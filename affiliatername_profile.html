@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <title>LEARN - Courses, Education site template</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/affiliate_dashboard.css" rel="stylesheet">
+
+    <!-- file upload (http://dev.html5ux.com/upload-image/) -->
+    <link href="css/fileupload.css" rel="stylesheet">
+
+    <!-- datepicker (https://github.com/jonthornton/Datepair.js)-->
+    <link rel="stylesheet" type="text/css" href="date-picker/pikaday.css" />
+
+    <!-- popup -->
+    <link rel="stylesheet" href="css/popup.css">
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <a href="index.html" id="logo">Learnterest</a>
+            </div>
+        </div>
+    </div>
+</header><!-- End header -->
+
+<nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div id="mobnav-btn"></div>
+                <ul class="sf-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="mega_drop_down">
+                        <a href="course_category.html">Course Category <i class="icon-down-dir"></i></a>
+                        <div class="mobnav-subarrow"></div>
+                        <div class="sf-mega">
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu">
+                                    <li><a href="">IT DEVELOPMENT</a></li>
+                                    <li><a href="">DATABASE MANAGEMENT</a></li>
+                                    <li><a href="">DESIGN</a></li>
+                                    <li><a href="">BUSINESS</a></li>
+                                    <li><a href="">MICROSOFT</a></li>
+                                    <li><a href="">PRODUCTIVITY</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu">
+                                    <li><a href="">ENGINEERING</a></li>
+                                    <li><a href="">ACADEMICS</a></li>
+                                    <li><a href="">MARKETING</a></li>
+                                    <li><a href="">SALES</a></li>
+                                    <li><a href="">PERSONALITY DEVELOPMENT</a></li>
+                                    <li><a href="">FASHION AND LIFESTYLE</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu icons">
+                                    <li><a href="#">HEALTH AND FITNESS</a></li>
+                                    <li><a href="#">PHOTOGRAPHY</a></li>
+                                    <li><a href="#">MUSIC AND DANCE</a></li>
+                                    <li><a href="#">LANGUAGE</a></li>
+                                    <li><a href="#">ENTRANCE EXAM</a></li>
+                                    <li><a href="#">SPORTS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="offer_zone.html">Offer Zone</a></li>
+                    <li><a href="news_events.html">News and events</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div><!-- End row -->
+    </div><!-- End container -->
+</nav>
+
+<section id="sub-header" class="padding-bottom-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 hi-icon-wrap hi-icon-effect-8">
+                <a href="affiliatername_dashboard.html" class="hi-icon icon-home">
+                    <p>Home</p>
+                </a>
+                <a href="affiliatername_profile.html" class="hi-icon icon-user-1">
+                    <p>my profile</p>
+                </a>
+                <a href="affiliatername_messages.html" class="hi-icon icon-email">
+                    <p>messages</p>
+                </a>
+                <a href="affiliatername_my_instructors.html" class="hi-icon icon-users-1">
+                    <p>my instructors</p>
+                </a>
+                <a href="affiliatername_reports.html" class="hi-icon icon-dollar">
+                    <p>reports</p>
+                </a>
+            </div>
+        </div><!-- End row -->
+    </div><!-- End container -->
+    <div class="divider_top"></div>
+</section><!-- End sub-header -->
+
+
+<section id="main_content">
+    <div class="container">
+        <div class="row margin-top-10">
+            <aside class="col-md-4 col-lg-4 col-sm-5">
+            <div class="box_style_1">
+                <div class="text-center">
+                    <br/>
+                    <form>
+                        <div class="dropzone" data-width="300" data-height="300" data-originalsize="false" data-url="canvas.php" style="width:85%;height: auto" data-image="img/teacher_2.jpg" data-removeurl="/your_remove_image_script.html">
+                            <input type="file" name="thumb"/>
+                        </div>
+                    </form>
+                    <br/>
+                    <h4>Affiliater Name</h4>
+                </div>
+            </div>
+        </aside>
+
+            <div class="col-md-8 col-lg-8 col-sm-7">
+                <h4><strong>PROFILE</strong></h4><hr>
+
+                <!--  Tabs -->
+                <ul class="nav nav-tabs" id="mytabs">
+                    <li class="active"><a href="#personal" data-toggle="tab">Personal Info</a></li>
+                    <li><a href="#website" data-toggle="tab">Website Info</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="personal">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="data-list no-margin entry">
+                                    <li>
+                                        <label><strong>First Name</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="firstname" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>Last Name</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="lastname" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>User Name</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="username" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>Email-id</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="email" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>Password</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="password" class="required form-control">
+                                            <a href="#yourModalId"><span class="input-icon" title="Edit"><i class="icon-pencil"></i></span></a>
+                                            <!-- pop up linked with popup.css, popup.js and inline script at bottom-->
+                                            <div id="yourModalId" class="yourModalClass">
+                                                <a href="#yourModalId" class="pull-right close padding-top-10">x</a>
+                                                <h4 class="text-center padding-top-10">Change Password</h4><hr>
+                                                <div class="passwordchange">
+                                                    <input type="text" name="lastname" class="required form-control" placeholder="Current Password">
+                                                    <input type="text" name="lastname" class="required form-control" placeholder="New Password">
+                                                    <input type="text" name="lastname" class="required form-control" placeholder="Confirm New Password">
+                                                    <button class="btn btn-primary center-block margin-bottom-10">Change Password</button>
+                                                </div>
+                                            </div>
+                                            <!-- pop up end -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label class="col-md-12 no-padding"><strong>Country</strong></label>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="country">
+                                                <option value="Europe">Europe</option>
+                                                <option value="Asia">Asia</option>
+                                                <option value="North America" selected>North America</option>
+                                                <option value="South America">South America</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>City</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="city" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>Contact Number</strong></label>
+                                        <div class="form-group">
+                                            <input type="text" name="contact" class="required form-control">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label><strong>Address</strong></label>
+                                        <div class="form-group">
+                                            <textarea type="text" name="contact" class="required form-control"></textarea>
+                                        </div>
+                                    </li>
+                                    <li class="text-center">
+                                        <button class="btn btn-primary">Save Changes</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- End row -->
+                    </div><!-- End tab-pane -->
+
+                    <div class="tab-pane fade" id="website">
+
+                        <div class="row website-entry">
+
+                            <div class="col-md-12">
+                                <div id="button_pro">
+                                    <div class='space' id='input_1'>
+                                        <h4 class="website-entry">Website 1</h4><hr>
+
+                                        <label>Website Name</label>
+                                        <input class="required form-control" type="text" name="webname">
+
+                                        <label>Website URL</label>
+                                        <input class="required form-control" type="text" name="url">
+
+                                        <label>Website Published Date</label>
+                                        <div class="form-group" name="date">
+                                            <input type="text" id="datepicker">
+                                        </div>
+
+                                        <label><strong>Business Model</strong></label>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="model">
+                                                <option value="IT-products">IT Products</option>
+                                                <option value="online-shopping">Online Shopping</option>
+                                                <option value="Community">Community</option>
+                                                <option value="Forum" selected>Forum</option>
+                                                <option value="loyalty">Loyalty/Rewards</option>
+                                                <option value="coupons">Coupons/Deals</option>
+                                                <option value="search">Search</option>
+                                                <option value="price">Price Comparison</option>
+                                                <option value="content_niche">Content/Niche</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <label><strong>Targeted Primary Category</strong></label>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="category">
+                                                <option value="" selected></option>
+                                                <option value="adult">Adult</option>
+                                                <option value="animals">Animals & Pets</option>
+                                                <option value="arts">Arts & Entertainments</option>
+                                                <option value="automotive">Automotive</option>
+                                                <option value="blog">Blog/Social Networking</option>
+                                                <option value="opportunities">Business Opportunities</option>
+                                                <option value="services">Business Services</option>
+                                                <option value="career">Career & Employment</option>
+                                                <option value="children">Children</option>
+                                                <option value="computer">Computer/Teachnology</option>
+                                                <option value="credit">Credit Card</option>
+                                                <option value="dating">Dating</option>
+                                                <option value="debt">Debt settlement & Consolidation</option>
+                                                <option value="education">Education</option>
+                                                <option value="fashion">Fashion & Beauty</option>
+                                                <option value="finance">Financial services</option>
+                                                <option value="food">Food & Drinks</option>
+                                                <option value="game">Games & Toys</option>
+                                                <option value="health">Health & Wellness</option>
+                                                <option value="hobby">Hobbies & Collectibles</option>
+                                                <option value="gardening">Home & Gardening</option>
+                                                <option value="insurance">Insurance</option>
+                                                <option value="literature">Literature & Reading</option>
+                                                <option value="loans">Loans</option>
+                                                <option value="men">Mens Lifestyle</option>
+                                                <option value="moving">Moving</option>
+                                                <option value="music">Music</option>
+                                                <option value="news">News & Polities</option>
+                                                <option value="parenting">Parenting & Family</option>
+                                                <option value="real-estate">Real Estate</option>
+                                                <option value="religious">Religious</option>
+                                                <option value="senior">Senior</option>
+                                                <option value="shopping">Shopping & Coupons</option>
+                                                <option value="education">Education</option>
+                                                <option value="software">Software</option>
+                                                <option value="sports">Sports</option>
+                                                <option value="teen">Teen</option>
+                                                <option value="telecom">Telecom</option>
+                                                <option value="travel">Travels & Vacations</option>
+                                                <option value="video">Video</option>
+                                                <option value="women">Womens Lifestyle</option>
+                                                <option value="other-category">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <label><strong>Targeted Gender</strong></label>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="gender">
+                                                <option value="" selected></option>
+                                                <option value="male">Mostly Male</option>
+                                                <option value="female">Mostly Female</option>
+                                                <option value="both">Both</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="age-group">Targeted Age Groups</div>
+                                        <div class="col-md-12 padding-left-20 border">
+                                            <div class="col-md-4">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">Under 18</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">18-25</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">26-35</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">36-50</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="">51-65</label>
+                                                </div>
+                                                <div class="checkbox disabled">
+                                                    <label><input type="checkbox" value="">Over 65</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="add btn btn-warning center-block">Add another Website</button>
+                                    </div>
+                                </div>
+                                <button class="add btn btn-primary center-block margin-top-10">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End tab-pane -->
+            </div>
+        </div>
+    </div><!-- End container -->
+</section><!-- End main_content-->
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Subscribe to our Newsletter for latest news.</h3>
+                <div id="message-newsletter"></div>
+                <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
+                    <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
+                    <button id="submit-newsletter" class=" button_outline"> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container" id="nav-footer">
+        <div class="row text-left">
+            <div class="col-md-3 col-sm-3">
+                <h4>Policies & Program</h4>
+                <ul>
+                    <li><a href="term_of_use.html">Terms of Use</a></li>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="refund_policy.html">Refund Policy</a></li>
+                    <li><a href="affiliate_login.html">Affiliate Program</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <h4>See also</h4>
+                <ul>
+                    <li><a href="course_details_1.html">IT Development</a></li>
+                    <li><a href="course_details_2.html">Business</a></li>
+                    <li><a href="course_details_2.html">Language</a></li>
+                    <li><a href="course_details_3.html">Entrance Exam</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <h4>Learnterest</h4>
+                <ul>
+                    <li><a href="about_us.html">Why Learnterest</a></li>
+                    <li><a href="promocode.html">Promocode System</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="contacts.html">Contact Us</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <ul id="follow_us">
+                    <li><a href="https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/learnterest" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/b/107601624465751204096/107601624465751204096/about" target="_blank"><i class="icon-googleplus"></i></a></li>
+                </ul>
+                <ul class="wrap">
+                    <li>Questions? <br/>support_mooc@deemsysinc.com</li>
+                </ul>
+            </div><!-- End col-md-4 -->
+        </div><!-- End row -->
+    </div>
+    <div id="copy_right">Copy right © 2015 learnterest.com</div>
+</footer>
+
+<div id="toTop"><i class="icon icon-up-circle-1"></i><h5>Go Top</h5></div>
+
+<!-- JQUERY -->
+<script src="js/jquery-1.10.2.min.js"></script>
+
+<!-- website entry -->
+<script>
+    $('document').ready(function(){
+        var id=2,txt_box;
+        var counter = 1;
+        var limit = 3;
+        $('#button_pro').on('click','.add',function(){
+
+            if (counter == limit)  {
+                alert("You have reached the limit of adding " + counter + " inputs");
+            }
+            else{
+                $(this).remove();
+                txt_box='<div class="space" id="input_'+id+'"><i class="remove  btn btn-danger btn-sm icon icon-trash pull-right"></i><h4 class="website-entry">Website '+(counter+1)+'</h4><hr><label>Website Name</label><input class="required form-control" type="text" name="webname"><label>Website URL</label><input class="required form-control" type="text" name="url"><label>Website Published Date</label><div class="form-group" name="date"><input type="text" id="datepicker"></div><label><strong>Business Model</strong></label><div class="styled-select"><select class="form-control required" name="model"><option value="IT-products">IT Products</option><option value="online-shopping">Online Shopping</option><option value="Community">Community</option><option value="Forum" selected>Forum</option><option value="loyalty">Loyalty/Rewards</option><option value="coupons">Coupons/Deals</option><option value="search">Search</option><option value="price">Price Comparison</option><option value="content_niche">Content/Niche</option><option value="other">Other</option></select></div><label><strong>Targeted Primary Category</strong></label><div class="styled-select"><select class="form-control required" name="category"><option value="" selected></option><option value="adult">Adult</option><option value="animals">Animals & Pets</option><option value="arts">Arts & Entertainments</option><option value="automotive">Automotive</option><option value="blog">Blog/Social Networking</option><option value="opportunities">Business Opportunities</option><option value="services">Business Services</option><option value="career">Career & Employment</option><option value="children">Children</option><option value="computer">Computer/Teachnology</option><option value="credit">Credit Card</option><option value="dating">Dating</option><option value="debt">Debt settlement & Consolidation</option><option value="education">Education</option><option value="fashion">Fashion & Beauty</option><option value="finance">Financial services</option><option value="food">Food & Drinks</option><option value="game">Games & Toys</option><option value="health">Health & Wellness</option><option value="hobby">Hobbies & Collectibles</option><option value="gardening">Home & Gardening</option><option value="insurance">Insurance</option><option value="literature">Literature & Reading</option><option value="loans">Loans</option><option value="men">Mens Lifestyle</option><option value="moving">Moving</option><option value="music">Music</option><option value="news">News & Polities</option><option value="parenting">Parenting & Family</option><option value="real-estate">Real Estate</option><option value="religious">Religious</option><option value="senior">Senior</option><option value="shopping">Shopping & Coupons</option><option value="education">Education</option><option value="software">Software</option><option value="sports">Sports</option><option value="teen">Teen</option><option value="telecom">Telecom</option><option value="travel">Travels & Vacations</option><option value="video">Video</option><option value="women">Womens Lifestyle</option><option value="other-category">Other</option></select></div><label><strong>Targeted Gender</strong></label><div class="styled-select"><select class="form-control required" name="gender"><option value="" selected></option><option value="male">Mostly Male</option><option value="female">Mostly Female</option><option value="both">Both</option></select></div><div class="age-group">Targeted Age Groups</div><div class="col-md-12 padding-left-20 border"><div class="col-md-4"><div class="checkbox"><label><input type="checkbox" value="">Under 18</label></div><div class="checkbox"><label><input type="checkbox" value="">18-25</label></div></div><div class="col-md-4"><div class="checkbox"><label><input type="checkbox" value="">26-35</label></div><div class="checkbox"><label><input type="checkbox" value="">36-50</label></div></div><div class="col-md-4"><div class="checkbox"><label><input type="checkbox" value="">51-65</label></div><div class="checkbox disabled"><label><input type="checkbox" value="">Over 65</label></div></div></div></div><button class="add btn btn-warning center-block">Add another Website</button>';
+                $("#button_pro").append(txt_box);
+                id++;
+                counter++;
+            }
+        });
+
+        $('#button_pro').on('click','.remove',function(){
+            var parent=$(this).parent().prev().attr("id");
+            var parent_im=$(this).parent().attr("id");
+            $("#"+parent_im).slideUp('medium',function(){
+                $("#"+parent_im).remove();
+                counter--;
+                if($('.add').length<1){
+                    $("#"+parent).append('<button class="add btn btn-warning center-block">Add another Website</button>');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- OTHER JS -->
+<script src="js/superfish.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="assets/validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>new UISearch( document.getElementById( 'sb-search' ) );</script>
+
+<script src="js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>
+
+<!-- date picker -->
+<script src="date-picker/pikaday.js"></script>
+<script>
+
+    var picker = new Pikaday(
+            {
+                field: document.getElementById('datepicker'),
+                firstDay: 1,
+                minDate: new Date('2000-01-01'),
+                maxDate: new Date('2020-12-31'),
+                yearRange: [2000,2020]
+            });
+
+</script>
+
+<!-- popup -->
+<script src="js/popup.js"></script>
+
+<script>
+    var modal1 = Modality.init('#yourModalId', {
+        effect: 'slide-up'
+    });
+</script>
+
+<script src="js/jquery.nicescroll.js"></script>
+
+</body>
+</html>

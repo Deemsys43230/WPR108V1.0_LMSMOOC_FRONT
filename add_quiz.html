@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LEARN - Courses, Education site template</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- file upload (http://dev.html5ux.com/upload-image/) -->
+    <link href="css/fileupload.css" rel="stylesheet">
+
+    <!-- popup -->
+    <link rel="stylesheet" href="css/popup.css">
+
+    <!-- table sort -->
+    <link rel="stylesheet" href="css/table-sort.css">
+
+    <!-- sidebar -->
+    <link rel="stylesheet" href="css/sidebar.css">
+
+</head>
+<body>
+<div id="slideout">
+    <img src="img/askus.png" alt="Feedback" />
+    <div id="slideout_inner">
+        <form>
+            <textarea></textarea>
+            <input type="submit" class="btn btn-black btn-xs center-block" value="Send">
+        </form>
+    </div>
+</div>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <a href="index.html" id="logo">Learnterest</a>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+                <div class="margin-right-40 pull-right margin-top-3">
+                    <button type="button" class="btn btn-signin dropdown-toggle" data-toggle="dropdown">
+                        <span class="hidden-xs">User Name&nbsp;&nbsp;<span class="caret"></span></span><span class="hidden-sm hidden-md hidden-lg"><i class="icon icon-user">&nbsp;&nbsp;<span class="caret"></span></i></span>
+                    </button>
+                    <ul class="dropdown-menu signin" role="menu">
+                        <li>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img class="profile-img" src="img/teacher_4_small.jpg" alt="" />
+                                    </td>
+                                    <td id="default">
+                                        <strong>Andrew</strong><br/>
+                                        <a href="profile_edit.html" class="icon icon-pencil" title="Edit Profile" positionX="-20" positionY="-35"></a>
+                                        <a href="profile_view.html" class="icon icon-user" title="View Profile" positionX="-20" positionY="-35"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="my_courses.html">My Courses</a></li>
+                        <li><a href="my_wishlist.html">My Wishlist</a></li>
+                        <li><a href="my_students.html">My Students</a></li>
+                        <li><a href="my_favourites.html">My Favorites</a></li>
+                        <li><a href="my_messages.html">Messages</a></li>
+                        <li><a href="my_purchase_history.html">Purchase History</a></li>
+                        <li><a href="my_payment.html">Payments</a></li>
+                        <li class="divider"></li>
+                        <li class="margin-bottom-5 red-color"><a href="login.html"><i class="icon icon-power"></i> Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><!-- End header -->
+
+<nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div id="mobnav-btn"></div>
+                <ul class="sf-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="mega_drop_down">
+                        <a href="course_category.html">Course Category <i class="icon-down-dir"></i></a>
+                        <div class="mobnav-subarrow"></div>
+                        <div class="sf-mega">
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu">
+                                    <li><a href="">IT DEVELOPMENT</a></li>
+                                    <li><a href="">DATABASE MANAGEMENT</a></li>
+                                    <li><a href="">DESIGN</a></li>
+                                    <li><a href="">BUSINESS</a></li>
+                                    <li><a href="">MICROSOFT</a></li>
+                                    <li><a href="">PRODUCTIVITY</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu">
+                                    <li><a href="">ENGINEERING</a></li>
+                                    <li><a href="">ACADEMICS</a></li>
+                                    <li><a href="">MARKETING</a></li>
+                                    <li><a href="">SALES</a></li>
+                                    <li><a href="">PERSONALITY DEVELOPMENT</a></li>
+                                    <li><a href="">FASHION AND LIFESTYLE</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <ul class="mega_submenu icons">
+                                    <li><a href="#">HEALTH AND FITNESS</a></li>
+                                    <li><a href="#">PHOTOGRAPHY</a></li>
+                                    <li><a href="#">MUSIC AND DANCE</a></li>
+                                    <li><a href="#">LANGUAGE</a></li>
+                                    <li><a href="#">ENTRANCE EXAM</a></li>
+                                    <li><a href="#">SPORTS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="offer_zone.html">Offer Zone</a></li>
+                    <li><a href="news_events.html">News and events</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div><!-- End row -->
+    </div><!-- End container -->
+</nav>
+
+<section id="main_content">
+
+    <div class="container">
+
+        <div class="row margin-top-10">
+            <aside class="col-md-4 col-lg-4 col-sm-5">
+                <div class="box_style_1">
+                    <div class="text-center">
+                        <br/>
+                        <form>
+                            <div class="dropzone" data-width="400" data-height="300" data-originalsize="false" data-url="canvas.php" style="width:85%;height: auto" data-image="img/OdinCwm.jpg" data-removeurl="/your_remove_image_script.html">
+                                <input type="file" name="thumb"/>
+                            </div>
+                        </form>
+                        <br/>
+                    </div>
+                    <p class="course-name no_margin">Course Cover Image</p>
+                    <ul class="profile-edit margin-top-10">
+                        <li class="">
+                            <a href="new_course.html">Overview</a>
+                        </li>
+                        <li class="">
+                            <a href="add_section.html">Add Sections</a>
+                        </li>
+                        <li class="">
+                            <a href="add_lecture.html">Add Lectures</a>
+                        </li>
+                        <li class="active">
+                            <a href="view-quiz.html">Add Quiz</a>
+                        </li>
+                        <li class="">
+                            <a href="add_promocode.html">Add Promocode</a>
+                        </li>
+                        <li class="">
+                            <a href="preview.html">Preview/Publish</a>
+                        </li>
+                        <li class="">
+                            <a href="help.html">Course Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="col-md-8 col-lg-8 col-sm-7">
+                <a href="view-quiz.html" class="pull-right btn-primary btn-sm margin-bottom-10 ">Back to list</a>
+                <a href="quiz_preview.html" class="pull-right btn-warning btn-sm margin-bottom-10 margin-right-10 icon icon-eye">Preview</a>
+                <h3 class="text-center">Add Questions</h3><hr>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                            
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="data-list no-margin entry">
+                            <li>
+                                <label class="col-md-12 no-padding"><strong>Question Type</strong></label>
+                                <div class="styled-select">
+                                    <select class="form-control required" name="lecture-type">
+                                        <option value="single">Single Answer Question</option>
+                                        <option value="multiple">Multiple Answer Question</option>
+                                        <option value="fill_blank" selected>Fill in the blanks</option>
+                                        <option value="yes_no">Yes/No Type</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Question</strong></label>
+                                <div class="form-group">
+                                    <input type="text" name="question" class="required form-control">
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Options</strong></label>
+                                <div class="row">
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option1" class="required form-control" placeholder="Option A">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option2" class="required form-control" placeholder="Option B">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option3" class="required form-control" placeholder="Option C">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option4" class="required form-control" placeholder="Option D">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Select Answer</strong></label>
+                                <form class="answer" action="">
+                                    <div class="col-md-3"><input type="radio" name="answer" value="A">&nbsp;&nbsp;Option-A</div>
+                                    <div class="col-md-3"><input type="radio" name="answer" value="B">&nbsp;&nbsp;Option-B</div>
+                                    <div class="col-md-3"><input type="radio" name="answer" value="C">&nbsp;&nbsp;Option-C</div>
+                                    <div class="col-md-3"><input type="radio" name="answer" value="D">&nbsp;&nbsp;Option-D</div>
+                                </form>
+                            </li>
+                        </ul>
+                        <div class="text-center col-md-12 margin-top-20">
+                            <a href=""><button class="add btn btn-primary">Save Quiz</button></a><hr/>
+                        </div>
+                        <div class="col-xs-12 col-md-6 margin-bottom-10 pull-right">
+                            <div id="sb-search" class="sb-search">
+                                <form>
+                                    <input class="sb-search-input" placeholder="Search here..." type="text" value="" name="search" id="search">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"></span>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-xs-12 no-padding">
+                            <div class="panel-body1">
+                                <table id="table4" class="table">
+                                    <thead>
+                                    <tr class="nodrag">
+                                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                        <th>No.</th>
+                                        <th>Section Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>1</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>2</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr class="sorter">
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>3</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>4</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>5</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>6</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>7</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>7</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sorter"><i class="icon icon-move"></i> </td>
+                                        <td>7</td>
+                                        <td>Study of website development</td>
+                                        <td>
+                                            <a href="#yourModalId" class="btn btn-xs btn-success margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-edit"></i>
+                                                <span class="hidden-xs hidden-sm">Edit</span>
+                                            </a>
+                                            <a href="#yourModalId1" class="btn btn-xs btn-danger margin-top-3">
+                                                <i class="hidden-md hidden-lg icon icon-trash"></i>
+                                                <span class="hidden-xs hidden-sm">Delete</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End row-->
+        <!-- pop up linked popup.css, popup.js and inline script at bottom-->
+        <div id="yourModalId" class="yourModalClass">
+            <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+            <h4 class="text-center"><strong>Edit Question</strong></h4><hr/>
+            <ul class="data-list no-margin entry">
+                <li>
+                    <label><strong>Question</strong></label>
+                    <div class="form-group">
+                        <input type="text" name="question" class="required form-control1 margin-bottom-10">
+                    </div>
+                </li>
+                <li>
+                    <label><strong>Options</strong></label>
+                    <div class="row">
+                        <div class="col-md-3 form-group">
+                            <input type="text" name="option1" class="required form-control1 margin-bottom-10" placeholder="Option A">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input type="text" name="option2" class="required form-control1 margin-bottom-10" placeholder="Option B">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input type="text" name="option3" class="required form-control1 margin-bottom-10" placeholder="Option C">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input type="text" name="option4" class="required form-control1 margin-bottom-10" placeholder="Option D">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label><strong>Select Answer</strong></label><br/>
+                    <form class="answer margin-top-10" action="">
+                        <input type="radio" name="answer1" value="A1">&nbsp;&nbsp;Option-A<br/>
+                        <input type="radio" name="answer1" value="B1">&nbsp;&nbsp;Option-B<br/>
+                        <input type="radio" name="answer1" value="C1">&nbsp;&nbsp;Option-C<br/>
+                        <input type="radio" name="answer1" value="D1">&nbsp;&nbsp;Option-D<br/>
+                    </form>
+                </li>
+            </ul>
+            <button class="btn btn-sm btn-success margin-top-10 center-block">Save</button>
+        </div>
+        <div id="yourModalId1" class="yourModalClass text-center alert-warning" style="display:none;">
+            <a href="#yourModalId1" class="pull-right close padding-top-10">x</a><br/>
+            <h4><strong>Alert!</strong></h4>
+            <span class="text-center">Are you sure want to delete</span><br/><br/>
+            <button class="btn btn-sm btn-danger">Delete</button>
+        </div>
+    </div><!-- End container -->
+</section><!-- End main_content-->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Subscribe to our Newsletter for latest news.</h3>
+                <div id="message-newsletter"></div>
+                <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
+                    <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
+                    <button id="submit-newsletter" class=" button_outline"> Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container" id="nav-footer">
+        <div class="row text-left">
+            <div class="col-md-3 col-sm-3">
+                <h4>Policies & Program</h4>
+                <ul>
+                    <li><a href="term_of_use.html">Terms of Use</a></li>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="refund_policy.html">Refund Policy</a></li>
+                    <li><a href="affiliate_login.html">Affiliate Program</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <h4>See also</h4>
+                <ul>
+                    <li><a href="course_details_1.html">IT Development</a></li>
+                    <li><a href="course_details_2.html">Business</a></li>
+                    <li><a href="course_details_2.html">Language</a></li>
+                    <li><a href="course_details_3.html">Entrance Exam</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <h4>Learnterest</h4>
+                <ul>
+                    <li><a href="about_us.html">Why Learnterest</a></li>
+                    <li><a href="promocode.html">Promocode System</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="contacts.html">Contact Us</a></li>
+                </ul>
+            </div><!-- End col-md-4 -->
+            <div class="col-md-3 col-sm-3">
+                <ul id="follow_us">
+                    <li><a href="https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/learnterest" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="https://plus.google.com/u/0/b/107601624465751204096/107601624465751204096/about" target="_blank"><i class="icon-googleplus"></i></a></li>
+                </ul>
+                <ul class="wrap">
+                    <li>Questions? <br/>support_mooc@deemsysinc.com</li>
+                </ul>
+            </div><!-- End col-md-4 -->
+        </div><!-- End row -->
+    </div>
+    <div id="copy_right">Copy right © 2015 learnterest.com</div>
+</footer>
+
+<div id="toTop"><i class="icon icon-up-circle-1"></i><h5>Go Top</h5></div>
+<!-- JQUERY -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<!-- tooltip -->
+<script type="text/javascript" src="js/tooltip.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#default a").toolTip();
+    })
+</script>
+
+<!-- OTHER JS -->
+<script src="js/superfish.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="assets/validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>new UISearch( document.getElementById( 'sb-search' ) );</script>
+
+<!-- file upload -->
+<script src="js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>
+
+<script src="js/popup.js"></script>
+
+<!-- pop up -->
+<script>
+    var modal1 = Modality.init('#yourModalId', {
+        effect: 'slide-up'
+    });
+</script>
+
+<script>
+    var modal1 = Modality.init('#yourModalId1', {
+        effect: 'slide-up'
+    });
+
+</script>
+
+<script type="text/javascript" src="js/jquery-sortable-table.js"></script>
+<script type="text/javascript">
+    $("#table4").rowSorter({
+        handler: "td.sorter"
+    });
+</script>
+
+<script src="js/jquery.nicescroll.js"></script>
+
+</body>
+</html>

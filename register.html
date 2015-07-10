@@ -1,0 +1,45 @@
+
+
+<section id="login_bg">
+<div  class="container">
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+		<div id="login">
+			<p class="text-center">
+				<img src="img/login_logo.png" alt="">
+			</p>
+			<hr>
+			<form role="form" name="regForm" class="form-horizontal">
+				<div class="form-group">
+					<input type="text" class=" form-control required" ng-model="userDetailsForm.username"  placeholder="Full Name">
+					<span class="input-icon"><i class=" icon-user"></i></span>
+				</div>
+				<div class="form-group">
+					<input type="text" type="email" name="email" class=" form-control required" ng-model="userDetailsForm.emailAddress" placeholder="Email" ng-blur="onBlur()">
+					<span class="input-icon"><i class="icon-email"></i></span>
+					<span style="color:red">{{alreadyexist}}</span>
+					<span style="color:red" ng-show="regForm.email.$dirty && regForm.email.$invalid && !regForm.email.$error.email" class="help-inline">Email Required</span>
+    				<span style="color:red" ng-show="regForm.email.$error.email" class="help-inline">Email is not valid</span>
+
+				</div>
+				<div class="form-group">
+					<input type="password" class=" form-control required" ng-model="userDetailsForm.password" id="password1" placeholder="Password">
+					<span class="input-icon"><i class=" icon-lock"></i></span>
+				</div>
+				<div class="form-group">
+					<input type="password" class=" form-control required" id="password2" placeholder="Confirm password">
+					<span class="input-icon"><i class=" icon-lock"></i></span>
+					
+				</div>
+                <div class="checkbox small terms col-md-offset-2 col-sm-offset-2 col-xs-offset-1">
+                    <label><input type="checkbox" value="fasd"><span>I accept the&nbsp;</span><a href="">Terms & Conditions</a></label>
+                </div>
+                 <button ng-click="creatUser(userDetailsForm);" ng-disabled="regForm.$invalid" class="button_fullwidth">Create Account</button>
+               <!--  <a href="#create_account"  ng-disabled="regForm.$invalid" class="button_fullwidth">Create Account</a> -->
+                <a href="#login" class="button_fullwidth-2">Log in</a>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</section><!-- End register -->

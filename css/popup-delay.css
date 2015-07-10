@@ -1,0 +1,59 @@
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+  min-width: 100%;
+}
+
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  overflow-y: scroll;
+  display:none;
+  z-index:9999;
+  text-align: center;
+  padding-bottom: 30px;
+}
+#boxes #dialog {
+  width:80%;
+  height:55%;
+  background-color:#ffffff;
+}
+
+.maintext{
+	text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  text-decoration: none;
+}
+
+#lorem{
+    padding:15px 15px 0px 15px;
+	font-family: "Segoe UI", sans-serif;
+	font-size: 14px;
+  text-align: left;
+}
+#popupfoot{
+	font-family: "Segoe UI", sans-serif;
+	font-size: 16pt;
+  padding: 10px 20px;
+}
+#popupfoot a{
+	text-decoration: none;
+}
+
+.agree{
+  margin-right: 20px;
+  font-size: 15px;
+  opacity: 1;
+  background-color:#1ABC9C ;
+}
+
+.agree:hover{
+    margin-right: 10px;
+    background-color:#1ABC9C ;
+    opacity: 1;
+}

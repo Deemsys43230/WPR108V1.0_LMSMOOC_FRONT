@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<html lang="en">
+
+<head>
+  	<meta charset="utf-8">
+    <title>LEARN - Courses, Education site template</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/single_course.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+      <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- social -->
+    <script type="text/javascript" src="js/jquery-social.min.js"></script>
+    <script type="text/javascript" src="js/jquery-socialmedia.js"></script>
+
+    <!-- video -->
+    <script src="video/build/jquery.js"></script>
+    <script src="video/build/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="video/build/mediaelementplayer.min.css" />
+
+    <!-- popup -->
+    <link rel="stylesheet" href="css/popup.css">
+
+</head>
+  
+  <body>
+
+  <div id="share-wrapper">
+      <ul class="share-inner-wrp">
+          <!-- Facebook -->
+          <li class="facebook button-wrap"><a href="#">Facebook</a></li>
+
+          <!-- Twitter -->
+          <li class="twitter button-wrap"><a href="#">Tweet</a></li>
+
+          <!-- Linked In -->
+          <li class="linkedin button-wrap"><a href="#">Linked In</a></li>
+
+          <!-- whatsapp -->
+          <li class="whatsapp button-wrap hidden-lg hidden-sm hidden-md"><a href="#">Whatsapp</a></li>
+
+          <!-- Email -->
+          <li class="email button-wrap"><a href="#">Email</a></li>
+
+          <!-- Google -->
+          <li class="google button-wrap"><a href="#">Google+</a></li>
+
+      </ul>
+  </div>
+
+<header>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                  <a href="index.html" id="logo">Learnterest</a>
+              </div>
+              <div class="col-md-9 col-sm-9 col-xs-9">
+                  <div class="margin-right-40 pull-right margin-top-3">
+                      <button type="button" class="btn btn-signin dropdown-toggle" data-toggle="dropdown">
+                          <span class="hidden-xs">User Name</span><span class="hidden-sm hidden-md hidden-lg"><i class="icon icon-user"></i> </span>&nbsp;&nbsp;<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu signin" role="menu">
+                          <li>
+                              <table>
+                                  <tr>
+                                      <td>
+                                          <img class="profile-img" src="img/teacher_4_small.jpg" alt="" />
+                                      </td>
+                                      <td id="default">
+                                          <strong>Andrew</strong><br/>
+                                          <a href="profile_edit.html" class="icon icon-pencil" title="Edit Profile" positionX="-20" positionY="-35"></a>
+                                          <a href="profile_view.html" class="icon icon-user" title="View Profile" positionX="-20" positionY="-35"></a>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </li>
+                          <li class="divider"></li>
+                          <li><a href="my_courses.html">My Courses</a></li>
+                          <li><a href="my_wishlist.html">My Wishlist</a></li>
+                          <li><a href="my_students.html">My Students</a></li>
+                          <li><a href="my_favourites.html">My Favorites</a></li>
+                          <li><a href="my_messages.html">Messages</a></li>
+                          <li><a href="my_purchase_history.html">Purchase History</a></li>
+                          <li><a href="my_payment.html">Payments</a></li>
+                          <li class="divider"></li>
+                          <li class="margin-bottom-5 red-color"><a href="login.html"><i class="icon icon-power"></i> Log Out</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+</header><!-- End header -->
+
+  <nav>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-sm-12">
+                  <div id="mobnav-btn"></div>
+                  <ul class="sf-menu">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="mega_drop_down">
+                          <a href="course_category.html">Course Category <i class="icon-down-dir"></i></a>
+                          <div class="mobnav-subarrow"></div>
+                          <div class="sf-mega">
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu">
+                                      <li><a href="">IT DEVELOPMENT</a></li>
+                                      <li><a href="">DATABASE MANAGEMENT</a></li>
+                                      <li><a href="">DESIGN</a></li>
+                                      <li><a href="">BUSINESS</a></li>
+                                      <li><a href="">MICROSOFT</a></li>
+                                      <li><a href="">PRODUCTIVITY</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu">
+                                      <li><a href="">ENGINEERING</a></li>
+                                      <li><a href="">ACADEMICS</a></li>
+                                      <li><a href="">MARKETING</a></li>
+                                      <li><a href="">SALES</a></li>
+                                      <li><a href="">PERSONALITY DEVELOPMENT</a></li>
+                                      <li><a href="">FASHION AND LIFESTYLE</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu icons">
+                                      <li><a href="#">HEALTH AND FITNESS</a></li>
+                                      <li><a href="#">PHOTOGRAPHY</a></li>
+                                      <li><a href="#">MUSIC AND DANCE</a></li>
+                                      <li><a href="#">LANGUAGE</a></li>
+                                      <li><a href="#">ENTRANCE EXAM</a></li>
+                                      <li><a href="#">SPORTS</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+                      <li><a href="offer_zone.html">Offer Zone</a></li>
+                      <li><a href="news_events.html">News and events</a></li>
+                      <li><a href="blog.html">Blog</a></li>
+                  </ul>
+              </div>
+          </div><!-- End row -->
+      </div><!-- End container -->
+  </nav>
+
+  <section id="sub-header" >
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                  <h2>Course name</h2>
+                  <h3>- Course Subtitle</h3>
+                  <br>
+                  <ul class="list_ok">
+                      <h4><strong>Exclusive Features</strong></h4>
+                      <li>Certificate of completion</li>
+                      <li>Lifetime access</li>
+                      <li>30 days money back guarantee!</li>
+                      <li>Became an expert</li>
+                  </ul>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-8 video col-xs-12">
+                  <video width="100%" height="auto" id="player2" controls="controls">
+                      <source src="video/temp%20(360p).mp4" type="video/mp4">
+                      <p>Your browser leaves much to be desired.</p>
+                  </video>
+              </div>
+          </div><!-- End row -->
+      </div>
+      <div class="divider_top"></div>
+  </section>
+
+  <section id="main-features" class="padding-10">
+      <div class="divider_top_black"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <h3>Course summary</h3>
+                  <p>
+                      In this course, I will try to create an application that can display 3 D object into a web browser. First, I made a simple object with 3dsmax and then I will show you in a web browser using Three.js
+                  </p>
+                  <div class="course-accordion-group">
+                      <div id="collapse-more" class="course-accordion-body collapse">
+                          <div class="course-accordion-inner">
+                              <p>In this course, I will try to create an application that can display 3 D object into a web browser. First, I made a simple object with 3dsmax and then I will show you in a web browser using Three.js</p>
+                          </div>
+                      </div>
+                      <button class="SeeMore tab" data-toggle="collapse" href="#collapse-more">Read More</button>
+                  </div>
+                  <h3>Tags:</h3>
+                  <p class="tag">
+                      <a href="">Web designing</a> /&nbsp;
+                      <a href="">Web development</a> /&nbsp;
+                      <a href="">Designing</a> /&nbsp;
+                      <a href="">Development</a>
+                  </p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <div class="course-accordion-group">
+                      <div class="course-accordion-heading">
+                          <a class="course-accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapse-require">
+                              <h3>Basic Requirements&nbsp;<span class="caret"></span></h3>
+                          </a>
+                      </div>
+                      <div id="collapse-require" class="course-accordion-body collapse">
+                          <div class="course-accordion-inner">
+                              <ul class="list_ok">
+                                  <li>Internet</li>
+                                  <li>Windows/MAC/LINUX</li>
+                                  <li>HTML</li>
+                                  <li>CSS</li>
+                                  <li>JAVA SCRIPT</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="course-accordion-group">
+                      <div class="course-accordion-heading">
+                          <a class="course-accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapse-learn">
+                              <h3>What will learn from this course&nbsp;<span class="caret"></span></h3>
+                          </a>
+                      </div>
+                      <div id="collapse-learn" class="course-accordion-body collapse">
+                          <div class="course-accordion-inner">
+                              <ul class="list_ok">
+                                  <li>Use the best strategies to boost your course sales</li>
+                                  <li>Access all my secret tips (that work!)</li>
+                                  <li>Increase your number of students</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="course-accordion-group margin-bottom-20">
+                      <div class="course-accordion-heading">
+                          <a class="course-accordion-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapse-who">
+                              <h3>Who all can take this course&nbsp;<span class="caret"></span></h3>
+                          </a>
+                      </div>
+                      <div id="collapse-who" class="course-accordion-body collapse">
+                          <div class="course-accordion-inner">
+                              <ul class="list_ok">
+                                  <li>Web developer</li>
+                                  <li>Designer</li>
+                                  <li>Anyone interested in the design</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div><!-- End row -->
+      </div><!-- End container-->
+  </section><!-- End main-features -->
+
+  <div id="yourModalId2" class="yourModalClass " style="display:none;">
+          <a href="#yourModalId2" class="pull-right close padding-top-10">x</a>
+      <form method="get" action="https://www.paypal.com/signin/">
+          <h4 class="margin-top-20 text-center">Course Enrollment</h4><hr/>
+          <p class="pull-right" style="font-size: 20px;">132 $</p>
+          <span>Photoshop designing skills and training</span><br/><br/>
+          <input type="text"/>
+          <a class="btn-primary btn-sm margin-top-10" place>Apply Promo Code</a>
+          <div><hr/></div>
+          <p class="pull-right" style="font-size: 20px;">132 $</p>
+          <span>Your Pay Amount</span><br/><hr/>
+          <a  target="_blank" onclick=" window.location = 'https://www.paypal.com/signin/';" class="btn btn-success center-block">Pay Now</a>
+      </form>
+  </div>
+
+  <section id="main_content">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+                  <br/>
+                  <div class="course-content">
+                      <span class="course-content">
+                          <h4>Course Contents</h4>
+                      </span>
+                  </div>
+                  <br/><br/>
+                  <h3 class="chapter_course no_margin_rop">Section 1: Welcome</h3>
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">1</span><a href="course_detail_page_txt.html">Lorem ipsum dolor sit amet, case saepe impetus sed ut.</a></h4>
+                      <button type="button" class="btn btn-success btn-xs pull-right margin-right-10" data-toggle="tooltip" data-placement="top" title="Preview"><i class="icon-eye"></i></button>
+                      <ul>
+                          <li><i class="icon-doc"></i>Text reading</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">2</span><a href="course_detail_page_video.html">Oportere efficiantur usu ad.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-video"></i> Video lesson</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">3</span><a href="#">Oportere efficiantur usu ad.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-mic"></i> Audio lesson</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <h3 class="chapter_course">Section 2: Case aeque melius duo ut, porro ridens habemus quo in</h3>
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">1</span><a href="#">Et has suscipit probatus.</a></h4>
+                      <button type="button" class="btn btn-success btn-xs pull-right margin-right-10" data-toggle="tooltip" data-placement="top" title="Preview"><i class="icon-eye"></i></button>
+                      <ul>
+                          <li><i class="icon-doc"></i>12 Pages</li>
+                          <li><i class="icon-attach"></i>PDF</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">2</span><a href="#">Quo ea feugiat saperet vulputate</a></h4>
+                      <ul>
+                          <li><i class="icon-doc"></i>Text reading</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">3</span><a href="#">Legere sanctus perfecto at eos</a></h4>
+                      <ul>
+                          <li><i class="icon-doc"></i>Text reading</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">4</span><a href="#">Mei habemus voluptua ex, utroque instructior.</a></h4>
+                      <ul>
+                          <li><i class="icon-doc"></i>Text reading</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <h3 class="chapter_course">Section 3: Case aeque melius duo ut, porro ridens habemus quo in</h3>
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">1</span><a href="#">Ysu suavitate adversarium philosophia.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-video"></i> Video</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">2</span><a href="#">Eu sit causae elaboraret efficiendi.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-video"></i> Video</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course">
+                      <h4><span class="lecture">3</span><a href="#">Moderatius efficiantur eu mei.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-video"></i> Video</li>
+                      </ul>
+                  </div><!-- end strip single course -->
+
+                  <div class="strip_single_course add_bottom_30 margin-bottom-5">
+                      <h4><span class="lecture">4</span><a href="#">Diam assentior sententiae eu duo.</a></h4>
+                      <ul>
+                          <li><i class="icon-clock"></i> 00:58</li>
+                          <li><i class="icon-video"></i> Video</li>
+                      </ul>
+                  </div>
+              </div><!-- End col-md-8  -->
+
+              <aside class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                  <a href="#yourModalId2" target="_blank" class="button_fullwidth-3 margin-top-20" style="background-color: #009000">Enroll This Course</a>
+                  <div class="box_style_1">
+                      <h4>Course Amount<span class="pull-right"><span class="rate_color">120$</span></span></h4>
+                      <h4>Total Lectures<span class="pull-right">17</span></h4>
+                      <h4><a href="">
+                          Rates&nbsp;<span>(123)</span>
+                          <span class="pull-right rating_2"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i></span></a></h4><br>
+                      <h4>About the Author</h4>
+                      <div class="media">
+                          <div class="media-body no-padding">
+                              <h4 class="media-heading">
+                                  Marc Twain
+                              </h4>
+                              <div class="col-md-4 col-xs-4 no-padding margin-top-10">
+                                  <img src="img/avatar1.jpg" class="img-thumbnail margin-bottom-10" alt="">
+                              </div>
+
+                              <div class="col-md-8 col-xs-8 padding-left-10">
+                                  <h5><i>Web developer</i></h5>
+                                  <span class="small padding-top-10">
+                                      <a href=""><i class="icon-facebook"></i></a>
+                                      <a href=""><i class="icon-twitter"></i></a>
+                                      <a href=""><i class="icon-globe"></i></a><br/>
+                                  </span>
+                                  <a href="" class="btn-success btn-xs pull-left margin-top-10">Add to Favourite</a><br/>
+                              </div>
+
+                              <div class="col-md-12 col-xs-12 no-padding margin-top-5">
+                                  <p>
+                                      Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
+                                      Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
+                                      Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
+                                  </p>
+                                  <a href="instructor_name.html"><button class="btn btn-primary btn-xs center-block">Know more</button></a>
+                                  <br/>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-12 col-xs-12  box_style_1">
+                      <h4>Related Courses</h4>
+                      <div class="col-md-4 col-xs-4 padding-tb-5">
+                          <img src="img/course-7.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-8 col-xs-8 padding-lr-5">
+                          <h5><strong><a href="">Course name</a> </strong></h5>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <small class="text-gray">4.5</small><br/>
+                          </div>
+                          <small class="text-gray">2345 Enrolls</small><br/>
+                          <h5 class="rate">120 $</h5>
+                      </div>
+                      <div class="col-md-12 col-xs-12 padding-tb-5">
+                          <div class="divider"></div>
+                      </div>
+                      <div class="col-md-4 col-xs-4 padding-tb-5">
+                          <img src="img/course-6.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-8 col-xs-8 padding-lr-5">
+                          <h5><strong><a href="">Course name</a> </strong></h5>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <small class="text-gray">4.5</small><br/>
+                          </div>
+                          <small class="text-gray">2345 Enrolls</small><br/>
+                          <h5 class="rate">Free</h5>
+                      </div>
+                      <div class="col-md-12 col-xs-12 author_division"></div>
+                      <div class="col-md-4 col-xs-4 padding-tb-5">
+                          <img src="img/course-8.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-8 col-xs-8 padding-lr-5">
+                          <h5><strong><a href="">Course name</a> </strong></h5>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <small class="text-gray">4.5</small><br/>
+                          </div>
+                          <small class="text-gray">2345 Enrolls</small><br/>
+                          <h5 class="rate">120 $</h5>
+                      </div>
+                  </div>
+              </aside> <!-- End col-md-4 -->
+
+          </div><!-- End row -->
+      </div><!-- End container -->
+  </section>
+
+  <section id="main_content1" class="padding-top-0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8">
+                  <br/>
+                  <div class="course-content">
+                    <span class="course-content">
+                         <h4>Ratings (987)</h4>
+                    </span>
+                  </div>
+                  <br/>
+                  <div class="col-md-6">
+                      <div class="rating">
+                          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star"></i>
+                          <span class="text-gray"><strong>&nbsp;(676)</strong></span>
+                      </div>
+                      <div class="rating">
+                          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                          <span class="text-gray"><strong>&nbsp;(176)</strong></span>
+                      </div>
+                      <div class="rating">
+                          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class=" icon-star-empty"></i>
+                          <span class="text-gray"><strong>&nbsp;(112)</strong></span>
+                      </div>
+                      <div class="rating">
+                          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class=" icon-star-empty"></i>
+                          <span class="text-gray"><strong>&nbsp;(68)</strong></span>
+                      </div>
+                      <div class="rating">
+                          <i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class=" icon-star-empty"></i>
+                          <span class="text-gray"><strong>&nbsp;(7)</strong></span>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <h4>AVERAGE RATING</h4>
+                      <div class="rating">
+                          <h1 class="text-primary">
+                              4.5
+                          </h1>
+                          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half-alt"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</section>
+
+  <section id="main_content2" class="padding-top-0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8">
+                  <br/>
+                  <div class="course-content">
+                    <span class="course-content">
+                         <h4>Reviews</h4>
+                    </span>
+                  </div>
+                  <br/>
+                  <div class="col-md-12">
+                      <div class="col-md-2 col-xs-2 padding-tb-5">
+                          <img src="img/avatar2.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-10 col-xs-10">
+                          <h4><strong>Name</strong></h4>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <span class="black"><strong>&nbsp;(4)</strong></span>
+                          </div>
+                          <h6>10 days ago</h6>
+                          <h5><strong>Very useful course</strong></h5>
+                          <p>Subscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest news</p>
+                      </div>
+
+                  </div>
+
+                  <hr>
+                  <div class="col-md-12">
+                      <div class="col-md-2 col-xs-2 padding-tb-5">
+                          <img src="img/avatar2.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-10 col-xs-10">
+                          <h4><strong>Name</strong></h4>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <span class="black"><strong>&nbsp;(4)</strong></span>
+                          </div>
+                          <h6>10 days ago</h6>
+                          <h5><strong>Very useful course</strong></h5>
+                          <p>Subscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest news</p>
+                      </div>
+                  </div>
+
+                  <br/>
+                  <div class="col-md-12">
+                      <div class="col-md-2 col-xs-2 padding-tb-5">
+                          <img src="img/avatar2.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-10 col-xs-10">
+                          <h4><strong>Name</strong></h4>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <span class="black"><strong>&nbsp;(4)</strong></span>
+                          </div>
+                          <h6>10 days ago</h6>
+                          <h5><strong>Very useful course</strong></h5>
+                          <p>Subscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest news</p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-12">
+                      <div class="col-md-2 col-xs-2 padding-tb-5">
+                          <img src="img/avatar2.jpg" class="img-thumbnail" alt="">
+                      </div>
+                      <div class="col-md-10 col-xs-10">
+                          <h4><strong>Name</strong></h4>
+                          <div class="rating">
+                              <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class=" icon-star-empty"></i>
+                              <span class="black"><strong>&nbsp;(4)</strong></span>
+                          </div>
+                          <h6>10 days ago</h6>
+                          <h5><strong>Very useful course</strong></h5>
+                          <p>Subscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest newsSubscribe to our Newsletter for latest news</p>
+                      </div>
+                  </div>
+                  <button class="btn btn-primary btn-md center-block">See more reviews</button>
+              </div>
+          </div>
+      </div>
+      </div>
+  </section>
+
+  <!-- pop up linked popup.css, popup.js and inline script at bottom-->
+  <div id="yourModalId1" class="yourModalClass">
+      <a href="#yourModalId1" class="pull-right close padding-top-10">x</a><br/>
+      <h4 class="text-center"><strong>Edit Question</strong></h4><hr/>
+      <ul class="data-list no-margin entry">
+          <li>
+              <label><strong>Reason for leave from this course</strong></label>
+              <div class="form-group">
+                  <textarea type="text" name="reason" class="required form-control margin-bottom-20" placeholder="Enter the reasons..."></textarea>
+              </div>
+              <label><strong>How we can improve?</strong></label>
+              <div class="form-group">
+                  <textarea type="text" name="improve" class="required form-control margin-bottom-10" placeholder="Enter the suggestions"></textarea>
+              </div>
+          </li>
+      </ul>
+      <button class="btn btn-sm btn-success margin-top-10 center-block">Send</button>
+  </div>
+
+  <div id="yourModalId" class="yourModalClass text-center alert-warning">
+      <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+      <h4><strong>Confirmation</strong></h4>
+      <span class="text-center">Are you surly want to leave from this course</span><br/><br/>
+      <a href="#yourModalId1" class="btn btn-sm btn-success margin-right-5">Yes</a><a href="#yourModalId" class="btn btn-sm btn-danger">No</a>
+  </div>
+
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <h3>Subscribe to our Newsletter for latest news.</h3>
+                  <div id="message-newsletter"></div>
+                  <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
+                      <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
+                      <button id="submit-newsletter" class=" button_outline"> Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="container" id="nav-footer">
+          <div class="row text-left">
+              <div class="col-md-3 col-sm-3">
+                  <h4>Policies & Program</h4>
+                  <ul>
+                      <li><a href="term_of_use.html">Terms of Use</a></li>
+                      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                      <li><a href="refund_policy.html">Refund Policy</a></li>
+                      <li><a href="affiliate_login.html">Affiliate Program</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <h4>See also</h4>
+                  <ul>
+                      <li><a href="course_details_1.html">IT Development</a></li>
+                      <li><a href="course_details_2.html">Business</a></li>
+                      <li><a href="course_details_2.html">Language</a></li>
+                      <li><a href="course_details_3.html">Entrance Exam</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <h4>Learnterest</h4>
+                  <ul>
+                      <li><a href="about_us.html">Why Learnterest</a></li>
+                      <li><a href="promocode.html">Promocode System</a></li>
+                      <li><a href="FAQ.html">FAQ</a></li>
+                      <li><a href="contacts.html">Contact Us</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <ul id="follow_us">
+                      <li><a href="https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314" target="_blank"><i class="icon-facebook"></i></a></li>
+                      <li><a href="https://twitter.com/learnterest" target="_blank"><i class="icon-twitter"></i></a></li>
+                      <li><a href="https://plus.google.com/u/0/b/107601624465751204096/107601624465751204096/about" target="_blank"><i class="icon-googleplus"></i></a></li>
+                  </ul>
+                  <ul class="wrap">
+                      <li>Questions? <br/>support_mooc@deemsysinc.com</li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+          </div><!-- End row -->
+      </div>
+      <div id="copy_right">Copy right © 2015 learnterest.com</div>
+  </footer>
+
+  <div id="toTop" class="social"><i class="icon icon-up-circle-1"></i><h5>Go Top</h5></div>
+
+<!-- JQUERY -->
+<script src="js/jquery-1.10.2.min.js"></script>
+
+
+<!-- OTHER JS -->
+<script src="js/superfish.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="js/jquery.fitvids.js"></script> <!-- for video responsive-->
+<script src="assets/validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script src="js/jquery-readmore.js"></script>
+<script>new UISearch( document.getElementById( 'sb-search' ) );</script>
+
+  <script type="text/javascript">stLight.options({publisher: "b3e2871d-7dd8-4d0b-a8c1-00ca9ee541a8", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+  <script>
+      var options={ "publisher": "b3e2871d-7dd8-4d0b-a8c1-00ca9ee541a8", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "email", "linkedin", "whatsapp", "googleplus"]}};
+      var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+
+
+  <script>
+      $('audio,video').mediaelementplayer({
+          // auto-select this language (instead of starting with "None")
+          startLanguage:'en',
+          // automatically translate into these languages
+          translations:['es','ar','zh','ru'],
+          // enable the dropdown list of languages
+          translationSelector: true
+      });
+  </script>
+
+  <script src="js/popup.js"></script>
+
+  <!-- pop up -->
+  <script>
+      var modal1 = Modality.init('#yourModalId', {
+          effect: 'slide-up'
+      });
+
+      var modal1 = Modality.init('#yourModalId1', {
+          effect: 'slide-up'
+      });
+
+      var modal1 = Modality.init('#yourModalId2', {
+          effect: 'slide-up'
+      });
+  </script>
+
+  <script src="js/jquery.nicescroll.js"></script>
+
+</body>
+</html>

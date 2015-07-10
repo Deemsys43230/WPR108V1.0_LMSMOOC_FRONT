@@ -1,0 +1,224 @@
+
+<style>
+    html{
+        overflow-y: scroll !important;
+    }
+</style>
+
+<!-- Toggle Switch -->
+<link rel="stylesheet" href="css/jquery.switch.css">
+<link href="check_radio/skins/square/aero.css" rel="stylesheet">
+
+<!-- datepicker (https://github.com/jonthornton/Datepair.js)-->
+<link rel="stylesheet" type="text/css" href="date-picker/pikaday.css" />
+
+<section id="wizard_bg">
+    <div class="container">
+        <!-- Start Survey container -->
+        <div id="survey_container">
+
+            <div id="top-wizard">
+                <strong>Progress </strong>
+                <div id="progressbar"></div>
+                <div class="shadow"></div>
+            </div><!-- end top-wizard -->
+
+            <form role="form"  name="example-1" id="wrapped" method="POST" autocomplete="off">
+                <div id="middle-wizard">
+                    <div class="step row">
+                        <div class="col-md-12 no-padding">
+                            <h4 class="col-md-12  margin-bottom-20">Enter your personal info</h4>
+                            <div class="col-md-6 ">
+                                <ul class="data-list ">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" ng-model="userDetailForm.userId">
+                                            <input type="text" name="firstname" ng-model="userDetailForm.firstName" class="required form-control" placeholder="First name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="lastname" ng-model="userDetailForm.lastName" class="required form-control" placeholder="Last name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li><div class="styled-select margin-bottom-15">
+                                        <select class="form-control required" name="country" ng-model="userDetailForm.country">
+                                            <option value="" select ed>Select your country</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="North America">North America</option>
+                                            <option value="South America">South America</option>
+                                        </select>
+                                    </div>
+                                    </li>
+                                    <li><div class="styled-select margin-bottom-15">
+                                        <select class="form-control required" name="state" ng-model="userDetailForm.state">
+                                            <option value="" select ed>Select your state</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="North America">North America</option>
+                                            <option value="South America">South America</option>
+                                        </select>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="city" class="required form-control" placeholder="Your city" ng-model="userDetailForm.city">
+                                                <span class="input-icon">
+                                                    <i class="icon-building"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" class="required form-control" placeholder="Your phone number" ng-model="userDetailForm.phoneNumber">
+                                                <span class="input-icon">
+                                                    <i class="icon-phone"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="address" class="required form-control" ng-model="userDetailForm.address" placeholder="Your Address" style="height:163px!important"></textarea>
+                                        </div>
+                                    </li>
+                                    <ul class="data-list floated clearfix">
+                                        <li id="age">
+                                            <div class="form-group">
+                                                <input type="text" id="datepicker" placeholder="Date Of Birth" ng-model="userDetailForm.dateOfBirth">
+                                                <span class="input-icon">
+                                                    <i class="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="1" ng-model="userDetailForm.gender">
+                                            <label class="label_gender"> Male</label>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="2" ng-model="userDetailForm.gender">
+                                            <label class="label_gender"> Female</label>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                        </div>
+                    </div><!-- end step-->
+
+                    <div class="step">
+                        <div class="row margin-bottom-20">
+                            <h4 class="col-md-12">Primary Info</h4>
+                            <br><br>
+                            <div class="col-md-6 ">
+                                <ul class="data-list">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="designation" class="required form-control" placeholder="Designation" ng-model="userDetailForm.designation">
+                                            <span class="input-icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="education" class="required form-control" placeholder="Education" ng-model="userDetailForm.education"> 
+                                            <span class="input-icon">
+                                                <i class="icon-book"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                            <div class="col-md-12">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="describtion-me" ng-model="userDetailForm.aboutMe" class="required form-control" placeholder="Description about you"></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                    </div><!-- end step -->
+
+                    <div class="submit step" id="complete">
+                        <i class="icon-check"></i>
+                        <h3>Thank you for you time.</h3>
+                        <a href="#"><button type="button" ng-click="updateUserDetails(userDetailForm);" name="process" class="submit">Submit to register</button></a>
+                    </div><!-- end submit step -->
+
+                </div><!-- end middle-wizard -->
+
+                <div id="bottom-wizard">
+                    <button type="button" name="backward" class="backward">Backward</button>
+                    <button type="button" name="forward" class="forward">Forward</button>
+                </div><!-- end bottom-wizard -->
+            </form>
+
+        </div><!-- end Survey container -->
+
+    </div>
+</section><!-- end section main container -->
+
+
+<!-- Modal About -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Wizard-->
+  <script src="js/jquery-ui-1.8.12.min.js"></script>
+  <script src="js/jquery.wizard.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="check_radio/jquery.icheck.js"></script>
+<script src="js/wizard_func.js"></script>
+
+<!-- date picker -->
+<script src="date-picker/pikaday.js"></script>
+<script>
+
+      var picker = new Pikaday(
+              {
+                  field: document.getElementById('datepicker'),
+                  firstDay: 1,
+                  minDate: new Date('2000-01-01'),
+                  maxDate: new Date('2020-12-31'),
+                  yearRange: [2000,2020]
+              });
+
+</script>

@@ -1,0 +1,15 @@
+table.sorting-table {cursor: ns-resize; box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);}
+        table thead{font-weight: bold;}
+        table thead tr th {background-color: #ccc; padding: 5px 8px;border: 0px;}
+        table td {background-color: #fffffe; padding: 5px 8px;word-wrap:break-word;}
+        table tr.sorting-row td {background-color: #8b8;}
+        table td.sorter {text-align: center; width: 10px; cursor: move;color: #FFB84D }
+        table tr.nodrag td.sorter {cursor: default; background-color: #ddd;}
+        .sort-handler {float: right; background-color: #f80; width: 14px; height: 14px; margin: 2px 0 0 6px; cursor: ns-resize;}
+
+        table.sorting-table tbody tr:not(.sorting-row) td {opacity: 0.4;}
+
+        /* some styling for table1 */
+        table#table1 tr.sorting-row td {background-color: #ccc;}
+        table#table1.sorting-table {cursor: ns-resize; box-shadow: none; outline: 1px solid #333;}
+        table#table1.sorting-table tbody tr:not(.sorting-row) td {opacity: 1; color: #bbb; text-shadow: 0 1px 0 rgba(255, 255, 255, 1);}

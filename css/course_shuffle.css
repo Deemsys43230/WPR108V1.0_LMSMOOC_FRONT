@@ -1,0 +1,191 @@
+/*! Course shuffle */
+
+.course-offer-zone-count {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    height: 30px;
+    margin-top: 20px;
+    padding: 0px 10px;
+    background-color: #F7F7F7;
+    color: #565656;
+    line-height: 30px;
+    font-size: 14px
+}
+
+.offer{
+    width:90%;
+    position: absolute;
+    margin-top: -52px;
+    background: rgba(255, 0, 0, .9);
+    padding: 5px 0px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.offer-zone {
+    position: relative;
+    border: 1px solid #dfdfdf;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,.13);
+    -moz-box-shadow: 0 4px 5px 0 rgba(0,0,0,.13);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.13)
+}
+.offer-zone a {
+    text-decoration: none;
+    color: inherit
+}
+.offer-zone-small {
+    margin-bottom: 25px;
+    height: auto
+}
+
+.offer-zone-small .website-title {
+    font-size: 16px
+}
+
+.offer-zone-small {
+    font-size: 15px
+}
+.offer-zone-small .offer-zone-title {
+    padding: 10px 10px;
+    min-height: 75px;
+    font-weight: bold;
+
+}
+
+.offer-zone-small .offer-zone-title p{
+     margin: 0px;
+     text-transform: uppercase;
+     color: #808080;
+ }
+
+.offer-zone-small .offer-zone-title span{
+    font-size: 12px;
+    color: #808080;
+}
+
+.offer-zone-small .offer-zone-title a{
+    font-style: italic;
+    font-size: 12px;
+    color: #46b8da;
+}
+
+.offer-zone-small .course-image {
+    background: #FFF;
+    border-bottom: 1px solid #ECECEC
+}
+.offer-zone-small .course-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.course-image .store-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    text-align: center;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.offer-zone-title {
+    font-size: 17px;
+    line-height: 25px;
+    color: #000
+}
+.offer-zone-title a:hover {
+    color: #3498DB
+}
+.offer-zone-small .offer-zone-getcode {
+    text-align: center
+}
+.offer-zone-getcode {
+    position: relative;
+}
+
+
+/*! shuffle end */
+
+.course-tabs {
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+    position: relative
+}
+
+.dotted-line{
+    margin-top: -12px;
+    border-bottom: 1px dotted #C7C7C7;
+}
+.course-tabs .more-tab {
+    position: absolute!important;
+    right: 0;
+    top: 0;
+    padding: 2px 15px 2px 0;
+    color: #939393;
+    cursor: pointer;
+    font-size: 17px
+}
+.course-tabs .more-tab:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-color: #939393 transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -2px
+}
+.course-tabs .tab span {
+    padding-bottom: 7px
+}
+.course-tabs .tab.activeTab span {
+    box-shadow: inset 0 -2px 0 0 #3388d3
+}
+
+#course-tabs div,#course-tabs li {
+    display: inline-block;
+    position: relative
+}
+.tab {
+    padding: 0px 16px 7px 12px;
+    color: #939393;
+    cursor: pointer;
+    font-size: 17px
+}
+.tab span {
+    padding-bottom: 7px
+}
+
+.tab:hover {
+    color: #3388d3!important
+}
+.tab:hover span {
+    box-shadow: inset 0 -2px 0 0 #3388d3
+}
+.activeTab {
+    color: #3388d3
+}
+
+#tabcontents {
+    clear: both;
+    margin-top: 20px
+}
+
+#countdown{
+    font-weight: bold;
+}
+
+
+
+/*! end of Course shuffle */

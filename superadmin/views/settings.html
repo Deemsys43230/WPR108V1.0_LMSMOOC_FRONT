@@ -1,0 +1,98 @@
+
+<div class="col-md-12 margin-top-50 margin-bottom-20">
+    <h3 class="padding-left-20 icon-cogs"> Settings</h3>
+    <hr>
+    <div class="col-md-12 col-xs-12 no-padding">
+
+        <div class="setting">
+            <h5 class="pull-right"><a href="#yourModalId"><span class=" icon-pencil"></span> Change Password</a> </h5>
+            <p>Basic Settings</p><hr>
+
+            <form role="form" class="row">
+
+                <div class="form-group col-md-4">
+                    <label for="admin-username"><strong>Admin Username</strong></label>
+                    <input type="text" class="form-control" id="admin-username" placeholder="Deemsys Inc">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="admin-email"><strong>Admin Email</strong></label>
+                    <input type="text" class="form-control" id="admin-email" placeholder="support@deemsysinc.com">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="percentage_share"><strong>Percentage of Share</strong></label>
+                    <input type="text" class="form-control" id="percentage_share" placeholder="20%">
+                </div>
+            </form>
+
+        </div>
+
+        <div class="setting">
+            <p>Payment Settings</p><hr>
+
+            <form role="form" class="row">
+
+                <div class="form-group col-md-4">
+                    <label for="app-id"><strong>App ID</strong></label>
+                    <input type="text" class="form-control" id="app-id" placeholder="MHHGH8800350">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="signature"><strong>Signature</strong></label>
+                    <input type="text" class="form-control" id="signature" placeholder="MHHGH8800350">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="account-mode"><strong>Account mode</strong></label>
+                    <input type="text" class="form-control" id="account-mode" placeholder="Single">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="notification-url"><strong>Notification URL</strong></label>
+                    <input type="text" class="form-control" id="notification-url" placeholder="http://sample.com">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="return-url"><strong>Return URL</strong></label>
+                    <input type="text" class="form-control" id="return-url" placeholder="http://sample.com">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="cancel-url"><strong>Cancel URL</strong></label>
+                    <input type="text" class="form-control" id="cancel-url" placeholder="http://sample.com">
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="text-center margin-bottom-20">
+            <button class="btn btn-success">Save Changes</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- pop up linked popup.css, popup.js and inline script at bottom-->
+<div id="yourModalId" class="yourModalClass" style="display: none">
+    <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+    <h4 class="text-center"><strong>Change Password</strong></h4>
+    <label>Password</label>
+    <input class="form-control" placeholder="Enter Old Password">
+    <label>New Password</label>
+    <input class="form-control" placeholder="Enter New Password">
+    <label>Confirm Password</label>
+    <input class="form-control" placeholder="Confirm New Password">
+    <div class="text-center">
+        <a class="btn btn-sm btn-success">Change Password</a>
+        <a href="#yourModalId" class="btn btn-sm btn-warning">Cancel</a>
+    </div>
+</div>
+<!-- pop up end -->
+
+<script>
+    var modal1 = Modality.init('#yourModalId', {
+        effect: 'slide-up'
+    });
+</script>

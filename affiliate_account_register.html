@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<html lang="en">
+
+<head>
+  	<meta charset="utf-8">
+    <title>LEARN - Courses, Education site template</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.switch.css">
+    <link href="check_radio/skins/square/aero.css" rel="stylesheet">
+
+    <style>
+        html{
+            overflow-y: scroll !important;
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- datepicker (https://github.com/jonthornton/Datepair.js)-->
+    <link rel="stylesheet" type="text/css" href="date-picker/pikaday.css" />
+
+</head>
+<body>
+  
+  <header>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <a href="index.html" id="logo">Learnterest</a>
+              </div>
+              <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                  <div class="pull-right" id="apply">
+                      <a href="login.html" class="signin">Sign in</a>
+                      <a href="affiliate_login.html" class="affiliate">Affiliate</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header><!-- End header -->
+
+  <nav>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 col-sm-12">
+                  <div id="mobnav-btn"></div>
+                  <ul class="sf-menu">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="mega_drop_down">
+                          <a href="course_category.html">Course Category <i class="icon-down-dir"></i></a>
+                          <div class="mobnav-subarrow"></div>
+                          <div class="sf-mega">
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu">
+                                      <li><a href="">IT DEVELOPMENT</a></li>
+                                      <li><a href="">DATABASE MANAGEMENT</a></li>
+                                      <li><a href="">DESIGN</a></li>
+                                      <li><a href="">BUSINESS</a></li>
+                                      <li><a href="">MICROSOFT</a></li>
+                                      <li><a href="">PRODUCTIVITY</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu">
+                                      <li><a href="">ENGINEERING</a></li>
+                                      <li><a href="">ACADEMICS</a></li>
+                                      <li><a href="">MARKETING</a></li>
+                                      <li><a href="">SALES</a></li>
+                                      <li><a href="">PERSONALITY DEVELOPMENT</a></li>
+                                      <li><a href="">FASHION AND LIFESTYLE</a></li>
+                                  </ul>
+                              </div>
+                              <div class="col-md-4 col-sm-6">
+                                  <ul class="mega_submenu icons">
+                                      <li><a href="#">HEALTH AND FITNESS</a></li>
+                                      <li><a href="#">PHOTOGRAPHY</a></li>
+                                      <li><a href="#">MUSIC AND DANCE</a></li>
+                                      <li><a href="#">LANGUAGE</a></li>
+                                      <li><a href="#">ENTRANCE EXAM</a></li>
+                                      <li><a href="#">SPORTS</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </li>
+                      <li><a href="offer_zone.html">Offer Zone</a></li>
+                      <li><a href="news_events.html">News and events</a></li>
+                      <li><a href="blog.html">Blog</a></li>
+                  </ul>
+              </div>
+          </div><!-- End row -->
+      </div><!-- End container -->
+  </nav>
+
+<section id="wizard_bg">
+    <div class="container">
+        <!-- Start Survey container -->
+        <div id="survey_container">
+
+            <div id="top-wizard">
+                <strong>Progress </strong>
+                <div id="progressbar"></div>
+                <div class="shadow"></div>
+            </div><!-- end top-wizard -->
+
+            <form name="example-1" id="wrapped" method="POST" autocomplete="off">
+                <div id="middle-wizard">
+                    <div class="step row">
+                        <div class="col-md-12 no-padding">
+                            <h4 class="col-md-12  margin-bottom-20">Enter your personal info</h4>
+                            <div class="col-md-6 ">
+                                <ul class="data-list ">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="firstname" class="required form-control" placeholder="First name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="lastname" class="required form-control" placeholder="Last name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li><div class="styled-select">
+                                        <select class="form-control required" name="country">
+                                            <option value="" selected>Select your country</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="North America">North America</option>
+                                            <option value="South America">South America</option>
+                                        </select>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="city" class="required form-control" placeholder="Your city">
+                                                <span class="input-icon">
+                                                    <i class="icon-building"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" class="required form-control" placeholder="Your phone number">
+                                                <span class="input-icon">
+                                                    <i class="icon-phone"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="address" class="required form-control" placeholder="Your Address"></textarea>
+                                        </div>
+                                    </li>
+                                    <ul class="data-list floated clearfix">
+                                        <li id="age">
+                                            <div class="form-group">
+                                                <input type="text" id="datepicker" placeholder="Date Of Birth">
+                                                <span class="input-icon">
+                                                    <i class="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="Male">
+                                            <label class="label_gender"> Male</label>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="Female">
+                                            <label class="label_gender"> Female</label>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                        </div>
+                    </div><!-- end step-->
+
+                    <div class="step">
+                        <div class="row">
+                            <h4 class="col-md-12 no-margin">Primary Website Info</h4>
+                            <br><br>
+                            <div class="col-md-6 ">
+                                <ul class="data-list">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="website-name" class="required form-control" placeholder="Website name">
+                                            <span class="input-icon">
+                                                <i class="icon-website-circled"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="website-url" class="required form-control" placeholder="Website URL">
+                                            <span class="input-icon">
+                                                <i class="icon-globe"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" id="datepicker1" placeholder="Website Published Date">
+                                            <span class="input-icon">
+                                                <i class="icon-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="business-model">
+                                                <option value="" selected>Primary Business Model</option>
+                                                <option value="IT-products">IT Products</option>
+                                                <option value="online-shopping">Online Shopping</option>
+                                                <option value="Community">Community</option>
+                                                <option value="Forum">Forum</option>
+                                                <option value="loyalty">Loyalty/Rewards</option>
+                                                <option value="coupons">Coupons/Deals</option>
+                                                <option value="search">Search</option>
+                                                <option value="price">Price Comparison</option>
+                                                <option value="content_niche">Content/Niche</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="describtion" class="required form-control" placeholder="Short Description"></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="Visitors">
+                                                <option value="" selected>Unique Visitors/Month</option>
+                                                <option value="300">Less than 300</option>
+                                                <option value="300-3000">300 to 3,000</option>
+                                                <option value="3000-30000">3,000 to 30,000</option>
+                                                <option value="30000-300000">30,000 to 3,00,000</option>
+                                                <option value="over">Over 3,00,000</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="Primary-Category">
+                                                <option value="" selected>Targeted Primary Category</option>
+                                                <option value="adult">Adult</option>
+                                                <option value="animals">Animals & Pets</option>
+                                                <option value="arts">Arts & Entertainments</option>
+                                                <option value="automotive">Automotive</option>
+                                                <option value="blog">Blog/Social Networking</option>
+                                                <option value="opportunities">Business Opportunities</option>
+                                                <option value="services">Business Services</option>
+                                                <option value="career">Career & Employment</option>
+                                                <option value="children">Children</option>
+                                                <option value="computer">Computer/Teachnology</option>
+                                                <option value="credit">Credit Card</option>
+                                                <option value="dating">Dating</option>
+                                                <option value="debt">Debt settlement & Consolidation</option>
+                                                <option value="education">Education</option>
+                                                <option value="fashion">Fashion & Beauty</option>
+                                                <option value="finance">Financial services</option>
+                                                <option value="food">Food & Drinks</option>
+                                                <option value="game">Games & Toys</option>
+                                                <option value="health">Health & Wellness</option>
+                                                <option value="hobby">Hobbies & Collectibles</option>
+                                                <option value="gardening">Home & Gardening</option>
+                                                <option value="insurance">Insurance</option>
+                                                <option value="literature">Literature & Reading</option>
+                                                <option value="loans">Loans</option>
+                                                <option value="men">Men's Lifestyle</option>
+                                                <option value="moving">Moving</option>
+                                                <option value="music">Music</option>
+                                                <option value="news">News & Polities</option>
+                                                <option value="parenting">Parenting & Family</option>
+                                                <option value="real-estate">Real Estate</option>
+                                                <option value="religious">Religious</option>
+                                                <option value="senior">Senior</option>
+                                                <option value="shopping">Shopping & Coupons</option>
+                                                <option value="education">Education</option>
+                                                <option value="software">Software</option>
+                                                <option value="sports">Sports</option>
+                                                <option value="teen">Teen</option>
+                                                <option value="telecom">Telecom</option>
+                                                <option value="travel">Travels & Vacations</option>
+                                                <option value="video">Video</option>
+                                                <option value="women">Women's Lifestyle</option>
+                                                <option value="other-category">Other</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="styled-select">
+                                            <select class="form-control required" name="gender">
+                                                <option value="" selected>Targeted Gender</option>
+                                                <option value="male">Mostly Male</option>
+                                                <option value="female">Mostly Female</option>
+                                                <option value="both">Both</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="age-group">Targeted Age Groups</div>
+                                        <div class="padding-left-20 form-group">
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">Under 18</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">18-25</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">26-35</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">36-50</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">51-65</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="" name="course_1[]">Over 65</label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                        </div><!-- end row -->
+                    </div><!-- end step -->
+
+                    <div class="submit step" id="complete">
+                                <i class="icon-check"></i>
+                                <h3>Apply complete! Thank you for you time.</h3>
+                                <a href="affiliatername_dashboard.html"><button type="submit" name="process" class="submit">Submit your apply</button></a>
+                    </div><!-- end submit step -->
+
+                </div><!-- end middle-wizard -->
+
+                <div id="bottom-wizard">
+                    <button type="button" name="backward" class="backward">Backward</button>
+                    <button type="button" name="forward" class="forward">Forward</button>
+                </div><!-- end bottom-wizard -->
+            </form>
+
+        </div><!-- end Survey container -->
+
+    </div>
+</section><!-- end section main container -->
+
+  <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <h3>Subscribe to our Newsletter for latest news.</h3>
+                  <div id="message-newsletter"></div>
+                  <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
+                      <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
+                      <button id="submit-newsletter" class=" button_outline"> Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="container" id="nav-footer">
+          <div class="row text-left">
+              <div class="col-md-3 col-sm-3">
+                  <h4>Policies & Program</h4>
+                  <ul>
+                      <li><a href="term_of_use.html">Terms of Use</a></li>
+                      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                      <li><a href="refund_policy.html">Refund Policy</a></li>
+                      <li><a href="affiliate_login.html">Affiliate Program</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <h4>See also</h4>
+                  <ul>
+                      <li><a href="course_details_1.html">IT Development</a></li>
+                      <li><a href="course_details_2.html">Business</a></li>
+                      <li><a href="course_details_2.html">Language</a></li>
+                      <li><a href="course_details_3.html">Entrance Exam</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <h4>Learnterest</h4>
+                  <ul>
+                      <li><a href="about_us.html">Why Learnterest</a></li>
+                      <li><a href="promocode.html">Promocode System</a></li>
+                      <li><a href="FAQ.html">FAQ</a></li>
+                      <li><a href="contacts.html">Contact Us</a></li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+              <div class="col-md-3 col-sm-3">
+                  <ul id="follow_us">
+                      <li><a href="https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314" target="_blank"><i class="icon-facebook"></i></a></li>
+                      <li><a href="https://twitter.com/learnterest" target="_blank"><i class="icon-twitter"></i></a></li>
+                      <li><a href="https://plus.google.com/u/0/b/107601624465751204096/107601624465751204096/about" target="_blank"><i class="icon-googleplus"></i></a></li>
+                  </ul>
+                  <ul class="wrap">
+                      <li>Questions? <br/>support_mooc@deemsysinc.com</li>
+                  </ul>
+              </div><!-- End col-md-4 -->
+          </div><!-- End row -->
+      </div>
+      <div id="copy_right">Copy right © 2015 learnterest.com</div>
+  </footer>
+
+  <div id="toTop"><i class="icon icon-up-circle-1"></i><h5>Go Top</h5></div>
+
+<!-- Modal About -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
+sanctus, pro ne quod dicunt sensibus.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- JQUERY -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<!-- Wizard-->
+<script src="js/jquery-ui-1.8.12.min.js"></script>
+<script src="js/jquery.wizard.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="check_radio/jquery.icheck.js"></script>
+
+
+<!-- OTHER JS -->
+<script src="js/superfish.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="assets/validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="js/wizard_func.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>new UISearch( document.getElementById( 'sb-search' ) );</script>
+
+
+<!-- date picker -->
+<script src="date-picker/pikaday.js"></script>
+<script>
+
+      var picker = new Pikaday(
+              {
+                  field: document.getElementById('datepicker'),
+                  firstDay: 1,
+                  minDate: new Date('2000-01-01'),
+                  maxDate: new Date('2020-12-31'),
+                  yearRange: [2000,2020]
+              });
+
+</script>
+
+<script>
+
+      var picker = new Pikaday(
+              {
+                  field: document.getElementById('datepicker1'),
+                  firstDay: 1,
+                  minDate: new Date('2000-01-01'),
+                  maxDate: new Date('2020-12-31'),
+                  yearRange: [2000,2020]
+              });
+
+</script>
+
+
+</body>
+</html>

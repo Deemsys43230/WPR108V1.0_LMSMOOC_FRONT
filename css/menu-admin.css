@@ -1,0 +1,73 @@
+
+.header
+{
+	background: #005b7f;
+	color: #fff;
+	line-height: 50px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+    position: fixed;
+    z-index: 10000;
+}
+
+.header a
+{
+	background: center center no-repeat transparent;
+    padding: 0px 30px 0px 10px !important;
+	display: block;
+	width: auto;
+	height: 50px;
+	position: absolute;
+	top: 0;
+    color: #fff;
+}
+
+.header a:hover
+{
+    background-color: #003f58;
+    cursor: pointer;
+}
+.header img
+{
+    width:100px !important;
+    margin-top: 13px;
+}
+
+.header img:hover
+{
+    cursor: pointer;
+}
+
+.header p
+ {
+     position: absolute;
+     top: 0;
+     right: 30px;
+ }
+
+.header p i
+{
+    margin-left: 3px;
+    width: auto;
+    height: 50px;
+    padding: 0px 7px!important;
+}
+.header p i:hover
+{
+    background-color: #003f58;
+    cursor: pointer;
+}
+
+.header p i span
+{
+    position: relative;
+    background-color: red;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 3px;
+    top: -10px;
+    left:-2px;
+    color: #fff;
+}
