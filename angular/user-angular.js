@@ -45,7 +45,7 @@ sampleUser.config(['$routeProvider',
 
 sampleUser.controller('saveUserDetails', function($scope,$http,$location,$route,$rootScope,sharedProperties) {
 
- $scope.userDetailForm=sharedProperties .getProperty();
+ $scope.userDetailForm=sharedProperties.getProperty();
 
  $scope.onBlur = function() {
    

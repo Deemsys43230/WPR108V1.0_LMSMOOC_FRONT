@@ -32,8 +32,8 @@
                                 <ul class="data-list ">
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" ng-model="userDetailForm.userId">
-                                            <input type="text" name="firstname" ng-model="userDetailForm.firstName" class="required form-control" placeholder="First name">
+                                            <input type="hidden" ng-model="userDetailsForm.userId">
+                                            <input type="text" name="firstname" ng-model="userDetailsForm.firstName" class="required form-control" placeholder="First name">
                                                 <span class="input-icon">
                                                     <i class="icon-user"></i>
                                                 </span>
@@ -41,14 +41,14 @@
                                     </li>
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" name="lastname" ng-model="userDetailForm.lastName" class="required form-control" placeholder="Last name">
+                                            <input type="text" name="lastname" ng-model="userDetailsForm.lastName" class="required form-control" placeholder="Last name">
                                                 <span class="input-icon">
                                                     <i class="icon-user"></i>
                                                 </span>
                                         </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="country" ng-model="userDetailForm.country">
+                                        <select class="form-control required" name="country" ng-model="userDetailsForm.country">
                                             <option value="" select ed>Select your country</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
@@ -58,7 +58,7 @@
                                     </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="state" ng-model="userDetailForm.state">
+                                        <select class="form-control required" name="state" ng-model="userDetailsForm.state">
                                             <option value="" select ed>Select your state</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
@@ -69,7 +69,7 @@
                                     </li>
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" name="city" class="required form-control" placeholder="Your city" ng-model="userDetailForm.city">
+                                            <input type="text" name="city" class="required form-control" placeholder="Your city" ng-model="userDetailsForm.city">
                                                 <span class="input-icon">
                                                     <i class="icon-building"></i>
                                                 </span>
@@ -82,7 +82,7 @@
                                 <ul class="data-list no-padding no-margin">
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" name="phone" class="required form-control" placeholder="Your phone number" ng-model="userDetailForm.phoneNumber">
+                                            <input type="text" name="phone" class="required form-control" placeholder="Your phone number" ng-model="userDetailsForm.phoneNumber">
                                                 <span class="input-icon">
                                                     <i class="icon-phone"></i>
                                                 </span>
@@ -90,24 +90,24 @@
                                     </li>
                                     <li>
                                         <div class="form-group">
-                                            <textarea type="text" name="address" class="required form-control" ng-model="userDetailForm.address" placeholder="Your Address" style="height:163px!important"></textarea>
+                                            <textarea type="text" name="address" class="required form-control" ng-model="userDetailsForm.address" placeholder="Your Address" style="height:163px!important"></textarea>
                                         </div>
                                     </li>
                                     <ul class="data-list floated clearfix">
                                         <li id="age">
                                             <div class="form-group">
-                                                <input type="text" id="datepicker" placeholder="Date Of Birth" ng-model="userDetailForm.dateOfBirth">
+                                                <input type="text" id="datepicker" placeholder="Date Of Birth" ng-model="userDetailsForm.dateOfBirth">
                                                 <span class="input-icon">
                                                     <i class="icon-calendar"></i>
                                                 </span>
                                             </div>
                                         </li>
                                         <li>
-                                            <input name="gender" type="radio" class="required check_radio" value="1" ng-model="userDetailForm.gender">
+                                            <input name="gender" type="radio" class="required check_radio" value="1" ng-model="userDetailsForm.gender">
                                             <label class="label_gender"> Male</label>
                                         </li>
                                         <li>
-                                            <input name="gender" type="radio" class="required check_radio" value="2" ng-model="userDetailForm.gender">
+                                            <input name="gender" type="radio" class="required check_radio" value="2" ng-model="userDetailsForm.gender">
                                             <label class="label_gender"> Female</label>
                                         </li>
                                     </ul>
@@ -124,7 +124,7 @@
                                 <ul class="data-list">
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" name="designation" class="required form-control" placeholder="Designation" ng-model="userDetailForm.designation">
+                                            <input type="text" name="designation" class="required form-control" placeholder="Designation" ng-model="userDetailsForm.designation">
                                             <span class="input-icon">
                                                 <i class="icon-user"></i>
                                             </span>
@@ -137,7 +137,7 @@
                                 <ul class="data-list no-padding no-margin">
                                     <li>
                                         <div class="form-group">
-                                            <input type="text" name="education" class="required form-control" placeholder="Education" ng-model="userDetailForm.education"> 
+                                            <input type="text" name="education" class="required form-control" placeholder="Education" ng-model="userDetailsForm.education"> 
                                             <span class="input-icon">
                                                 <i class="icon-book"></i>
                                             </span>
@@ -149,7 +149,7 @@
                                 <ul class="data-list no-padding no-margin">
                                     <li>
                                         <div class="form-group">
-                                            <textarea type="text" name="describtion-me" ng-model="userDetailForm.aboutMe" class="required form-control" placeholder="Description about you"></textarea>
+                                            <textarea type="text" name="describtion-me" ng-model="userDetailsForm.aboutMe" class="required form-control" placeholder="Description about you"></textarea>
                                         </div>
                                     </li>
                                 </ul>
@@ -160,7 +160,7 @@
                     <div class="submit step" id="complete">
                         <i class="icon-check"></i>
                         <h3>Thank you for you time.</h3>
-                        <a href="#"><button type="button" ng-click="updateUserDetails(userDetailForm);" name="process" class="submit">Submit to register</button></a>
+                        <a href="#"><button type="button" ng-click="updateUserDetails(userDetailsForm);" name="process" class="submit">Submit to register</button></a>
                     </div><!-- end submit step -->
 
                 </div><!-- end middle-wizard -->
