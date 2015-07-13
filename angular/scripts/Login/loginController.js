@@ -13,8 +13,6 @@ loginApp.directive('ngBlur', ['$parse', function($parse) {
   }
 }]);
 
-
-
 loginApp.config(['$routeProvider',
 
     function($routeProvider) {
@@ -37,6 +35,30 @@ loginApp.config(['$routeProvider',
             }).
             when('/offer_zone', {
                 templateUrl: 'offer_zone.html'
+            }).
+            when('/news_events', {
+                templateUrl: 'news_events.html'
+            }).
+            when('/news_detail', {
+                templateUrl: 'news_detail.html'
+            }).
+            when('/blog', {
+                templateUrl: 'blog.html'
+            }).
+            when('/blog_post', {
+                templateUrl: 'blog_post.html'
+            }).
+            when('/affiliate_login', {
+                templateUrl: 'affiliate_login.html'
+            }).
+            when('/affiliate_register', {
+                templateUrl: 'affiliate_register.html'
+            }).
+            when('/affiliate_account_register', {
+                templateUrl: 'affiliate_account_register.html'
+            }).
+            when('/apply_send', {
+                templateUrl: 'apply_send.html'
             }).
             otherwise({
                 redirectTo: '/index'

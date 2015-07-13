@@ -10,15 +10,15 @@
 
 $(document).ready(function() {
 
-    body = document.getElementsByTagName("html")[0];
+    body = document.getElementsByTagName("body")[0];
 
-    $('body').niceScroll({cursoropacitymax:0.8,cursorwidth:8});
+    $('html').niceScroll({cursoropacitymax:0.8,cursorwidth:8});
 
-    $('#nctouch').iphoneStyle().change(function(){
+    /*$('#nctouch').iphoneStyle().change(function(){
         initScroll();
     });
 
-    initScroll();
+    initScroll();*/
 
 });
 
@@ -418,7 +418,7 @@ $(document).ready(function() {
         el.css(n,pars[n]);
       }
     };
-    
+
     this.scrollTop = function(val) {
       return (typeof val == "undefined") ? self.getScrollTop() : self.setScrollTop(val);
     };

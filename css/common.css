@@ -4175,7 +4175,7 @@ ul.list_2 li a:hover {
 /** social media**/
 /* outer wrapper */
 #share-wrapper {
-    margin-top: 20%;
+    top:40%;
     position:fixed;
     left: 0;
     z-index: 1005;
@@ -7062,3 +7062,11 @@ ul#follow_us  li a{border: 2px solid #b4d3e0;}
     color: #fff !important;
 }
 
+.button-disable{
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
