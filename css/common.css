@@ -614,6 +614,11 @@ a#logo {
     left:0;
     z-index:999;
 }
+#sub-header img.full{
+    width: 100%;
+}
+
+
 #sub-header{
     padding:0 0 60px 0;
     color:#fff;
@@ -2528,7 +2533,7 @@ ul#follow_us_contacts  li a:hover i{
     overflow:hidden;
     height: 44px;
     background: #fff url(../img/down_arrow_select.png) no-repeat  right center ;
-    border:1px solid #ccc;
+    border:1px solid #dbdbdb;
     margin-bottom:25px;
 }
 
@@ -2610,7 +2615,6 @@ input.form-control, textarea.form-control {
     padding: 6px 45px 6px 15px;
 }
 input.form-control:focus, textarea.form-control:focus, select.form-control:focus {
-    border:1px solid #ccc;
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -4843,6 +4847,11 @@ tbody.quiz .type{
     font-weight: bold;
 }
 
+input.answer-single{
+    margin-top: -10px;
+    height: 20px !important;
+}
+
 .hints h5{
     margin: 20px 0px 5px 0px;
 }
@@ -7070,3 +7079,17 @@ ul#follow_us  li a{border: 2px solid #b4d3e0;}
     box-shadow: none;
     opacity: .65;
 }
+
+.create-title{
+    font-weight:bold;
+    color:#0076a3;
+    font-size:20px;
+}
+
+button.button-section{
+    border-radius: 0px!important;
+    background-color: #428bca;
+    height: 45px
+}
+
+
