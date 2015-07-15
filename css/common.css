@@ -979,6 +979,14 @@ a.affiliate:hover{
     background-color:#ff4850 ;
 }
 
+.green-button{
+    background-color: #0cbdaa !important;
+}
+
+.green-button:hover{
+    background-color: #000 !important;
+}
+
 a.button_medium, .button_medium {
     border:none;
     background:#5bc0de;
@@ -1447,6 +1455,10 @@ button[disabled].backward, button[disabled].forward {
     margin-right:2px;
 }
 .cat_row a:hover{text-decoration:none;}
+
+table.user-menu td{
+    padding:0px !important;
+}
 
 table.course-author tr{
     background-color: #fff;
@@ -2484,7 +2496,7 @@ ul#follow_us_contacts  li a:hover i{
 .box_style_2 {
     background:#f9f9f9;
     border:1px solid #f3f3f3;
-    padding:30px;
+    padding-bottom: 20px;
     position:relative;
 }
 .tape {
@@ -4450,6 +4462,10 @@ ul.profile-edit{
 
 .margin-top-minus-20{
     margin-top: -20px !important;
+}
+
+.margin-top-minus-5{
+    margin-top: -5px !important;
 }
 
 .margin-top-30{

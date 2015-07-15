@@ -5,40 +5,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>MY COURSES</h4><hr>
+                <a href="#new_course" class="button_medium green-button icon icon-plus-circle pull-right"> Create Course</a>
+                <h4 class="create-title">MY COURSES</h4><hr>
                 <!--  Tabs -->
                 <ul class="nav nav-tabs" id="mytabs">
-                    <li class="active"><a href="#learn" data-toggle="tab">Learning</a></li>
-                    <li><a href="#teach" data-toggle="tab">Teaching</a></li>
+                    <li class="active"><a href="#learn" data-toggle="tab">Enroll</a></li>
+                    <li><a href="#teach" data-toggle="tab">Teach</a></li>
                 </ul>
 
                 <div class="tab-content">
 
                     <div class="tab-pane fade in active" id="learn">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="col-md-5 text-left no-padding pull-right">
-                                    <div class="input-group margin-top-10 margin-bottom-20">
-                                        <div class="input-group-btn search-panel">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                <span id="search_concept">Filter by</span> <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">In Progress</a></li>
-                                                <li><a href="#">Not Started</a></li>
-                                                <li><a href="#">Completed</a></li>
-                                            </ul>
-                                        </div>
-                                        <input type="hidden" name="search_param" value="all" id="search_param">
-                                        <input type="text" class="form-control1" name="x" placeholder="Search term...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button"><span class="icon-search"></span></button>
-                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="row">
 
                             <!--<div class="col-md-12 col-xs-12 no-padding margin-top-20">
@@ -315,35 +292,6 @@
 
                     <div class="tab-pane fade" id="teach">
 
-                        <div class="row margin-bottom-20">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="col-md-5"></div>
-                                <div class="col-md-5 text-left no-padding">
-                                    <div class="input-group margin-top-10">
-                                        <div class="input-group-btn search-panel">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                <span id="search_concept1">Filter by</span> <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Approved Courses</a></li>
-                                                <li><a href="#">Pending Courses</a></li>
-                                                <li><a href="#">Draft Courses</a></li>
-                                                <li><a href="#">Rejected Courses</a></li>
-                                            </ul>
-                                        </div>
-                                        <input type="hidden" name="search_param" value="all" id="search_param1">
-                                        <input type="text" class="form-control1" name="x" placeholder="Search term...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button"><span class="icon-search"></span></button>
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-xs-12 no-padding margin-top-10">
-                                    <a href="#new_course" class="btn btn-success icon icon-plus-circle pull-right"> Create Course</a>
-                                </div>
-                            </div>
-                        </div>
-
                        <!-- <div class="col-md-12 col-xs-12 no-padding">
                             <div class="empty">
                                 <h1>
@@ -357,7 +305,7 @@
 
 
                         <!-- If course was created or started to create un-comment the below col-md-12 div -->
-                        <div class="col-md-12 col-xs-12 no-padding">
+                        <div class="col-md-12 col-xs-12 no-padding margin-top-10">
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 col-sm-4">
                                     <div class="col-item">
@@ -552,7 +500,7 @@
 
                         <div class="col-md-12 text-center">
                             <ul class="pagination">
-                                <li><a href="#">&laquo;</a></li>
+                                    <li><a href="#">&laquo;</a></li>
                                 <li class="active"><a href="#">1</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
@@ -569,6 +517,7 @@
         </div><!-- End row-->
     </div><!-- End container -->
 </section><!-- End main_content-->
+
 
 <!-- tooltip -->
 <script type="text/javascript" src="js/tooltip.min.js"></script>
