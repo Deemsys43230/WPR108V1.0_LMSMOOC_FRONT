@@ -1,0 +1,165 @@
+
+<!-- file upload (http://dev.html5ux.com/upload-image/) -->
+<link href="css/fileupload.css" rel="stylesheet">
+
+<!-- sidebar -->
+<link rel="stylesheet" href="css/sidebar.css">
+
+<!-- check and radio button -->
+<link rel="stylesheet" href="css/check-radio.css"/>
+
+<div id="slideout">
+    <img src="img/askus.png" alt="Feedback" />
+    <div id="slideout_inner">
+        <form>
+            <textarea></textarea>
+            <input type="submit" class="btn btn-black btn-xs center-block" value="Send">
+        </form>
+    </div>
+</div>
+
+<section id="main_content">
+
+    <div class="container">
+
+        <div class="row margin-top-10">
+            <aside class="col-md-4 col-lg-4 col-sm-5">
+                <div class="box_style_1">
+                    <div class="text-center">
+                        <br/>
+                        <form>
+                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                                <input type="file" name="thumb"/>
+                            </div>
+                        </form>
+                        <br/>
+                    </div>
+                    <p class="course-name no_margin">Course Cover Image</p>
+                    <ul class="profile-edit margin-top-10">
+                        <li class="">
+                            <a href="#new_course">Overview</a>
+                        </li>
+                        <li class="">
+                            <a href="#add_section">Add Sections</a>
+                        </li>
+                        <li class="">
+                            <a href="#add_lecture">Add Lectures</a>
+                        </li>
+                        <li class="active">
+                            <a href="#view-quiz">Add Quiz</a>
+                        </li>
+                        <li class="">
+                            <a href="#add_promocode">Add Promocode</a>
+                        </li>
+                        <li class="">
+                            <a href="#preview">Preview/Publish</a>
+                        </li>
+                        <li class="">
+                            <a href="#help">Course Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="col-md-8 col-lg-8 col-sm-7">
+                <a href="#question-list" class="pull-right btn-primary btn-sm margin-bottom-10 ">Back <span class="hidden-xs">to Question list</span></a>
+                <h4 class="create-title">Add Question</h4><hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="data-list no-margin entry">
+                            <li>
+                                <label class="col-md-12 no-padding"><strong>Question Type</strong></label>
+                                <div class="styled-select">
+                                    <select class="form-control required" name="lecture-type">
+                                        <option value="single">Single Answer Question</option>
+                                        <option value="multiple">Multiple Answer Question</option>
+                                        <option value="fill_blank" selected>Fill in the blanks</option>
+                                        <option value="yes_no">Yes/No Type</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Question</strong></label>
+                                <div class="form-group">
+                                    <input type="text" name="question" class="required form-control">
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Options</strong></label>
+                                <div class="row">
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option1" class="required form-control" placeholder="Option A">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option2" class="required form-control" placeholder="Option B">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option3" class="required form-control" placeholder="Option C">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <input type="text" name="option4" class="required form-control" placeholder="Option D">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Select Answer</strong></label>
+
+                                <!--multiple answer-->
+                                <div class="check-radio">
+                                    <label class="col-md-3">
+                                        <input type="checkbox" class="option-input checkbox" CHECKED />Option-A
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="checkbox" class="option-input checkbox" />Option-B
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="checkbox" class="option-input checkbox" />Option-C
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="checkbox" class="option-input checkbox" />Option-D
+                                    </label>
+                                </div>
+
+                                <!--single answer-->
+                                <div class="check-radio">
+                                    <label class="col-md-3">
+                                        <input type="radio" class="option-input radio" name="example" />Option-A
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="radio" class="option-input radio" name="example" />Option-B
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="radio" class="option-input radio" name="example" />Option-C
+                                    </label>
+                                    <label class="col-md-3">
+                                        <input type="radio" class="option-input radio" name="example" />Option-D
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <br/>
+                        <div class="text-center col-md-12 margin-top-20">
+                            <a href="" class=" btn btn-success">Save Quiz</a>
+                            <a href="#question-list" class=" btn btn-warning">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End row-->
+    </div><!-- End container -->
+</section><!-- End main_content-->
+
+<!-- tooltip -->
+<script type="text/javascript" src="js/tooltip.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#default a").toolTip();
+    })
+</script>
+
+<!-- file upload -->
+<script src="js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>

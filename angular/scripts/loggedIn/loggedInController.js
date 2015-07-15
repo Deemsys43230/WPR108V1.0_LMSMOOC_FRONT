@@ -45,8 +45,35 @@ loggedinApp.config(['$routeProvider',
             when('/view-quiz', {
                 templateUrl: 'view-quiz.html'
             }).
-            when('/add_quiz', {
-                templateUrl: 'add_quiz.html'
+            when('/question-list', {
+                templateUrl: 'question-list.html'
+            }).
+            when('/add_question', {
+                templateUrl: 'add_question.html'
+            }).
+            when('/edit_question', {
+                templateUrl: 'edit_question.html'
+            }).
+            when('/quiz_preview', {
+                templateUrl: 'quiz_preview.html'
+            }).
+            when('/add_promocode', {
+                templateUrl: 'add_promocode.html'
+            }).
+            when('/preview', {
+                templateUrl: 'preview.html'
+            }).
+            when('/preview_text', {
+                templateUrl: 'preview_text.html'
+            }).
+            when('/preview-video', {
+                templateUrl: 'preview-video.html'
+            }).
+            when('/preview-audio', {
+                templateUrl: 'preview-audio.html'
+            }).
+            when('/help', {
+                templateUrl: 'help.html'
             }).
             otherwise({
                 redirectTo: '/index'
