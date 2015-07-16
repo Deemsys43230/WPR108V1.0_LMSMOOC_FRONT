@@ -9,7 +9,7 @@
 				<img src="img/login_logo.png" alt="">
 			</p>
 			<hr>
-			<form name="loginForm" action="http://localhost:8080/Learnterest/j_spring_security_check" method="POST" novalidate> 
+			<form name="loginForm" novalidate> 
             <div class="row">
             <div class="col-md-6 col-sm-6 login_social">
 				<a href="#" class="btn btn-primary btn-block"><i class="icon-facebook"></i>Facebook</a>
@@ -21,18 +21,19 @@
 			<div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
        
 				<div class="form-group">
-					<input type="text" class=" form-control " name="Email" placeholder="Email Address" required>
+					<input type="text" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required>
 					<span class="input-icon"><i class=" icon-user"></i></span>
 				</div>
 				<div class="form-group margin-bottom-5">
-					<input type="text" class=" form-control margin-bottom-5" name="Password" placeholder="Password" required>
+					<input type="text" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
 					<span class="input-icon"><i class="icon-lock"></i></span>
 				</div>
 				<p class="small forget">
 					<a href="#">Forgot Password?</a>
 				</p>
-				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid">Log in</button>
+				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid" ng-click="login()">Log in</button>
 				<a href="#register" class="button_fullwidth-2">Register</a>
+				<a href="userTemplate.html#/index" class="button_fullwidth-2" ng-click="sample()">Cookies</a>
 			</form>
 		</div>
 	</div>

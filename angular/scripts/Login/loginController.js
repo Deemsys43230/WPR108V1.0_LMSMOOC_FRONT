@@ -1,5 +1,5 @@
 //Module Creation
-var loginApp = angular.module('indexApp', []);
+var loginApp = angular.module('indexApp', ['authModule','requestModule']);
 
 //Own Directive for ngblur
 loginApp.directive('ngBlur', ['$parse', function($parse) {
@@ -22,7 +22,8 @@ loginApp.config(['$routeProvider',
                 templateUrl: 'startup.html'
             }).
             when('/login', {
-                templateUrl: 'login.html'
+                templateUrl: 'login.html',
+                controller: 'loginController'
             }).
             when('/register', {
                 templateUrl: 'register.html',
@@ -61,7 +62,7 @@ loginApp.config(['$routeProvider',
                 templateUrl: 'apply_send.html'
             }).
             otherwise({
-                redirectTo: '/index'
+                redirectTo: 'users/'
             });
     }]);
 
@@ -128,6 +129,33 @@ else
     });
 
 };
+
+});
+
+
+loginApp.controller("loginController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler){
+
+
+
+  $scope.login=function()
+  {
+    console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
+    oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password);
+    if(authFactory.isAuthenticated())
+    {
+        $window.location.href = 'users/';
+    }
+    else
+    {
+      $scope.loginError="Failed";
+    }
+  };
+
+  $scope.sample=function()
+  {
+      alert("ok");
+      requestHandler.getRequest("http://localhost:8080/Learnterest/User/getAllSectionss.json","",1);
+  };
 
 });
 

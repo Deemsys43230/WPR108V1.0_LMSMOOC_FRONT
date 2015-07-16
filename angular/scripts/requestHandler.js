@@ -1,51 +1,28 @@
-var requestHandler = angular.module('indexApp', []);
+var myApp=angular.module("requestModule",['authModule']);
 
-requestHandler.config(['$routeProvider',
+myApp.factory("requestHandler",['$http','authFactory',function($http,authFactory){
+    
+    var requestObj={};
 
-    function($routeProvider) {
+    requestObj.getRequest=function(requestURL,params,isAuthenticated){
 
-        $routeProvider.
-            when('/index', {
-                templateUrl: 'startup.html'
-            }).
-            when('/login', {
-                templateUrl: 'login.html'
-            }).
-            when('/register', {
-                templateUrl: 'register.html',
-                 controller: 'saveUserDetails'
-            }).
-            when('/create_account', {
-                templateUrl: 'create_account.html',
-                controller: 'userDetailController'
-            }).
-            when('/offer_zone', {
-                templateUrl: 'offer_zone.html'
-            }).
-            when('/news_events', {
-                templateUrl: 'news_events.html'
-            }).
-            otherwise({
-                redirectTo: '/index'
-            });
-    }]);
+        if(isAuthenticated==1)
+        {
+                requestURL=requestURL+"?access_token="+authFactory.getUserObj().access_token;
+        }
+
+         $http.get(requestURL,params).then(function (results) {
+            console.log(results);       
+         });
+    };
+
+    requestObj.postRequest=function(requestURL,params,isAuthenticated){      
+        return null;
+    };
 
 
-//Declare Login Page Controller
-requestHandler.controller('saveUserDetails', function($scope,$http,$location,$rootScope) {
+   
 
-//Check for Email Already Exists
- $scope.checkEmail = function() {   
+    return requestObj;
 
-    $http.post('http://localhost:8080/Learnterest/isNewUser.json', $scope.userDetailsForm).then(function (results) {
-         if (!results.data.isNewUser) {
-            $scope.emailAlreadyExist= "Email ID Already Exists!";
-            $scope.isValid=false;
-         }
-         else{
-             $scope.emailAlreadyExist= "";
-             $scope.isValid=true;
-         }
-    });
-
-});
+}]);

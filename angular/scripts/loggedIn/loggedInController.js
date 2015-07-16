@@ -18,7 +18,7 @@ loggedinApp.config(['$routeProvider',
             when('/news_events', {
                 templateUrl: 'news_events.html'
             }).
-            when('/news_detail', {
+            when('/news_detail', {  
                 templateUrl: 'news_detail.html'
             }).
             when('/blog', {
