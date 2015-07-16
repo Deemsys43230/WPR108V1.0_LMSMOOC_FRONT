@@ -4322,12 +4322,15 @@ span.course-content h4{
 
 ul.profile-edit li a{
      display: block;
-     font-size: 16px;
-     background-color: #fff;
-     color:#7998a3;
-     padding: 5px 10px;
-     margin-bottom: 2px;
+     font-size: 15px;
+    font-weight: bold;
+     background-color: #f6f6f6;
+     color:#999;
+     padding: 7px 15px;
+     margin: 4px 4px 6px 4px;
      cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #ccc;
  }
 
 ul.profile-edit li{
@@ -4335,13 +4338,13 @@ ul.profile-edit li{
 }
 
 ul.profile-edit  li.active a{
-    background-color:#7998a3;
+    background-color:#0076a3;
     color:#fff;
 }
 
 ul.profile-edit  li:hover a{
-    background-color:#7998a3;
-    color:#fff;
+    background-color:#ccc;
+    color:#777;
 }
 
 ul.profile-edit{

@@ -1,6 +1,4 @@
 
-CountDownTimer('09/30/2015 12:00 PM', 'countdown'); //Month.Day
-
 function CountDownTimer(dt, id)
         {
             var end = new Date(dt);

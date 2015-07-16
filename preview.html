@@ -7,6 +7,9 @@
 <!-- sidebar -->
 <link rel="stylesheet" href="css/sidebar.css">
 
+<!-- popup -->
+<link rel="stylesheet" href="css/popup.css">
+
 <div id="slideout">
     <img src="img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
@@ -61,7 +64,7 @@
             </aside>
 
             <div class="col-md-8 col-lg-8 col-sm-7">
-                <button class="btn btn-success btn-sm pull-right" onClick="location.href=''">Send to Publish</button>
+                <a href="#yourModalId" class="btn btn-success btn-sm pull-right">Send to Publish</a>
                 <h4 class="create-title">Preview Course</h4><hr>
 
                 <div class="row">
@@ -161,6 +164,15 @@
     </div><!-- End container -->
 </section><!-- End main_content-->
 
+<!-- pop up linked popup.css, popup.js and inline script at bottom-->
+<div id="yourModalId" class="yourModalClass text-center" style="display: none">
+    <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+    <h4><strong>Alert!</strong></h4>
+    <span class="text-center">Are you sure want to Publish this course</span><br/><br/>
+    <a class="btn btn-sm btn-success">Send</a>
+    <a href="#yourModalId" class="btn btn-sm btn-warning">Cancel</a>
+</div>
+
 <!-- file upload -->
 <script src="js/fileupload.js"></script>
 
@@ -174,4 +186,13 @@
     $(function(){
         $("#default a").toolTip();
     })
+</script>
+
+<script src="js/popup.js"></script>
+
+<!-- pop up -->
+<script>
+    var modal1 = Modality.init('#yourModalId', {
+        effect: 'slide-up'
+    });
 </script>

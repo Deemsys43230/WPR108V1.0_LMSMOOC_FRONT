@@ -1,6 +1,10 @@
+table.sorting-table {
+    cursor: ns-resize;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+}
 
 table tr.sorting-row td {
-    background-color: #8b8;
+    background-color: #f0f0f0;
 }
 
 table td.sorter {
@@ -26,23 +30,4 @@ table tr.nodrag td.sorter {
 
 table.sorting-table tbody tr:not(.sorting-row) td {
     opacity: 0.4;
-}
-
-
-/* some styling for table1 */
-
-table#table4 tr.sorting-row td {
-    background-color: #ccc;
-}
-
-table#table4.sorting-table {
-    cursor: ns-resize;
-    box-shadow: none;
-    outline: 1px solid #333;
-}
-
-table#table4.sorting-table tbody tr:not(.sorting-row) td {
-    opacity: 1;
-    color: #bbb;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
 }
