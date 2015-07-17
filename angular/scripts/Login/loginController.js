@@ -85,7 +85,7 @@ loginApp.config(['$routeProvider',
             }).
             when('/logout',{
               templateUrl:'login.html',
-              controller:'cookiesController'
+              controller:'logoutController'
             }).
             otherwise({
                 redirectTo: '/index'
@@ -159,35 +159,45 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
 
   $scope.login=function()
   {
+    $scope.loginError="";
     console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
-   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).then(function(results){
+   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).success(function(results){
+    alert(JSON.stringify(results));
     if(authFactory.isAuthenticated())
     {
         $window.location.href = 'users/';
     }
     else
     {
-      $scope.loginError="Failed";
+      $scope.loginError="Tokem Expired";
     }
+  }).error(function(){
+     $scope.loginError="Please check your email and password.";
+     $location.path('/login');
   });  
   };
 
 });
 
-loginApp.controller("cookiesController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler,$cookieStore){
+//logoutController
+loginApp.controller("logoutController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler,$cookieStore){
    $cookieStore.remove('userObj');
     $scope.login=function()
   {
+    $scope.loginError="";
     console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
-   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).then(function(results){
+   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).success(function(results){
     if(authFactory.isAuthenticated())
     {
         $window.location.href = 'users/';
     }
     else
     {
-      $scope.loginError="Failed";
+      $scope.loginError="Tokem Expired";
     }
+  }).error(function(){
+     $scope.loginError="Please check your email and password.";
+     $location.path('/logout');
   });  
   };
   });

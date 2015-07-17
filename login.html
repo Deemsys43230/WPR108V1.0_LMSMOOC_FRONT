@@ -21,6 +21,7 @@
 			<div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
        
 				<div class="form-group">
+					<span style="color:red" class="help-inline">{{loginError}}</span>
 					<input type="email" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
 					<span class="input-icon"><i class=" icon-user"></i></span>
 					<span style="color:red" ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 

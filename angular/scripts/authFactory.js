@@ -43,10 +43,13 @@ myApp.factory("oAuthFactory",["$http","authFactory",function($http,authFactory){
 
     oAuthObj.requestLogin=function(username,password)
     {
-       return $http.get("http://localhost:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).then(function (results) {
+       return $http.get("http://localhost:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).success(function (results) {
             console.log(results);     
-            authFactory.setUserObj(results.data);
+            authFactory.setUserObj(results);
             return results;
+         }).error(function(){
+            console.log('failed');
+            return false;
          });
     };
 
