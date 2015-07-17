@@ -84,7 +84,7 @@ loginApp.config(['$routeProvider',
                 templateUrl: 'apply_send.html'
             }).
             otherwise({
-                redirectTo: 'users/'
+                redirectTo: '/index'
             });
     }]);
 
@@ -172,7 +172,6 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
 
   $scope.sample=function()
   {
-      alert("ok");
       requestHandler.getRequest("http://localhost:8080/Learnterest/User/getAllSectionss.json","",1);
   };
 

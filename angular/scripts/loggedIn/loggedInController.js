@@ -1,5 +1,5 @@
 //Module Creation
-var loggedinApp = angular.module('logApp', []);
+var loggedinApp = angular.module('logApp', ['ngCookies']);
 
 loggedinApp.config(['$routeProvider',
 
@@ -7,7 +7,8 @@ loggedinApp.config(['$routeProvider',
 
         $routeProvider.
             when('/index', {
-                templateUrl: 'course_category.html'
+                templateUrl: 'course_category.html',
+                controller:'logoutController'
             }).
             when('/course_category', {
                 templateUrl: 'course_category.html'
@@ -139,6 +140,17 @@ loggedinApp.config(['$routeProvider',
                 templateUrl: 'contacts.html'
             }).
             otherwise({
-                redirectTo: '/index'
+                redirectTo: '/index',
+                controller:'logoutController'
             });
     }]);
+
+// Logut Controller
+loggedinApp.controller('logoutController',['$scope','$cookieStore',function($scope,$cookieStore){
+     $scope.error1="check";
+     $scope.logout=function(){
+        alert("Sure Logout");
+         $cookieStore.remove("userObj","localhost");
+         $cookieStore.put("sample","sample");
+     };
+}]);
