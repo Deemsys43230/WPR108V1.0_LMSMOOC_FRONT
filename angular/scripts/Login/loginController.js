@@ -83,6 +83,10 @@ loginApp.config(['$routeProvider',
             when('/apply_send', {
                 templateUrl: 'apply_send.html'
             }).
+            when('/logout',{
+              templateUrl:'login.html',
+              controller:'cookiesController'
+            }).
             otherwise({
                 redirectTo: '/index'
             });
@@ -118,8 +122,7 @@ $scope.isValid=false;
 
  	//Operation After clicked create account
      requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
-    	alert(JSON.stringify(results.data.userDetailsForm));
-          userDetailService.setUserDetailsForm(results.data.userDetailsForm);
+         userDetailService.setUserDetailsForm(results.data.userDetailsForm);
           $location.path('/create_account');
     });
 
@@ -152,14 +155,12 @@ else
 });
 
 
-loginApp.controller("loginController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler){
-
-
+loginApp.controller("loginController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler,$cookieStore){
 
   $scope.login=function()
   {
     console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
-    oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password);
+   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).then(function(results){
     if(authFactory.isAuthenticated())
     {
         $window.location.href = 'users/';
@@ -168,16 +169,28 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
     {
       $scope.loginError="Failed";
     }
-  };
-
-  $scope.sample=function()
-  {
-      requestHandler.getRequest("http://localhost:8080/Learnterest/User/getAllSectionss.json","",1);
+  });  
   };
 
 });
 
-
+loginApp.controller("cookiesController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler,$cookieStore){
+   $cookieStore.remove('userObj');
+    $scope.login=function()
+  {
+    console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
+   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).then(function(results){
+    if(authFactory.isAuthenticated())
+    {
+        $window.location.href = 'users/';
+    }
+    else
+    {
+      $scope.loginError="Failed";
+    }
+  });  
+  };
+  });
 //Service
 loginApp.service('userDetailService', function() {
   this.userDetailsForm = null;

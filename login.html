@@ -30,7 +30,7 @@
 					<span class="input-icon"><i class=" icon-user"></i></span>
 				</div>
 				<div class="form-group margin-bottom-5">
-					<input type="text" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
+					<input type="password" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
 					<span style="color:red" ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid"> 
     				<span style="color:red" ng-show="loginForm.Password.$error.required" class="help-inline">Required</span>
     				</span>
@@ -41,7 +41,6 @@
 				</p>
 				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid" ng-class="{'button-disable':loginForm.$invalid}" ng-click="login()">Log in</button>
 				<a href="#register" class="button_fullwidth-2">Register</a>
-				<!-- <a href="userTemplate.html#/index" class="button_fullwidth-2" ng-click="sample()">Cookies</a> -->
 			</form>
 		</div>
 	</div>

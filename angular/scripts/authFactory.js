@@ -22,8 +22,7 @@ myApp.factory("authFactory",["$cookieStore","$http",function($cookieStore,$http)
     };
 
     userObj.isAuthenticated=function(){
-        alert($cookieStore.get("userObj"));
-        if($cookieStore.get("userObj")==null)//If not available
+        if($cookieStore.get("userObj")== undefined)//If not available
         {
             return false;
         }
@@ -44,9 +43,10 @@ myApp.factory("oAuthFactory",["$http","authFactory",function($http,authFactory){
 
     oAuthObj.requestLogin=function(username,password)
     {
-        $http.get("http://localhost:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).then(function (results) {
-            console.log(results);       
+       return $http.get("http://localhost:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).then(function (results) {
+            console.log(results);     
             authFactory.setUserObj(results.data);
+            return results;
          });
     };
 

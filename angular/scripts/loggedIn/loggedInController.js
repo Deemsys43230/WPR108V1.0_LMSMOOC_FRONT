@@ -146,11 +146,13 @@ loggedinApp.config(['$routeProvider',
     }]);
 
 // Logut Controller
-loggedinApp.controller('logoutController',['$scope','$cookieStore',function($scope,$cookieStore){
+loggedinApp.controller('logoutController',['$window','$scope','$cookieStore','$location',function($window,$scope,$cookieStore,$location){
+    if($cookieStore.get("userObj") == undefined){
+          $window.location.href = '../#/login';
+    }
      $scope.error1="check";
      $scope.logout=function(){
-        alert("Sure Logout");
-         $cookieStore.remove("userObj","localhost");
-         $cookieStore.put("sample","sample");
+     $cookieStore.remove('userObj');
+     $window.location.href = '../#/logout';
      };
 }]);

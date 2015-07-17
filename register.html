@@ -35,7 +35,7 @@
 					<input type="password" class=" form-control required" ng-model="userDetailsForm.confirmPassword" name="confirmpassword" placeholder="Confirm password" required compare-to="userDetailsForm.password" >
 					<span class="input-icon"><i class=" icon-lock"></i></span>
 					<span style="color:red" ng-show="regForm.confirmpassword.$dirty && regForm.confirmpassword.$invalid">
-    				<span style="color:red"  ng-show="regForm.password.$valid && regForm.confirmpassword.$invalid" class="help-inline">Must match with password</span>
+    				<span style="color:red" ng-show="regForm.confirmpassword.$error.compareTo"  ng-show="frm.password.$valid && frm.confirmpassword.$invalid" class="help-inline">Must match with password</span>
     				</span>
 				</div>
                 <div class="checkbox small terms col-md-offset-2 col-sm-offset-2 col-xs-offset-1">

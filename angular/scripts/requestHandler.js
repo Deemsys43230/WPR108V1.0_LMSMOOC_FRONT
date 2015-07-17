@@ -8,14 +8,17 @@ myApp.factory("requestHandler",['$http','authFactory',function($http,authFactory
 
         if(isAuthenticated==1)
         {
+            
                 requestURL="http://localhost:8080/Learnterest/"+requestURL+"?access_token="+authFactory.getUserObj().access_token;
         }
         else{
+           
              requestURL="http://localhost:8080/Learnterest/"+requestURL;
         }
 
-         $http.get(requestURL,params).then(function (results) {
-            console.log(results);       
+         return $http.get(requestURL,params).then(function (results) {
+            console.log(results);    
+            return results;   
          });
     };
 
