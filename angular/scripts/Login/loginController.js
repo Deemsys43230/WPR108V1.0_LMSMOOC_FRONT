@@ -1,6 +1,28 @@
 //Module Creation
 var loginApp = angular.module('indexApp', ['authModule','requestModule']);
 
+
+
+// Compare Confirm Password
+loginApp.directive('compareTo',function() {
+    return {
+      require: "ngModel",
+      scope: {
+        otherModelValue: "=compareTo"
+      },
+      link: function(scope, element, attributes, ngModel) {
+
+        ngModel.$validators.compareTo = function(modelValue) {
+          return modelValue === scope.otherModelValue;
+        };
+
+        scope.$watch("otherModelValue", function() {
+          ngModel.$validate();
+        });
+      }
+    };
+  });
+
 //Own Directive for ngblur
 loginApp.directive('ngBlur', ['$parse', function($parse) {
   return function(scope, element, attr) {
@@ -68,7 +90,7 @@ loginApp.config(['$routeProvider',
 
 
 //Declare Login Page Controller
-loginApp.controller('saveUserDetails', function($scope,$http,$location,userDetailService) {
+loginApp.controller('saveUserDetails', function($scope,$http,$location,userDetailService,requestHandler) {
 
 $scope.isValid=false;
 
@@ -77,8 +99,8 @@ $scope.isValid=false;
 
  	if($scope.userDetailsForm.emailAddress!="")
  	{
-    $http.post('http://localhost:8080/Learnterest/isNewUser.json', $scope.userDetailsForm).then(function (results) {
-         if (!results.data.isNewUser) {
+    requestHandler.postRequest("isNewUser.json",$scope.userDetailsForm,0).then(function(results){
+       if (!results.data.isNewUser) {
             $scope.emailAlreadyExist= "Email ID Already Exists!";
             $scope.isValid=false;
          }
@@ -95,11 +117,9 @@ $scope.isValid=false;
  $scope.creatUser=function(){
 
  	//Operation After clicked create account
-  $http.post('http://localhost:8080/Learnterest/saveUserDetails.json', $scope.userDetailsForm).then(function (results) {
-    
+     requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
     	alert(JSON.stringify(results.data.userDetailsForm));
           userDetailService.setUserDetailsForm(results.data.userDetailsForm);
-          alert(JSON.stringify(userDetailService.getUserDetailsForm()));
           $location.path('/create_account');
     });
 
@@ -109,7 +129,7 @@ $scope.isValid=false;
 
 
 //Account Detail Controller
-loginApp.controller('userDetailController', function($scope,$http,$location,userDetailService) {
+loginApp.controller('userDetailController', function($scope,$http,$location,userDetailService,requestHandler) {
 
 if(userDetailService.getUserDetailsForm()!=null)
 {
@@ -122,8 +142,7 @@ else
 
 //Enrich the Account Profile
  $scope.updateUserDetails=function(){
-  $http.post('http://localhost:8080/Learnterest/updateUserDetails.json', $scope.userDetailsForm).then(function (results) {
-          
+    requestHandler.postRequest("updateUserDetails.json",$scope.userDetailsForm,0).then(function(results){       
           userDetailService.setUserDetailsForm(null);
           $location.path('/login');
     });
