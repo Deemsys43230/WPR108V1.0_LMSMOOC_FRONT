@@ -1,5 +1,5 @@
 //Module Creation
-var loginApp = angular.module('indexApp', ['authModule','requestModule']);
+var loginApp = angular.module('indexApp', ['authModule','requestModule','ngRoute']);
 
 
 
@@ -13,7 +13,7 @@ loginApp.directive('compareTo',function() {
       link: function(scope, element, attributes, ngModel) {
 
         ngModel.$validators.compareTo = function(modelValue) {
-          return modelValue === scope.otherModelValue;
+          return modelValue == scope.otherModelValue;
         };
 
         scope.$watch("otherModelValue", function() {
