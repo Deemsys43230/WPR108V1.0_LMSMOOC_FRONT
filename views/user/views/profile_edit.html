@@ -1,0 +1,97 @@
+
+<!-- file upload (http://dev.html5ux.com/upload-image/) -->
+<link href="../../../css/fileupload.css" rel="stylesheet">
+
+<section id="main_content">
+
+<div class="container">
+
+      <div class="row margin-top-10">
+          <aside class="col-md-4 col-sm-5">
+              <div class="box_style_1">
+                  <div class="text-center">
+                      <br/>
+                      <form>
+                          <div class="dropzone" data-width="250" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:80%;height: auto" data-image="img/teacher_2.jpg" data-removeurl="/your_remove_image_script.html">
+                              <input type="file" name="thumb"/>
+                          </div>
+                      </form>
+                      <br/>
+                  </div>
+                  <p class="profile-name no_margin">User Name<small><br>Web developer</small></p>
+                  <ul class="profile-edit">
+                      <li class="active">
+                          <a href="#profile_edit">Profile</a>
+                      </li>
+                      <li class="">
+                          <a href="#primary_info_edit">Primary Info</a>
+                      </li>
+                      <li class="">
+                          <a href="#account_edit">Account</a>
+                      </li>
+                      <li class="">
+                          <a href="#payment_edit">Payment</a>
+                      </li>
+                  </ul>
+              </div>
+          </aside>
+
+              <div class="col-md-8 col-sm-7">
+                  <h4 class="create-title">Profile</h4><hr>
+                  <ul class="data-list no-margin entry">
+                      <li>
+                          <label><strong>First Name</strong></label>
+                          <div class="form-group">
+                              <input type="text" name="firstname" class="required form-control">
+                          </div>
+                      </li>
+                      <li>
+                          <label><strong>Last Name</strong></label>
+                          <div class="form-group">
+                              <input type="text" name="lastname" class="required form-control">
+                          </div>
+                      </li>
+                      <li>
+                          <label class="col-md-12 no-padding"><strong>Country</strong></label>
+                          <div class="styled-select">
+                              <select class="form-control required" name="country">
+                                  <option value="Europe">Europe</option>
+                                  <option value="Asia">Asia</option>
+                                  <option value="North America" selected>North America</option>
+                                  <option value="South America">South America</option>
+                              </select>
+                          </div>
+                      </li>
+                      <li>
+                          <label><strong>City</strong></label>
+                          <div class="form-group">
+                              <input type="text" name="city" class="required form-control">
+                          </div>
+                      </li>
+                      <li>
+                          <label><strong>Contact Number</strong></label>
+                          <div class="form-group">
+                              <input type="text" name="contact" class="required form-control">
+                          </div>
+                      </li>
+                      <li>
+                          <label><strong>Address</strong></label>
+                          <div class="form-group">
+                              <textarea type="text" name="contact" class="required form-control"></textarea>
+                          </div>
+                      </li>
+                      <li class="text-center">
+                          <button class="btn btn-primary">Save Changes</button>
+                      </li>
+                  </ul>
+              </div>
+      </div><!-- End row-->
+</div><!-- End container -->
+</section><!-- End main_content-->
+
+<!-- file upload -->
+<script src="../../../js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>

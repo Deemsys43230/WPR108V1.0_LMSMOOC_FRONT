@@ -1,0 +1,120 @@
+
+
+<div class="col-md-12 margin-bottom-20 margin-top-50">
+    <a href="#offer_zone" class="btn-sm btn-warning margin-top-20 pull-right">Cancel</a>
+    <h3 class="padding-left-20 icon-gift-2"> {{title}} Offer</h3>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 margin-bottom-20">
+            <strong>Upload new offer cover image</strong>
+            <form class="margin-top-10">
+                <div class="dropzone fullwidth" data-width="1400" data-height="300" data-originalsize="false" data-url="canvas.php" data-image="../../img/offer.jpg" data-removeurl="/your_remove_image_script.html">
+                    <input type="file" name="thumb"/>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12 col-xs-12 no-padding">
+            <form role="form">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="type"><strong>Type</strong></label>
+                        <input type="text" class="form-control" id="type">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="offer-name"><strong>Offer Name</strong></label>
+                        <input type="text" class="form-control" id="offer-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label><strong>Offer Period</strong></label>
+                        <div id="basicExample">
+                            <div class="col-md-2 col-xs-3 margin-top-10 no-padding">From :</div>
+                            <div class="col-md-4 col-xs-9 no-padding">
+                                <input type="text" class="date start form-control" />
+                            </div>
+                            <div class="col-md-2 col-xs-3 margin-top-10 no-padding">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to :</div>
+                            <div class="col-md-4 col-xs-9 no-padding">
+                                <input type="text" class="date end form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label><strong>Offer Description</strong></label>
+                        <textarea name="message" class="form-control" id="height-130" placeholder="Description..."></textarea>
+                    </div>
+
+                    <label class="" for="category"><strong>Category</strong>
+                    </label>
+
+                    <div class="form-group styled-select">
+                        <select class="form-control no-margin" id="category">
+                            <option>For All Category</option>
+                            <option>Business Development</option>
+                            <option>IT development</option>
+                            <option>Business Development</option>
+                            <option>IT development</option>
+                            <option>Business Development</option>
+                            <option>IT development</option>
+                            <option>Business Development</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label for="discount-type"><strong>Discount Type</strong>
+                            </label>
+                            <div class="no-margin styled-select">
+                                <select class="form-control" id="discount-type">
+                                    <option>Dollar</option>
+                                    <option>Percentage</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="discount-value"><strong>Discount Value</strong></label>
+                                <input type="text" class="form-control" id="discount-value">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="promocode"><strong>Promocode</strong></label>
+                        <input type="text" class="form-control" id="promocode">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="url"><strong>Page URL</strong></label>
+                        <input type="text" class="form-control" id="url">
+                    </div>
+                </div>
+
+            </form>
+            <div class="text-center margin-bottom-20">
+                <a class="btn btn-success">{{button}}</a>
+                <a href="#offer_zone" class="btn btn-warning">Cancel</a>
+            </div>
+        </div>
+
+    </div><!-- End tab-pane -->
+</div>
+
+<script src="../../js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>
+
+<script>
+    $('#basicExample .date').datepicker({
+        'format': 'd/m/yyyy',
+        'autoclose': true
+    });
+
+    var basicExampleEl = document.getElementById('basicExample');
+    var datepair = new Datepair(basicExampleEl);
+</script>

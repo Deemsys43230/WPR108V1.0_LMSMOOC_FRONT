@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LEARN - Courses, Education site template</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" type="image/x-icon" href="../../img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../../img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../../img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../../img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/common.css" rel="stylesheet">
+    <link href="../../css/admin_style.css" rel="stylesheet">
+
+    <!-- SUPER ADMIN CSS -->
+    <link type="text/css" rel="stylesheet" href="../../css/jquery.menu-admin.all.css" />
+
+</head>
+
+<body>
+<div class="superadmin" ng-app="superadmin">
+    <div class="header">
+        <a href="#menu" onclick="return false;"><i class="icon icon-menu"></i> Menu</a>
+        <img src="../../img/logo.png" class="hidden-xs center-block" target="_blank" onclick="window.location.href = '../#index'">
+        <p class="pull-right">
+            <i onclick="window.location.href = '#messages'" class="icon icon-bell-alt" title="Notification"><span>12</span></i>
+            <i onclick="window.location.href = '#refund'" class="icon icon-arrows-ccw" title="Refund Request"><span>1</span></i>
+            <i onclick="window.location.href = '../#index'" class="icon icon-logout" title="Sign Out">Sign Out</i>
+        </p>
+    </div>
+
+    <div class="container-fluid" ng-view>
+    </div>
+
+    <nav id="menu">
+        <nave>
+            <div class="menu-title">Super Admin</div>
+            <ul class="no-padding nave">
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-chart-bar-1"></i>
+                        </div>
+                        <a href="#dashboard"><span>Dashboard</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-email"></i>
+                        </div>
+                        <a href="#messages"><span>Messages (15)</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-user-1"></i>
+                        </div>
+                        <a href="#instructors"><span>Instructors</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-users-1"></i>
+                        </div>
+                        <a href="#students"><span>Students</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-user-3"></i>
+                        </div>
+                        <a href="#affiliates"><span>Affiliates</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-book"></i>
+                        </div>
+                        <a href="#courses"><span>Courses</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-menu-1"></i>
+                        </div>
+                        <a href="#categories"><span>Course Categories</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-ticket"></i>
+                        </div>
+                        <a href="#billing"><span>Billing Details</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-gift-2"></i>
+                        </div>
+                        <a href="#offer_zone"><span>Offer Zone</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-bullhorn"></i>
+                        </div>
+                        <a href="#news"><span>News</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-blogger-1"></i>
+                        </div>
+                        <a href="#blogs"><span>Blogs</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-note-1"></i>
+                        </div>
+                        <a href="#reports"><span>Reports</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-dollar"></i>
+                        </div>
+                        <a href="#refund"><span>Refund Request (01)</span></a>
+                    </div>
+                </li>
+                <li class="var_nave">
+                    <div class="link_bg"></div>
+                    <div class="link_title">
+                        <div class=icon>
+                            <i class="icon-cogs"></i>
+                        </div>
+                        <a href="#settings"><span>Settings</span></a>
+                    </div>
+                </li>
+            </ul>
+        </nave>
+    </nav>
+</div>
+
+<div id="footer" class="text-center">Copy right © 2015 learnterest.com</div>
+
+<!-- JQUERY -->
+<script src="../../js/jquery-1.10.2.min.js"></script>
+
+<!-- OTHER JS -->
+<script src="../../js/superfish.js"></script>
+<script src="../../js/retina.min.js"></script>
+<script src="../../assets/validate.js"></script>
+<script src="../../js/jquery.placeholder.js"></script>
+<script src="../../js/functions.js"></script>
+<script src="../../js/classie.js"></script>
+<script src="../../js/uisearch.js"></script>
+
+<script type="text/javascript" src="../../js/jquery.menu-admin.all.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('nav#menu').mmenu({
+            extensions	: [ 'effect-slide-menu', 'pageshadow' ],
+            display:'block'
+        });
+    });
+</script>
+
+<!-- ANGULAR JS -->
+<script src="../../angular/angularjs-1.3.14.js"></script>
+<script src="../../angular/angular-route-1.4.2.js"></script>
+<script src="../../angular/ocLazyLoad.min.js"></script>
+<script src="../../angular/scripts/superadmin/superadminController.js"></script>
+
+<!-- scoll -->
+<script src="../../js/jquery.nicescroll.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+</body>
+</html>

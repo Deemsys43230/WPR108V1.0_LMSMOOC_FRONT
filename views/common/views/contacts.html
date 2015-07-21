@@ -1,0 +1,115 @@
+
+<section id="map"></section><!-- end map-->
+
+<section id="directions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form action="http://maps.google.com/maps" method="get" target="_blank">
+                    <div class="input-group">
+                        <input type="text" name="saddr" placeholder="Enter your starting point" class="form-control style-2" />
+                        <input type="hidden" name="daddr" value="Gahanna, OH, USA"/><!-- Write here your end point -->
+					<span class="input-group-btn">
+					<button class="btn height-45 direction-button btn-primary" type="submit" value="Get directions">GET DIRECTIONS</button>
+					</span>
+                    </div><!-- /input-group -->
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+  
+<section id="main_content" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 box_style_1">
+                <h3 class="margin-top-10">Address</h3><hr/>
+                <ul id="contact-info">
+                    <li><i class="icon-home"></i><strong>Deemsys Inc</strong><br/>
+                        <span class="padding-left-20">800, Cross Pointe Road,</span><br/>
+                        <span class="padding-left-20">Suite A,Gahanna,</span><br/>
+                        <span class="padding-left-20">OHIO - 43230 </span><br/>
+                        <span class="padding-left-20">U.S.A.</span>
+                    </li>
+                    <li><i class="icon-phone"></i>614-322-9928 </li>
+                    <li><i class="icon-globe"></i> <a href="#">www.deemsysinc.net</a></li>
+                </ul>
+                <hr>
+                <h3>Follow us</h3>
+                <ul id="follow_us_contacts">
+                    <li><a href="https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314" target="_blank"><i class="icon-facebook"></i>facebook</a></li>
+                    <li><a href="https://twitter.com/learnterest" target="_blank"><i class="icon-twitter"></i>twitter</a></li>
+                    <li><a href="https://plus.google.com/u/0/b/107601624465751204096/107601624465751204096/about" target="_blank"><i class=" icon-googleplus"></i>googleplus</a></li>
+                </ul>
+                <hr>
+            </div>
+            <div class="col-md-8">
+                <div class=" box_style_1">
+                    <div class="row margin-top-10">
+                        <div class="col-md-12">
+                            <h3>General Enquire</h3><hr/>
+                        </div>
+                    </div>
+                    <div id="message-contact"></div>
+                    <form method="post" action="../../assets/contact.php" id="contactform">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control style_2" id="name_contact" name="name_contact" placeholder="Enter Name">
+                                    <span class="input-icon"><i class="icon-user"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control style_2" id="lastname_contact" name="lastname_contact" placeholder="Enter Last Name">
+                                    <span class="input-icon"><i class="icon-user"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" id="email_contact" name="email_contact" class="form-control style_2" placeholder="Enter Email">
+                                    <span class="input-icon"><i class="icon-email"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" id="phone_contact" name="phone_contact" class="form-control style_2" placeholder="Enter Phone number">
+                                    <span class="input-icon"><i class="icon-phone"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea rows="5" id="message_contact" name="message_contact" class="form-control" placeholder="Write your message" style="height:200px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="Submit" class=" button_medium" id="submit-contact"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    //set up markers
+    var myMarkers = {"markers": [
+        {"latitude": "39.996526", "longitude":"-82.836383", "icon": "../../img/map-marker2.png"}
+    ]
+    };
+
+    //set up map options
+    $("#map").mapmarker({
+        zoom	: 12,
+        center	: '800 Cross Pointe Road, Suite A',
+        markers	: myMarkers
+    });
+</script>

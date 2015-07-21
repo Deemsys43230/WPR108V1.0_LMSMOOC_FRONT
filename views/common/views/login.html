@@ -1,0 +1,50 @@
+
+
+<section id="login_bg">
+<div  class="container">
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+		<div id="login">
+			<p class="text-center">
+				<img src="../../img/login_logo.png" alt="">
+			</p>
+			<hr>
+			<form name="loginForm" novalidate> 
+            <div class="row">
+            <div class="col-md-6 col-sm-6 login_social">
+				<a href="#" class="btn btn-primary btn-block"><i class="icon-facebook"></i>Facebook</a>
+			</div>
+			<div class="col-md-6 col-sm-6 login_social">
+				<a href="#" class="btn btn-info btn-block "><i class="icon-twitter"></i>Twitter</a>
+			</div>
+			</div> <!-- end row -->
+			<div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
+       
+				<div class="form-group">
+					<span style="color:red" class="help-inline">{{loginError}}</span>
+					<input type="email" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
+					<span class="input-icon"><i class=" icon-user"></i></span>
+					<span style="color:red" ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 
+    				<span style="color:red" ng-show="loginForm.Email.$error.required" class="help-inline">Required</span>
+    				<span style="color:red" ng-show="loginForm.Email.$error.email" class="help-inline">Email is not valid</span>
+    				</span>
+					<span class="input-icon"><i class=" icon-user"></i></span>
+				</div>
+				<div class="form-group margin-bottom-5">
+					<input type="password" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
+					<span style="color:red" ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid"> 
+    				<span style="color:red" ng-show="loginForm.Password.$error.required" class="help-inline">Required</span>
+    				</span>
+					<span class="input-icon"><i class="icon-lock"></i></span>
+				</div>
+				<p class="small forget">
+					<a href="#">Forgot Password?</a>
+				</p>
+				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid" ng-class="{'button-disable':loginForm.$invalid}" ng-click="login()">Log in</button>
+				<a href="#register" class="button_fullwidth-2">Register</a>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</section> <!-- End login -->

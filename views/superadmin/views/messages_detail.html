@@ -1,0 +1,77 @@
+
+
+<div class="col-md-12 margin-bottom-20 margin-top-50">
+    <h3 class="padding-left-20 icon-email"> Messages</h3>
+    <hr>
+    <div class="message">
+        <div class="module-option col-md-12 col-xs-12 no-padding">
+            <div class="pull-left">
+                <div class="btn-group">
+                    <button class="btn">
+                        <a href="#messages">Inbox (15)</a>
+                    </button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Unread</a></li>
+                        <li><a href="#">Read</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pull-right">
+                <a href="#yourModalId" >
+                    <span class="btn btn-danger hidden-xs">Delete</span>
+                    <span class="btn btn-danger hidden-md hidden-lg hidden-sm"><i class="icon-trash"></i> </span>
+                </a>
+                <a href="#messages" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+        <div class="open-message col-xs-12 col-md-12">
+            <hr>
+            <p>
+                <span>Subject</span>
+                                  <span class="pull-right">
+                                      <span>
+                                          <i class="icon starred icon-star"></i><!-- remove starred if message not star -->
+                                      </span>
+                                      <i>01-02-2015</i>
+                                      <i>13:10</i>
+                                  </span>
+            </p>
+            <p>
+                <strong>From:</strong>
+                Manoj
+            </p>
+            <p>
+                The course was enrolled by the student which is given below.
+                Coursename:Display 3D Object On Web Browser
+                Author:abemid
+                Studentname: Author:abemid
+                Studentnam e:Author:abemid
+                Studentnam e:A uthor:abemid
+                Studentn ame:
+            </p>
+            <textarea name="message" class="form-control style_1 height-100" placeholder="Reply..."></textarea>
+            <div class="form-group text-center margin-top-20">
+                <input type="submit" class=" button_medium" value="SEND"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- pop up -->
+<div id="yourModalId" class="yourModalClass text-center text-warning">
+    <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+    <h4><strong>Alert!</strong></h4>
+    <p>Are you sure want to delete</p>
+    <button class="btn btn-sm btn-danger">Delete</button>
+</div>
+<!-- pop up end -->
+
+<script>
+    var modal1 = Modality.init('#yourModalId', {
+        effect: 'slide-up'
+    });
+</script>

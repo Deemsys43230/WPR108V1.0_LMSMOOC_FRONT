@@ -1,0 +1,44 @@
+
+<head>
+    <meta http-equiv="refresh" content="5; url=#{{redirect}}" />
+</head>
+
+<section id="sub-header">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12 margin-top-50 margin-bottom-30">
+                <h1 class="margin-top-50">Thank you!</h1>
+                <h1 class="margin-top-20 icon icon-thumbs-up thumb"></h1>
+                <h3>Form Successfully Submitted.</h3>
+                <p>You will be automatically redirected in <span class="c" id="5"></span> seconds...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+    function c(){
+        var n=$('.c').attr('id');
+        var c=n;
+        $('.c').text(c);
+        setInterval(function(){
+            c--;
+            if(c>=-1){
+                $('.c').text(c);
+            }
+            if(c==-1){
+                $('.c').text(n);
+            }
+        },1000);
+    }
+
+    // Start
+    c();
+
+    // Loop
+    setInterval(function(){
+        c();
+    },5000);
+
+</script>

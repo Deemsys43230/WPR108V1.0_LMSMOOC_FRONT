@@ -1,0 +1,229 @@
+<script src="../../js/jquery.wizard.js"></script>
+
+
+<section id="wizard_bg">
+    <div class="container">
+        <!-- Start Survey container -->
+        <div id="survey_container">
+
+            <div id="top-wizard">
+                <strong>Progress </strong>
+                <div id="progressbar"></div>
+                <div class="shadow"></div>
+            </div><!-- end top-wizard -->
+
+            <form role="form"  name="example-1" id="wrapped" method="POST" autocomplete="off" action="#user-registration-success">
+                <div id="middle-wizard">
+                    <div class="step row">
+                        <div class="col-md-12 no-padding">
+                            <h4 class="col-md-12  margin-bottom-20">Enter your personal info</h4>
+                            <div class="col-md-6 ">
+                                <ul class="data-list ">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="hidden" ng-model="userDetailsForm.userId">
+                                            <input type="text" name="firstname" ng-model="userDetailsForm.firstName" class="required form-control" placeholder="First name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="lastname" ng-model="userDetailsForm.lastName" class="required form-control" placeholder="Last name">
+                                                <span class="input-icon">
+                                                    <i class="icon-user"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li><div class="styled-select margin-bottom-15">
+                                        <select class="form-control required" name="country" ng-model="userDetailsForm.country">
+                                            <option value="" select ed>Select your country</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="North America">North America</option>
+                                            <option value="South America">South America</option>
+                                        </select>
+                                    </div>
+                                    </li>
+                                    <li><div class="styled-select margin-bottom-15">
+                                        <select class="form-control required" name="state" ng-model="userDetailsForm.state">
+                                            <option value="" select ed>Select your state</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="North America">North America</option>
+                                            <option value="South America">South America</option>
+                                        </select>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="city" class="required form-control" placeholder="Your city" ng-model="userDetailsForm.city">
+                                                <span class="input-icon">
+                                                    <i class="icon-building"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" class="required form-control" placeholder="Your phone number" ng-model="userDetailsForm.phoneNumber">
+                                                <span class="input-icon">
+                                                    <i class="icon-phone"></i>
+                                                </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="address" class="required form-control" ng-model="userDetailsForm.address" placeholder="Your Address" style="height:163px!important"></textarea>
+                                        </div>
+                                    </li>
+                                    <ul class="data-list floated clearfix">
+                                        <li id="age">
+                                            <div class="form-group">
+                                                <input type="text" id="datepicker" placeholder="Date Of Birth" ng-model="userDetailsForm.dateOfBirth">
+                                                <span class="input-icon">
+                                                    <i class="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="1" ng-model="userDetailsForm.gender">
+                                            <label class="label_gender"> Male</label>
+                                        </li>
+                                        <li>
+                                            <input name="gender" type="radio" class="required check_radio" value="2" ng-model="userDetailsForm.gender">
+                                            <label class="label_gender"> Female</label>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                        </div>
+                    </div><!-- end step-->
+
+                    <div class="step">
+                        <div class="row margin-bottom-20">
+                            <h4 class="col-md-12">Primary Info</h4>
+                            <br><br>
+                            <div class="col-md-6 ">
+                                <ul class="data-list">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="designation" class="required form-control" placeholder="Designation" ng-model="userDetailsForm.designation">
+                                            <span class="input-icon">
+                                                <i class="icon-user"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+
+                            <div class="col-md-6">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <input type="text" name="education" class="required form-control" placeholder="Education" ng-model="userDetailsForm.education"> 
+                                            <span class="input-icon">
+                                                <i class="icon-book"></i>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-6 -->
+                            <div class="col-md-12">
+                                <ul class="data-list no-padding no-margin">
+                                    <li>
+                                        <div class="form-group">
+                                            <textarea type="text" name="describtion-me" ng-model="userDetailsForm.aboutMe" class="required form-control" placeholder="Description about you"></textarea>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- end col-md-12 -->
+                        </div><!-- end row -->
+                    </div><!-- end step -->
+
+                    <div class="submit step" id="complete">
+                        <i class="icon-check"></i>
+                        <h3>Thank you for you time.</h3>
+                        <a href="#"><button type="button" ng-click="updateUserDetails(userDetailsForm);" name="process" class="submit">Submit to register</button></a>
+                    </div><!-- end submit step -->
+
+                </div><!-- end middle-wizard -->
+
+                <div id="bottom-wizard">
+                    <button type="button" name="backward" class="backward">Backward</button>
+                    <button type="button" name="forward" class="forward">Forward</button>
+                </div><!-- end bottom-wizard -->
+            </form>
+
+        </div><!-- end Survey container -->
+
+    </div>
+</section><!-- end section main container -->
+
+<!-- Wizard-->
+<script>
+    jQuery(function($) {
+        // Basic wizard with validation
+        $("#survey_container").wizard({
+            stepsWrapper: "#wrapped",
+            submit: ".submit",
+            beforeSelect: function( event, state ) {
+                var inputs = $(this).wizard('state').step.find(':input');
+                return !inputs.length || !!inputs.valid();
+            }
+
+
+        }).validate({
+            errorPlacement: function(error, element) {
+                if ( element.is(':radio') || element.is(':checkbox') ) {
+                    error.insertBefore( element.next() );
+
+                } else {
+                    error.insertAfter( element );
+                }
+            }
+        });
+
+        //  progress bar
+        $("#progressbar").progressbar();
+
+        $("#survey_container").wizard({
+            afterSelect: function( event, state ) {
+                $("#progressbar").progressbar("value", state.percentComplete);
+                $("#location").text("(" + state.stepsComplete + "/" + state.stepsPossible + ")");
+            }
+        });
+
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        //Check and radio input styles
+        $('input.check_radio').iCheck({
+            checkboxClass: 'icheckbox_square-aero',
+            radioClass: 'iradio_square-aero'
+        });
+
+        //Pace holder
+        $('input, textarea').placeholder();
+    });
+</script>
+
+<script>
+
+      var picker = new Pikaday(
+              {
+                  field: document.getElementById('datepicker'),
+                  firstDay: 1,
+                  minDate: new Date('1940-01-01'),
+                  maxDate: new Date(new Date().getFullYear()-5+'-12-31'),
+                  yearRange: [1940,new Date().getFullYear()-4]
+              });
+
+</script>

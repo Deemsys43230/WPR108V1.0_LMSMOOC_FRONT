@@ -1,0 +1,88 @@
+
+<!-- file upload (http://dev.html5ux.com/upload-image/) -->
+<link href="../../../css/fileupload.css" rel="stylesheet">
+
+<section id="main_content">
+
+<div class="container">
+
+      <div class="row margin-top-10">
+          <aside class="col-md-4 col-sm-5">
+              <div class="box_style_1">
+                  <div class="text-center">
+                      <br/>
+                      <form>
+                          <div class="dropzone" data-width="250" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:80%;height: auto" data-image="img/teacher_2.jpg" data-removeurl="/your_remove_image_script.html">
+                              <input type="file" name="thumb"/>
+                          </div>
+                      </form>
+                      <br/>
+                  </div>
+                  <p class="profile-name no_margin">User Name<small><br>Web developer</small></p>
+                  <ul class="profile-edit">
+                      <li class="">
+                          <a href="#profile_edit">Profile</a>
+                      </li>
+                      <li class="">
+                          <a href="#primary_info_edit">Primary Info</a>
+                      </li>
+                      <li class="active">
+                          <a href="#account_edit">Account</a>
+                      </li>
+                      <li class="">
+                          <a href="#payment_edit">Payment</a>
+                      </li>
+                  </ul>
+              </div>
+          </aside>
+
+          <div class="col-md-8 col-sm-7">
+              <h4 class="create-title">Account</h4><hr>
+              <ul class="data-list no-margin entry">
+                  <li>
+                      <label><strong>User Name</strong></label>
+                      <div class="form-group">
+                          <input type="text" name="username" class="required form-control">
+                      </div>
+                  </li>
+                  <li>
+                      <label><strong>E-mail ID</strong></label>
+                      <div class="form-group">
+                          <input type="text" name="email" class="required form-control">
+                      </div>
+                  </li>
+                  <li>
+                      <label><strong>Password</strong></label>
+                      <div class="form-group">
+                          <input type="text" name="current-password" class="required form-control" placeholder="Enter Current Password">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name="new-password" class="required form-control" placeholder="Enter New Password">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" name="confirm-new-password" class="required form-control" placeholder="Confirm New Password">
+                      </div>
+                  </li>
+                  <li class="text-center">
+                      <button class="btn btn-primary">Save Changes</button>
+                  </li>
+              </ul>
+          </div>
+      </div><!-- End row-->
+</div><!-- End container -->
+</section><!-- End main_content-->
+
+<!-- tooltip -->
+<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#default a").toolTip();
+    })
+</script>
+
+<!-- file upload -->
+<script src="../../../js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>

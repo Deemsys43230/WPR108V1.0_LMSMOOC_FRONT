@@ -1,0 +1,269 @@
+
+<!-- file upload (http://dev.html5ux.com/upload-image/) -->
+<link href="../../../css/fileupload.css" rel="stylesheet">
+
+<!-- text editor -->
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.5.0/summernote.css">
+<!-- text editor end -->
+
+<!-- sidebar -->
+<link rel="stylesheet" href="../../../css/sidebar.css">
+
+<div id="slideout">
+    <img src="../../../img/askus.png" alt="Feedback" />
+    <div id="slideout_inner">
+        <form>
+            <textarea></textarea>
+            <input type="submit" class="btn btn-black btn-xs center-block" value="Send">
+        </form>
+    </div>
+</div>
+
+<section id="main_content">
+
+    <div class="container">
+
+        <div class="row margin-top-10">
+            <aside class="col-md-4 col-lg-4 col-sm-5">
+                <div class="box_style_1">
+                    <div class="text-center">
+                        <br/>
+                        <form>
+                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                                <input type="file" name="thumb"/>
+                            </div>
+                        </form>
+                        <br/>
+                    </div>
+                    <p class="course-name no_margin">Course Cover Image</p>
+                    <ul class="profile-edit margin-top-10">
+                        <li class="">
+                            <a href="#new_course">Overview</a>
+                        </li>
+                        <li class="">
+                            <a href="#add_section">Add Sections</a>
+                        </li>
+                        <li class="active">
+                            <a href="#add_lecture">Add Lectures</a>
+                        </li>
+                        <li class="">
+                            <a href="#view-quiz">Add Quiz</a>
+                        </li>
+                        <li class="">
+                            <a href="#add_promocode">Add Promocode</a>
+                        </li>
+                        <li class="">
+                            <a href="#preview">Preview/Publish</a>
+                        </li>
+                        <li class="">
+                            <a href="#help">Course Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="col-md-8 col-lg-8 col-sm-7">
+                <h4 class="create-title">Add Lecture</h4><hr>
+                <div class="row website-entry">
+                    <div class="col-md-12">
+                        <ul class="data-list no-margin entry">
+                            <li>
+                                <label><strong>Lecture Name</strong></label>
+                                <div class="form-group">
+                                    <input type="text" name="lectureename" class="required form-control">
+                                </div>
+                            </li>
+                            <li>
+                                <label><strong>Short Description</strong></label>
+                                <div class="form-group">
+                                    <textarea type="text" name="description" class="required form-control"></textarea>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="col-md-12 no-padding"><strong>Select Lecture Type</strong></label>
+                                <div class="styled-select">
+                                    <select class="form-control required" name="lecture-type" id="lecture-type" onchange="changeType();">
+                                        <option value="text" selected>Text</option>
+                                        <option value="audio">Audio</option>
+                                        <option value="video">Video</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="col-md-12 no-padding"><strong>Preview</strong></label>
+                                <form action="" class="margin-left-30 margin-bottom-15">
+                                    <input type="checkbox" name="vehicle" value="Car" checked>&nbsp;&nbsp;&nbsp;Add this lecture as free trial.<br>
+                                </form>
+                            </li>
+                            <li>
+                                <label class="col-md-12 no-padding"><strong>Content</strong></label><br/>
+                                <div class="texteditor margin-bottom-20 margin-top-10" id="textDiv">
+                                    <textarea name="summernote" id="summernote"></textarea>                                  
+                                </div>
+                                <div class="row margin-top-10" id="uploadDiv" style="display:none;">
+
+                                    <div class="col-md-7">
+                                        <!-- The fileinput-button span is used to style the file input field as button -->
+                                        <span class="btn btn-success btn-sm fileinput-button margin-bottom-5">
+                                            <i class="icon icon-plus"></i>
+                                            <span>Add files... &nbsp;&nbsp;</span>
+                                        </span>
+                                        <button type="submit" class="btn btn-primary btn-sm start margin-bottom-5">
+                                            <i class="icon icon-upload"></i>
+                                            <span>Start upload &nbsp;&nbsp;</span>
+                                        </button>
+                                        <button type="reset" class="btn btn-warning  btn-sm cancel margin-bottom-5">
+                                            <i class="icon icon-cancel"></i>
+                                            <span>Cancel upload &nbsp;&nbsp;</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <!-- The global file processing state -->
+                                        <span class="fileupload-process">
+                                          <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                              <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                          </div>
+                                        </span>
+                                    </div>
+                                    <label class="text-danger"><small>Note : Promo video should be below 15MB!</small></label>
+                                </div>
+                                <div class="table table-striped files row no-margin" id="previews">
+
+                                    <div id="template" class="file-row">
+                                        <!-- This is used as the file preview template -->
+                                        <div>
+                                            <p class="name" data-dz-name style="width:80%;word-wrap: break-word;"></p>
+                                            <strong class="error text-danger" data-dz-errormessage></strong>
+                                    </div>
+                                        <div>
+                                            <p class="size" data-dz-size></p>
+                                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                                <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary btn-sm start margin-bottom-5">
+                                                <i class="icon-upload"></i>
+                                                <span>Start &nbsp;&nbsp;</span>
+                                            </button>
+                                            <button data-dz-remove class="btn btn-warning btn-sm cancel margin-bottom-5">
+                                                <i class="icon-cancel"></i>
+                                                <span>Cancel &nbsp;&nbsp;</span>
+                                            </button>
+                                            <button data-dz-remove class="btn btn-danger btn-sm delete margin-bottom-5">
+                                                <i class="icon-trash"></i>
+                                                <span>Delete &nbsp;&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="text-center margin-top-10">
+                            <a href=""><button class="add btn btn-success">Save</button></a>
+                            <a href="#add_lecture"><button class="add btn btn-warning">Cancel</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End row-->
+    </div><!-- End container -->
+</section><!-- End main_content-->
+
+<!-- file upload -->
+<script src="../../../js/fileupload.js"></script>
+
+<script>
+    $('.dropzone').html5imageupload();
+</script>
+
+<!-- tooltip -->
+<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#default a").toolTip();
+    })
+</script>
+<!-- text editor -->
+<script src="../../../plugin/text-editor/text-editor-bootstarp.js"></script>
+
+<script type='text/javascript' src="../../../plugin/text-editor/summernote.js"></script>
+
+<script type="text/javascript">
+function changeType(){
+    if($("#lecture-type").val()!="text")
+    {
+       $("#textDiv").hide();
+       $("#uploadDiv").show();
+     }
+   else
+   {
+        $("#textDiv").show();
+        $("#uploadDiv").hide();
+    }
+}
+</script>
+
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+    $('#summernote').summernote({height: 300});
+});//]]>
+</script>
+
+<script src="../../../plugin/video/jquery_video_upload.js"></script>
+<script>
+    var Dropzone = require("enyo-dropzone");
+    Dropzone.autoDiscover = false;
+</script>
+
+
+<script>
+    // Get the template HTML and remove it from the doument
+    var previewNode = document.querySelector("#template");
+    previewNode.id = "";
+    var previewTemplate = previewNode.parentNode.innerHTML;
+    previewNode.parentNode.removeChild(previewNode);
+
+    var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
+        url: "http://www.torrentplease.com/dropzone.php", // Set the url
+        thumbnailWidth: 80,
+        thumbnailHeight: 80,
+        parallelUploads: 20,
+        previewTemplate: previewTemplate,
+        autoQueue: false, // Make sure the files aren't queued until manually added
+        previewsContainer: "#previews", // Define the container to display the previews
+        clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
+    });
+
+    myDropzone.on("addedfile", function(file) {
+        // Hookup the start button
+        file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file); };
+    });
+
+    // Update the total progress bar
+    myDropzone.on("totaluploadprogress", function(progress) {
+        document.querySelector("#total-progress .progress-bar").style.width = progress + "%";
+    });
+
+    myDropzone.on("sending", function(file) {
+        // Show the total progress bar when upload starts
+        document.querySelector("#total-progress").style.opacity = "1";
+        // And disable the start button
+        file.previewElement.querySelector(".start").setAttribute("disabled", "disabled");
+    });
+
+    // Hide the total progress bar when nothing's uploading anymore
+    myDropzone.on("queuecomplete", function(progress) {
+        document.querySelector("#total-progress").style.opacity = "0";
+    });
+
+    // Setup the buttons for all transfers
+    // The "add files" button doesn't need to be setup because the config
+    // `clickable` has already been specified.
+    document.querySelector("#actions .start").onclick = function() {
+        myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+    };
+    document.querySelector("#actions .cancel").onclick = function() {
+        myDropzone.removeAllFiles(true);
+    };
+</script>
