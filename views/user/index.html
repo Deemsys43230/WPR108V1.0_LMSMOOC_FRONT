@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <a href="index.html" id="logo"></a>
+                <a href="../../index.html" id="logo"></a>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-9">
                 <div class="margin-right-40 pull-right margin-top-2">
@@ -47,7 +47,7 @@
                                     <td>
                                         <strong>Andrew</strong><br/>
                                         <small>Web developer</small><br/>
-                                        <span class="pull-left">
+                                        <span class="pull-left" id="tooltip-call">
                                             <a href="#profile_edit" class="icon icon-pencil" title="Edit Profile" positionX="-20" positionY="-35"></a>
                                             <a href="#profile_view" class="icon icon-user" title="View Profile" positionX="-20" positionY="-35"></a>
                                         </span>
@@ -78,7 +78,7 @@
             <div class="col-md-12 col-sm-12">
                 <div id="mobnav-btn"></div>
                 <ul class="sf-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../../index.html">Home</a></li>
                     <li class="mega_drop_down">
                         <a href="#course_category">Course Category <i class="icon-down-dir"></i></a>
                         <div class="mobnav-subarrow"></div>
@@ -194,12 +194,11 @@
 <script type="text/javascript" src="../../js/tooltip.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        $("#default a").toolTip();
+        $("#tooltip-call a").toolTip();
     })
 </script>
 
 <!-- OTHER JS -->
-<script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/superfish.js"></script>
 <script src="../../js/retina.min.js"></script>
 <script src="../../assets/validate.js"></script>
@@ -215,8 +214,9 @@
 <script src="https://code.angularjs.org/1.3.14/angular-cookies.js"></script>
 
 <!-- For Handling Request -->
-<script src="../../angular/ocLazyLoad.min.js"></script>
 <script src="../../angular/scripts/loggedIn/loggedInController.js"></script>
+<script src="../../angular/ocLazyLoad.min.js"></script>
+
 
 <script src="../../js/jquery.nicescroll.js"></script>
 

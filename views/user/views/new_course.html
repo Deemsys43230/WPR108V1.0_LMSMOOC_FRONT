@@ -1,21 +1,6 @@
 
-
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- delay popup -->
-<link rel="stylesheet" href="../../../css/popup-delay.css">
-
-<link href="../../../css/video_preview.css" rel="stylesheet">
-
-<link rel="stylesheet" href="../../../css/input-tag.css">
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
-
-
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -62,7 +47,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -233,7 +218,7 @@
                             <div id="template" class="file-row">
                                 <!-- This is used as the file preview template -->
                                 <div>
-                                    <p class="name" data-dz-name style="width:80%;word-wrap: break-word;"></p>
+                                    <p class="name" data-dz-name></p>
                                     <strong class="error text-danger" data-dz-errormessage></strong>
                             </div>
                                 <div>
@@ -264,7 +249,7 @@
                 </ul>
                 <div class="col-md-12 video col-xs-12 preview-video">
                     <video width="100%" height="auto" id="player2" controls="controls">
-                        <source src="../../../plugin/video/temp%20(360p).mp4" type="video/mp4">
+                        <source src="../../plugin/video/temp%20(360p).mp4" type="video/mp4">
                         <p>Your browser leaves much to be desired.</p>
                     </video>
                 </div>
@@ -277,39 +262,22 @@
 </section><!-- End main_content-->
 
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>
 
+<!-- input tag -->
+<script src="../../js/input-tag.js"></script>
 
-<!-- JQUERY -->
-<script src="../../../js/input-tag.js"></script>
+<!-- pop up delay -->
+<script src="../../js/jquery1.11.1.js"></script>
+<script src="../../js/popup-delay.js"></script>
 
-<script src="../../../js/jquery1.11.1.js"></script>
-<script src="../../../js/popup-delay.js"></script>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-
-<script src="../../../plugin/video/jquery_video_upload.js"></script>
+<!-- video upload -->
 <script>
     var Dropzone = require("enyo-dropzone");
     Dropzone.autoDiscover = false;
 </script>
-
 
 <script>
     // Get the template HTML and remove it from the doument
@@ -360,82 +328,6 @@
     document.querySelector("#actions .cancel").onclick = function() {
         myDropzone.removeAllFiles(true);
     };
-</script>
-
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
-
-<!-- video -->
-<script src="../../../plugin/video/build/jquery.js"></script>
-<script src="../../../plugin/video/build/mediaelement-and-player.min.js"></script>
-<link rel="stylesheet" href="../../../plugin/video/build/mediaelementplayer.min.css" />
-
-<script>
-    $(document).ready(function() {
-        var max_fields      = 10; //maximum input boxes allowed
-        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-        var add_button      = $(".add_field_button"); //Add button ID
-
-        var x = 1; //initlal text box count
-        $(add_button).click(function(e){ //on add input button click
-            e.preventDefault();
-            if(x < max_fields){ //max input box allowed
-                x++; //text box increment
-                $(wrapper).append('<div><input type="text" name="mytext[]" class="required form-control no-margin"/><a href="#" class="remove_field btn btn-danger btn-xs margin-top-10 margin-bottom-10 pull-right">Remove</a><br/></div>'); //add input box
-            }
-        });
-
-        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-        })
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        var max_fields      = 10; //maximum input boxes allowed
-        var wrapper         = $(".input_fields_wrap1"); //Fields wrapper
-        var add_button      = $(".add_field_button1"); //Add button ID
-
-        var x = 1; //initlal text box count
-        $(add_button).click(function(e){ //on add input button click
-            e.preventDefault();
-            if(x < max_fields){ //max input box allowed
-                x++; //text box increment
-                $(wrapper).append('<div><input type="text" name="mytext[]" class="required form-control no-margin"/><a href="#" class="remove_field btn btn-danger btn-xs margin-top-10 margin-bottom-10 pull-right">Remove</a><br/></div>'); //add input box
-        }
-        });
-
-        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-        })
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        var max_fields      = 10; //maximum input boxes allowed
-        var wrapper         = $(".input_fields_wrap2"); //Fields wrapper
-        var add_button      = $(".add_field_button2"); //Add button ID
-
-        var x = 1; //initlal text box count
-        $(add_button).click(function(e){ //on add input button click
-            e.preventDefault();
-            if(x < max_fields){ //max input box allowed
-                x++; //text box increment
-                $(wrapper).append('<div><input type="text" name="mytext[]" class="required form-control no-margin"/><a href="#" class="remove_field btn btn-danger btn-xs margin-top-10 margin-bottom-10 pull-right">Remove</a><br/></div>'); //add input box
-            }
-        });
-
-        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-            e.preventDefault(); $(this).parent('div').remove(); x--;
-        })
-    });
 </script>
 
 <script>

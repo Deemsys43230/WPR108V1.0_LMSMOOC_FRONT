@@ -1,18 +1,6 @@
 
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- popup -->
-<link rel="stylesheet" href="../../../css/popup.css">
-
-<!-- table sort -->
-<link rel="stylesheet" href="../../../css/table-sort.css">
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
-
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -31,7 +19,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -79,7 +67,7 @@
                     <div class="col-md-12">
 
                         <div class="col-md-12 col-xs-12 no-padding">
-                            <table id="table4" class="table">
+                            <table id="lecture-sort" class="table">
                                 <thead>
                                 <tr class="nodrag">
                                     <th>No.</th>
@@ -92,7 +80,7 @@
                                     <td>1</td>
                                     <td colspan="3">Study of website development</td>
                                     <td>
-                                        <a href="#add_lecture_new" class="btn btn-xs btn-primary margin-top-3">
+                                        <a href="#add_new_lecture" class="btn btn-xs btn-primary margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-plus"></i>
                                             <span class="hidden-xs hidden-sm">Add Lectures</span>
                                         </a>&nbsp;
@@ -108,7 +96,7 @@
                                     <td>1</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -124,7 +112,7 @@
                                     <td>2</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -140,7 +128,7 @@
                                     <td>3</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -156,7 +144,7 @@
                                     <td>4</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -184,7 +172,7 @@
                                     <td>2</td>
                                     <td colspan="3">Study of website development</td>
                                     <td>
-                                        <a href="#add_lecture_new" class="btn btn-xs btn-primary margin-top-3">
+                                        <a href="#add_new_lecture" class="btn btn-xs btn-primary margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-plus"></i>
                                             <span class="hidden-xs hidden-sm">Add Lectures</span>
                                         </a>&nbsp;
@@ -200,7 +188,7 @@
                                     <td>1</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -216,7 +204,7 @@
                                     <td>2</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -232,7 +220,7 @@
                                     <td>3</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -248,7 +236,7 @@
                                     <td>4</td>
                                     <td>Study of website development</td>
                                     <td>
-                                        <a href="#lecture_edit" class="btn btn-xs btn-success margin-top-3">
+                                        <a href="#edit_lecture" class="btn btn-xs btn-success margin-top-3">
                                             <i class="hidden-md hidden-lg icon icon-edit"></i>
                                             <span class="hidden-xs hidden-sm">Edit</span>
                                         </a>
@@ -274,50 +262,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="yourModalId" class="yourModalClass text-center alert-warning" style="display:none;">
-                            <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
-                            <h4><strong>Alert!</strong></h4>
-                            <span class="text-center">Are you sure want to delete</span><br/><br/>
-                            <button class="btn btn-sm btn-danger">Delete</button>
-                        </div>
-                        <div id="yourModalIdQuiz" class="yourModalClass" style="display:none;">
-                            <a href="#yourModalIdQuiz" class="pull-right close padding-top-10">x</a><br/>
-                            <h4 class="text-center">Select Quiz</h4>
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Section Name</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Quiz 1 - Basic Level</td>
-                                    <td>
-                                        <a class="btn btn-xs btn-success">Select</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Quiz 2 - Intermediate Level</td>
-                                    <td>
-                                        <a class="btn btn-xs btn-success">Select</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Quiz 3 - Expert Level</td>
-                                    <td>
-                                        <a class="btn btn-xs btn-success">Select</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br/>
-                      
-                        </div>
                     </div>
                 </div>
             </div>
@@ -325,25 +269,60 @@
     </div><!-- End container -->
 </section><!-- End main_content-->
 
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
+<!-- pop up content-->
+<div id="yourModalId" class="yourModalClass text-center alert-warning">
+    <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+    <h4><strong>Alert!</strong></h4>
+    <span class="text-center">Are you sure want to delete</span><br/><br/>
+    <button class="btn btn-sm btn-danger">Delete</button>
+</div>
 
-<!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
+<div id="yourModalIdQuiz" class="yourModalClass">
+    <a href="#yourModalIdQuiz" class="pull-right close padding-top-10">x</a><br/>
+    <h4 class="text-center">Select Quiz</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Section Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Quiz 1 - Basic Level</td>
+            <td>
+                <a class="btn btn-xs btn-success">Select</a>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Quiz 2 - Intermediate Level</td>
+            <td>
+                <a class="btn btn-xs btn-success">Select</a>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Quiz 3 - Expert Level</td>
+            <td>
+                <a class="btn btn-xs btn-success">Select</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+</div>
 
 <script>new UISearch( document.getElementById( 'sb-search' ) );</script>
 
+<!--file upload-->
 <script>
     $('.dropzone').html5imageupload();
 </script>
 
 <!-- pop up -->
-<script src="../../../js/popup.js"></script>
 <script>
     var modal1 = Modality.init('#yourModalId', {
         effect: 'slide-up'
@@ -353,9 +332,9 @@
     });
 </script>
 
-<script type="text/javascript" src="../../../js/jquery-sortable-table.js"></script>
+<!-- table sort -->
 <script type="text/javascript">
-    $("#table4").rowSorter({
+    $("#lecture-sort").rowSorter({
         handler: "td.sorter"
     });
 </script>

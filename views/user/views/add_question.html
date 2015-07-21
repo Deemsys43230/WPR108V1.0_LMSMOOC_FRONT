@@ -1,15 +1,6 @@
 
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
-
-<!-- check and radio button -->
-<link rel="stylesheet" href="../../../css/check-radio.css"/>
-
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -28,7 +19,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -62,8 +53,7 @@
             </aside>
 
             <div class="col-md-8 col-lg-8 col-sm-7">
-                <a href="#question-list" class="pull-right btn-primary btn-sm margin-bottom-10 ">Back <span class="hidden-xs">to Question list</span></a>
-                <h4 class="create-title">Add Question</h4><hr>
+                <h4 class="create-title">{{title}} Question</h4><hr>
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="data-list no-margin entry">
@@ -139,7 +129,7 @@
                         </ul>
                         <br/>
                         <div class="text-center col-md-12 margin-top-20">
-                            <a href="" class=" btn btn-success">Save Quiz</a>
+                            <a href="" class=" btn btn-success">{{button}}</a>
                             <a href="#question-list" class=" btn btn-warning">Cancel</a>
                         </div>
                     </div>
@@ -149,17 +139,7 @@
     </div><!-- End container -->
 </section><!-- End main_content-->
 
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
-
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>

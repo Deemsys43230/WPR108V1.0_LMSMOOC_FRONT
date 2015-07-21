@@ -1,8 +1,4 @@
 
-
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
 <section id="main_content">
 
 <div class="container">
@@ -13,7 +9,7 @@
                   <div class="text-center">
                       <br/>
                       <form>
-                          <div class="dropzone" data-width="250" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:80%;height:auto" data-image="img/teacher_2.jpg" data-removeurl="/your_remove_image_script.html">
+                          <div class="dropzone" data-width="250" data-height="250" data-originalsize="false" data-url="canvas.php"  data-image="../../img/teacher_2.jpg" data-removeurl="/your_remove_image_script.html">
                               <input type="file" name="thumb"/>
                           </div>
                       </form>
@@ -85,17 +81,7 @@
 </div><!-- End container -->
 </section><!-- End main_content-->
 
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
-
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>

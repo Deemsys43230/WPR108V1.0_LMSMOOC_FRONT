@@ -1,17 +1,6 @@
 
-<link href="../../../css/single_course.css" rel="stylesheet">
-
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
-
-<!-- popup -->
-<link rel="stylesheet" href="../../../css/popup.css">
-
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -30,7 +19,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -165,7 +154,7 @@
 </section><!-- End main_content-->
 
 <!-- pop up linked popup.css, popup.js and inline script at bottom-->
-<div id="yourModalId" class="yourModalClass text-center" style="display: none">
+<div id="yourModalId" class="yourModalClass text-center">
     <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
     <h4><strong>Alert!</strong></h4>
     <span class="text-center">Are you sure want to Publish this course</span><br/><br/>
@@ -174,21 +163,9 @@
 </div>
 
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>
-
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
-
-<script src="../../../js/popup.js"></script>
 
 <!-- pop up -->
 <script>

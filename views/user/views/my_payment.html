@@ -1,6 +1,3 @@
-<!--date picker-->
-<link rel="stylesheet" type="text/css" href="../../../plugin/date-picker/date-picker/lib/bootstrap-datepicker.css" />
-<link rel="stylesheet" type="text/css" href="../../../plugin/date-picker/date-picker/lib/pikaday.css" />
 
 <section id="main_content">
     <div class="container">
@@ -12,8 +9,8 @@
                 </div>
                 <!--  Tabs -->
                 <ul class="nav nav-tabs" id="mytabs">
-                    <li class="active"><a href="#payment" data-toggle="tab">Payments</a></li>
-                    <li><a href="#report" data-toggle="tab">Reports</a></li>
+                    <li class="active"><a href="#payment" data-toggle="tab" onclick="return false;">Payments</a></li>
+                    <li><a href="#report" data-toggle="tab" onclick="return false;">Reports</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -167,7 +164,7 @@
 </section><!-- End main_content-->
 
 <!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
+<script type="text/javascript" src="../../js/tooltip.min.js"></script>
 <script type="text/javascript">
     $(function(){
         $(".default a").toolTip();
@@ -175,11 +172,11 @@
 </script>
 
 <!-- datepicker (https://github.com/jonthornton/Datepair.js)-->
-<script src="../../../plugin/date-picker/date-picker/lib/jquery-2.1.1.js"></script>
-<script src="../../../plugin/date-picker/date-picker/dist/jquery-timepicker.js"></script>
-<script src="../../../plugin/date-picker/date-picker/lib/bootstrap-datepicker.js"></script>
-<script src="../../../plugin/date-picker/date-picker/lib/pikaday.js"></script>
-<script src="../../../plugin/date-picker/date-picker/dist/datepair.js"></script>
+<script src="../../plugin/date-picker/date-picker/lib/jquery-2.1.1.js"></script>
+<script src="../../plugin/date-picker/date-picker/dist/jquery-timepicker.js"></script>
+<script src="../../plugin/date-picker/date-picker/lib/bootstrap-datepicker.js"></script>
+<script src="../../plugin/date-picker/date-picker/lib/pikaday.js"></script>
+<script src="../../plugin/date-picker/date-picker/dist/datepair.js"></script>
 
 <script>
     $('#basicExample .date').datepicker({

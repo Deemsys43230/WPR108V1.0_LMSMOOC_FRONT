@@ -1,15 +1,6 @@
 
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- popup -->
-<link rel="stylesheet" href="../../../css/popup.css">
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
-
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -28,7 +19,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -184,42 +175,31 @@
                 </div>
             </div>
         </div><!-- End row-->
-        </div>
-        <div id="yourModalId1" class="yourModalClass text-center alert-warning" style="display:none;">
-            <a href="#yourModalId1" class="pull-right close padding-top-10">x</a><br/>
-            <h4><strong>Alert!</strong></h4>
-            <span class="text-center">Are you sure want to delete</span><br/><br/>
-            <button class="btn btn-sm btn-danger">Delete</button>
-        </div>
-        <div id="yourModalId" class="yourModalClass" style="display:none;">
-            <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
-            <h4 class="text-center"><strong>Add New Quiz</strong></h4>
-            <label>Quiz Name</label>
-            <input class="form-control">
-            <div class="text-center">
-                <a href="#yourModalId"class="btn btn-sm btn-success">Save</a>
-                <a  href="#yourModalId"class="btn btn-sm btn-warning">Cancel</a>
-            </div>
-        </div>
-    </div><!-- End container -->
+    </div>
 </section><!-- End main_content-->
 
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
+<!-- pop up-->
+<div id="yourModalId1" class="yourModalClass text-center alert-warning" style="display:none;">
+    <a href="#yourModalId1" class="pull-right close padding-top-10">x</a><br/>
+    <h4><strong>Alert!</strong></h4>
+    <span class="text-center">Are you sure want to delete</span><br/><br/>
+    <button class="btn btn-sm btn-danger">Delete</button>
+</div>
+<div id="yourModalId" class="yourModalClass" style="display:none;">
+    <a href="#yourModalId" class="pull-right close padding-top-10">x</a><br/>
+    <h4 class="text-center"><strong>Add New Quiz</strong></h4>
+    <label>Quiz Name</label>
+    <input class="form-control">
+    <div class="text-center">
+        <a href="#yourModalId"class="btn btn-sm btn-success">Save</a>
+        <a  href="#yourModalId"class="btn btn-sm btn-warning">Cancel</a>
+    </div>
+</div>
 
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>
-
-<script src="../../../js/popup.js"></script>
 
 <!-- pop up -->
 <script>

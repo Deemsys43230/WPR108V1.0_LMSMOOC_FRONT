@@ -1,16 +1,7 @@
 
-<!-- file upload (http://dev.html5ux.com/upload-image/) -->
-<link href="../../../css/fileupload.css" rel="stylesheet">
-
-<!-- text editor -->
-<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.5.0/summernote.css">
-<!-- text editor end -->
-
-<!-- sidebar -->
-<link rel="stylesheet" href="../../../css/sidebar.css">
 
 <div id="slideout">
-    <img src="../../../img/askus.png" alt="Feedback" />
+    <img src="../../img/askus.png" alt="Feedback" />
     <div id="slideout_inner">
         <form>
             <textarea></textarea>
@@ -29,7 +20,7 @@
                     <div class="text-center">
                         <br/>
                         <form>
-                            <div class="dropzone" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" style="width:90%;height: auto" data-image="img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
+                            <div class="dropzone" id="course-thumb" data-width="400" data-height="250" data-originalsize="false" data-url="canvas.php" data-image="../../img/course/course-5.jpg" data-removeurl="/your_remove_image_script.html">
                                 <input type="file" name="thumb"/>
                             </div>
                         </form>
@@ -63,7 +54,7 @@
             </aside>
 
             <div class="col-md-8 col-lg-8 col-sm-7">
-                <h4 class="create-title">Add Lecture</h4><hr>
+                <h4 class="create-title">{{title}} Lecture</h4><hr>
                 <div class="row website-entry">
                     <div class="col-md-12">
                         <ul class="data-list no-margin entry">
@@ -125,7 +116,9 @@
                                           </div>
                                         </span>
                                     </div>
-                                    <label class="text-danger"><small>Note : Promo video should be below 15MB!</small></label>
+                                    <div class="col-md-12">
+                                        <label class="text-danger"><small>Note : Promo video should be below 15MB!</small></label>
+                                    </div>
                                 </div>
                                 <div class="table table-striped files row no-margin" id="previews">
 
@@ -171,23 +164,9 @@
 </section><!-- End main_content-->
 
 <!-- file upload -->
-<script src="../../../js/fileupload.js"></script>
-
 <script>
     $('.dropzone').html5imageupload();
 </script>
-
-<!-- tooltip -->
-<script type="text/javascript" src="../../../js/tooltip.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        $("#default a").toolTip();
-    })
-</script>
-<!-- text editor -->
-<script src="../../../plugin/text-editor/text-editor-bootstarp.js"></script>
-
-<script type='text/javascript' src="../../../plugin/text-editor/summernote.js"></script>
 
 <script type="text/javascript">
 function changeType(){
@@ -204,13 +183,14 @@ function changeType(){
 }
 </script>
 
+<!-- text editor -->
 <script type='text/javascript'>//<![CDATA[
 $(function(){
     $('#summernote').summernote({height: 300});
 });//]]>
 </script>
 
-<script src="../../../plugin/video/jquery_video_upload.js"></script>
+<!--video file upload-->
 <script>
     var Dropzone = require("enyo-dropzone");
     Dropzone.autoDiscover = false;
@@ -260,10 +240,13 @@ $(function(){
     // Setup the buttons for all transfers
     // The "add files" button doesn't need to be setup because the config
     // `clickable` has already been specified.
-    document.querySelector("#actions .start").onclick = function() {
-        myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+    window.onload = function(){
+        document.querySelector("#actions .start").onclick = function() {
+            myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+        };
+        document.querySelector("#actions .cancel").onclick = function() {
+            myDropzone.removeAllFiles(true);
+        };
     };
-    document.querySelector("#actions .cancel").onclick = function() {
-        myDropzone.removeAllFiles(true);
-    };
+
 </script>
