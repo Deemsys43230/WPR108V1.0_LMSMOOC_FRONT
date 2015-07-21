@@ -1,6 +1,5 @@
 //Module Creation
-var loginApp = angular.module('indexApp', ['authModule','requestModule','ngRoute']);
-
+var loginApp = angular.module('indexApp', ['authModule','requestModule','ngRoute','roleModule']);
 
 
 // Compare Confirm Password
@@ -87,11 +86,38 @@ loginApp.config(['$routeProvider',
               templateUrl:'login.html',
               controller:'logoutController'
             }).
+            when('/authError',{
+              templateUrl:'error.html'
+            }).
             otherwise({
                 redirectTo: '/index'
             });
     }]);
 
+//Role Authentication
+loginApp.run(['$rootScope','roleFactory','$location','authFactory','$cookieStore', function($rootScope,roleFactory,$location,authFactory,$cookieStore) {
+$rootScope.$on("$routeChangeStart", function(event, next, current) {
+var nextURL = next.originalPath;
+
+if (nextURL == "/logout") {
+  //Remove Oauth and Role from Cookies if logout
+   $cookieStore.remove('userObj');
+   $cookieStore.remove('roleId');
+};
+
+if(authFactory.getRole() == undefined){
+  nextURL = ''+nextURL;
+}
+else if(authFactory.getRole().userRole == "1"){
+  nextURL = 'superadmin'+nextURL;
+}
+else{
+nextURL = 'users'+nextURL;
+}
+    if(!roleFactory.isUrlAccessibleForUser(nextURL))
+    $location.path('/authError');
+});
+}]);
 
 //Declare Login Page Controller
 loginApp.controller('saveUserDetails', function($scope,$http,$location,userDetailService,requestHandler) {
@@ -160,12 +186,20 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
   $scope.login=function()
   {
     $scope.loginError="";
-    console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
-   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).success(function(results){
-    alert(JSON.stringify(results));
+    console.log("Username: "+$scope.loginDetail.emailAddress+",Password:"+$scope.loginDetail.password);
+   oAuthFactory.requestLogin($scope.loginDetail.emailAddress,$scope.loginDetail.password).success(function(results){
     if(authFactory.isAuthenticated())
     {
+      //set role in cookies
+      oAuthFactory.requestRole("getUserRole.json",$scope.loginDetail).then(function(results){
+        if(results.data.userRole == "1"){
+          $window.location.href = 'superadmin/';
+        }
+        else{
         $window.location.href = 'users/';
+        }
+      });
+        
     }
     else
     {
@@ -181,15 +215,28 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
 
 //logoutController
 loginApp.controller("logoutController",function($window,$scope,$location,authFactory,oAuthFactory,requestHandler,$cookieStore){
+
+  //Remove Oauth and Role from Cookies
    $cookieStore.remove('userObj');
-    $scope.login=function()
+   $cookieStore.remove('roleId');
+
+   $scope.login=function()
   {
     $scope.loginError="";
-    console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
-   oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).success(function(results){
+    console.log("Username: "+$scope.loginDetail.emailAddress+",Password:"+$scope.loginDetail.password);
+   oAuthFactory.requestLogin($scope.loginDetail.emailAddress,$scope.loginDetail.password).success(function(results){
     if(authFactory.isAuthenticated())
     {
+      //set role in cookies
+      oAuthFactory.requestRole("getUserRole.json",$scope.loginDetail).then(function(results){
+        if(results.data.userRole == "1"){
+          $window.location.href = 'superadmin/';
+        }
+        else{
         $window.location.href = 'users/';
+        }
+      });
+        
     }
     else
     {
@@ -197,10 +244,11 @@ loginApp.controller("logoutController",function($window,$scope,$location,authFac
     }
   }).error(function(){
      $scope.loginError="Please check your email and password.";
-     $location.path('/logout');
+     $location.path('/login');
   });  
   };
   });
+
 //Service
 loginApp.service('userDetailService', function() {
   this.userDetailsForm = null;
@@ -211,6 +259,20 @@ loginApp.service('userDetailService', function() {
 
   this.getUserDetailsForm = function() {
         return this.userDetailsForm;
+  };
+
+});
+
+//Service
+loginApp.service('roleService', function() {
+  this.userRole = null;
+
+  this.setuserRole = function(role) {
+        this.role = role;
+  };
+
+  this.getuserRole = function() {
+        return this.role;
   };
 
 });

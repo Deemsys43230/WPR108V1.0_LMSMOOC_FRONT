@@ -1,5 +1,5 @@
 //Module Creation
-var loggedinApp = angular.module('logApp', ['ngCookies']);
+var loggedinApp = angular.module('logApp', ['ngCookies','roleModule','authModule']);
 
 loggedinApp.config(['$routeProvider',
 
@@ -144,6 +144,29 @@ loggedinApp.config(['$routeProvider',
                 controller:'logoutController'
             });
     }]);
+
+//Role Authentication
+loggedinApp.run(['$window','$rootScope','roleFactory','$location','authFactory', function($window,$rootScope,roleFactory,$location,authFactory) {
+  $rootScope.$on("$routeChangeStart", function(event, next, current) {
+   var nextURL = next.originalPath;
+  if(nextURL == undefined){
+    nextURL = "users/";
+   }else{
+              if(authFactory.getRole() == undefined){
+              nextURL = ''+nextURL;
+            }
+            else if(authFactory.getRole().userRole == "1"){
+              nextURL = 'superadmin'+nextURL;
+            }
+            else{
+            nextURL = 'users'+nextURL;
+            }
+ }
+    if(!roleFactory.isUrlAccessibleForUser(nextURL))
+   $window.location.href = '../#/authError';
+});
+}]);
+
 
 // Logut Controller
 loggedinApp.controller('logoutController',['$window','$scope','$cookieStore','$location',function($window,$scope,$cookieStore,$location){

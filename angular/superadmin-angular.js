@@ -1,14 +1,15 @@
 
-var sampleApp = angular.module('superadmin', []);
+var adminApp = angular.module('superadmin', ['ngCookies','roleModule','authModule']);
  
 //Define Routing for app
 
-sampleApp.config(['$routeProvider',
+adminApp.config(['$routeProvider',
   function($routeProvider) {
 
     $routeProvider.
       when('/dashboard', {
-        templateUrl: '../superadmin/views/dashboard.html'
+        templateUrl: '../superadmin/views/dashboard.html',
+         controller:'dashboardController'
       }).
       when('/messages',{
       	templateUrl: '../superadmin/views/messages.html'
@@ -82,8 +83,40 @@ sampleApp.config(['$routeProvider',
        when('/settings', {
         templateUrl: '../superadmin/views/settings.html'
       }).
-
+        when('/authError',{
+              templateUrl:'error.html'
+            }).
       otherwise({
         redirectTo: '/dashboard'
+        
       });
+}]);
+
+//Role Authentication
+adminApp.run(['$window','$rootScope','roleFactory','$location','authFactory', function($window,$rootScope,roleFactory,$location,authFactory) {
+  $rootScope.$on("$routeChangeStart", function(event, next, current) {
+   var nextURL = next.originalPath;
+   if(nextURL == undefined){
+    nextURL = "superadmin/";
+   }else{
+              if(authFactory.getRole() == undefined){
+              nextURL = ''+nextURL;
+            }
+            else if(authFactory.getRole().userRole == "1"){
+              nextURL = 'superadmin'+nextURL;
+            }
+            else{
+            nextURL = 'users'+nextURL;
+            }
+ }
+    if(!roleFactory.isUrlAccessibleForUser(nextURL))
+   $window.location.href = '../#/authError';
+});
+}]);
+
+// dashboard  Controller
+adminApp.controller('dashboardController',['$window','$scope','$cookieStore','$location',function($window,$scope,$cookieStore,$location){
+    if($cookieStore.get("userObj") == undefined){
+          $window.location.href = '../#/login';
+    }
 }]);

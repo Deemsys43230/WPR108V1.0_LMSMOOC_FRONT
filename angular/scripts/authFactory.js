@@ -16,11 +16,13 @@ myApp.factory("authFactory",["$cookieStore","$http",function($cookieStore,$http)
         userObj=response;
     };
 
-    userObj.alertFunction=function()
+    userObj.setRole=function(roleId)
     {
-        alert("ok");
+        $cookieStore.put("roleId",roleId);
     };
-
+  userObj.getRole=function(){
+        return $cookieStore.get("roleId");        
+    };
     userObj.isAuthenticated=function(){
         if($cookieStore.get("userObj")== undefined)//If not available
         {
@@ -53,6 +55,16 @@ myApp.factory("oAuthFactory",["$http","authFactory",function($http,authFactory){
          });
     };
 
+ oAuthObj.requestRole=function(requestURL,params)
+    {
+         requestURL="http://localhost:8080/Learnterest/"+requestURL;
+       return $http.post(requestURL,params).then(function (results) {
+            console.log(results);     
+            authFactory.setRole(results.data);
+            JSON.stringify(authFactory.getRole());
+            return results;
+         });
+    };
     return oAuthObj;
 
 }]);
