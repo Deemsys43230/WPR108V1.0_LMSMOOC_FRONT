@@ -16,13 +16,11 @@ myApp.factory("authFactory",["$cookieStore","$http",function($cookieStore,$http)
         userObj=response;
     };
 
-    userObj.setRole=function(roleId)
+    userObj.alertFunction=function()
     {
-        $cookieStore.put("roleId",roleId);
+        alert("ok");
     };
-  userObj.getRole=function(){
-        return $cookieStore.get("roleId");        
-    };
+
     userObj.isAuthenticated=function(){
         if($cookieStore.get("userObj")== undefined)//If not available
         {
@@ -45,7 +43,7 @@ myApp.factory("oAuthFactory",["$http","authFactory",function($http,authFactory){
 
     oAuthObj.requestLogin=function(username,password)
     {
-       return $http.get("http://localhost:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).success(function (results) {
+       return $http.get("http://192.168.1.16:8080/Learnterest/oauth/token?grant_type=password&client_id=restapp&client_secret=restapp&username="+username+"&password="+password).success(function (results) {
             console.log(results);     
             authFactory.setUserObj(results);
             return results;
@@ -55,16 +53,6 @@ myApp.factory("oAuthFactory",["$http","authFactory",function($http,authFactory){
          });
     };
 
- oAuthObj.requestRole=function(requestURL,params)
-    {
-         requestURL="http://localhost:8080/Learnterest/"+requestURL;
-       return $http.post(requestURL,params).then(function (results) {
-            console.log(results);     
-            authFactory.setRole(results.data);
-            JSON.stringify(authFactory.getRole());
-            return results;
-         });
-    };
     return oAuthObj;
 
 }]);

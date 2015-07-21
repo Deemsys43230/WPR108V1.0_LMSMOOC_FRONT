@@ -9,11 +9,11 @@ myApp.factory("requestHandler",['$http','authFactory',function($http,authFactory
         if(isAuthenticated==1)
         {
             
-                requestURL="http://localhost:8080/Learnterest/"+requestURL+"?access_token="+authFactory.getUserObj().access_token;
+                requestURL="http://192.168.1.16:8080/Learnterest/"+requestURL+"?access_token="+authFactory.getUserObj().access_token;
         }
         else{
            
-             requestURL="http://localhost:8080/Learnterest/"+requestURL;
+             requestURL="http://192.168.1.16:8080/Learnterest/"+requestURL;
         }
 
          return $http.get(requestURL,params).then(function (results) {
@@ -25,10 +25,10 @@ myApp.factory("requestHandler",['$http','authFactory',function($http,authFactory
     requestObj.postRequest=function(requestURL,params,isAuthenticated){      
        if(isAuthenticated==1)
         {
-                requestURL="http://localhost:8080/Learnterest/"+requestURL+"?access_token="+authFactory.getUserObj().access_token;
+                requestURL="http://192.168.1.16:8080/Learnterest/"+requestURL+"?access_token="+authFactory.getUserObj().access_token;
         }
         else{
-             requestURL="http://localhost:8080/Learnterest/"+requestURL;
+             requestURL="http://192.168.1.16:8080/Learnterest/"+requestURL;
         }
         return $http.post(requestURL,params).then(function (results) {
                 return results;
