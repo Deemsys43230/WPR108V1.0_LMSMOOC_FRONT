@@ -180,7 +180,6 @@ ul.nave
     -ms-transition:all .5s ease-in-out;
     float:left;
     transition:all .5s ease-in-out;
-    float:left;
 }
 .icon i{top:10px;position:relative;}
 
@@ -263,7 +262,7 @@ span.course-content h4{
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 80px;
+    width: 85px;
     height: 20px;
     padding: 2px;
     background-color: white;
@@ -370,7 +369,7 @@ span.course-content h4{
     background-image: linear-gradient(to bottom, #eeeeee, white);
 }
 .switch-input:checked ~ .switch-handle {
-    left: 60px;
+    left: 65px;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -487,9 +486,13 @@ td.pending a:hover{
     color: #fff;
     width:100%;
     background-color: #005b7f;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .superadmin h3{
     font-size: 20px;
+}
+
+.fullwidth{
+    width: 100%;
 }
