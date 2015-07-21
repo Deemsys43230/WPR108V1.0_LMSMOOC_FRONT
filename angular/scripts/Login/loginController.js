@@ -216,7 +216,7 @@ loginApp.controller('saveUserDetails', function($scope,$http,$location,userDetai
 $scope.isValid=false;
 
 //Check for Email Already Exists
- $scope.checkEmail = function() {   
+ $scope.checkEmail = function() {
 
  	if($scope.userDetailsForm.emailAddress!="")
  	{
@@ -262,7 +262,7 @@ else
 
 //Enrich the Account Profile
  $scope.updateUserDetails=function(){
-    requestHandler.postRequest("updateUserDetails.json",$scope.userDetailsForm,0).then(function(results){       
+    requestHandler.postRequest("updateUserDetails.json",$scope.userDetailsForm,0).then(function(results){
           userDetailService.setUserDetailsForm(null);
           $location.path('/login');
     });
@@ -282,7 +282,8 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
     alert(JSON.stringify(results));
     if(authFactory.isAuthenticated())
     {
-        $window.location.href = '../user/';
+        alert("isAuthenticated");
+        $window.location.href = '../user/#/index';
     }
     else
     {
@@ -291,7 +292,7 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
   }).error(function(){
      $scope.loginError="Please check your email and password.";
      $location.path('/login');
-  });  
+  });
   };
 
 });
@@ -315,7 +316,7 @@ loginApp.controller("logoutController",function($window,$scope,$location,authFac
   }).error(function(){
      $scope.loginError="Please check your email and password.";
      $location.path('/logout');
-  });  
+  });
   };
   });
 //Service
