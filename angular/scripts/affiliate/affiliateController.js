@@ -95,6 +95,30 @@ adminApp.config(['$routeProvider','$ocLazyLoadProvider',
           when('/blog_post', {
               templateUrl: '../common/views/blog_post.html'
           }).
+          when('/term_of_use', {
+              templateUrl: '../common/views/term_of_use.html'
+          }).
+          when('/privacy_policy', {
+              templateUrl: '../common/views/privacy_policy.html'
+          }).
+          when('/refund_policy', {
+              templateUrl: '../common/views/refund_policy.html'
+          }).
+          when('/affiliate_login', {
+              templateUrl: '../common/views/affiliate_login.html'
+          }).
+          when('/about_us', {
+              templateUrl: '../common/views/about_us.html'
+          }).
+          when('/promocode', {
+              templateUrl: '../common/views/promocode.html'
+          }).
+          when('/FAQ', {
+              templateUrl: '../common/views/FAQ.html'
+          }).
+          when('/contacts', {
+              templateUrl: '../common/views/contacts.html'
+          }).
           otherwise({
               redirectTo: '/index'
           });
