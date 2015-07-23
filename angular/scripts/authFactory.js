@@ -1,4 +1,4 @@
-var myApp=angular.module("authModule",['ngCookies']);
+var myApp=angular.module("authModule",['ngRoute','ngCookies']);
 
 myApp.factory("authFactory",["$cookieStore","$http",function($cookieStore,$http){
     
