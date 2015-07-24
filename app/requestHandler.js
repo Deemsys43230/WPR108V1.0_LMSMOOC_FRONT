@@ -7,7 +7,6 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     //*IMPORTANT*//
     var hostedDomain="http://localhost/Learnterest";
 
-
     requestObj.getRequest=function(requestURL,params){
 
         requestURL=hostedDomain+requestURL;
@@ -25,7 +24,8 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
          requestURL=hostedDomain+requestURL;
     
          return $http.post(requestURL,params).then(function (results) {
-            console.log(results);    
+            console.log(results);
+             alert(JSON.stringify(results));
             return results;   
          });
     };

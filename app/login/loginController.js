@@ -5,9 +5,7 @@ commonApp.controller("loginController",function($scope,$http,$location,requestHa
 
 	$scope.login=function(){
 		console.log("user logging in");
-		var login=requestHandler.postRequest("/api/j_spring_security_check?username=user&password=user","");
-
-		login.then(function(result){
+		requestHandler.postRequest("/api/j_spring_security_check?username=user&password=user","");
 
 		var getRole=requestHandler.getRequest("/api/getCurrentUserRole.json","");
 
@@ -20,13 +18,6 @@ commonApp.controller("loginController",function($scope,$http,$location,requestHa
 			}
 		});
 
-	});
-
 	};
-
-	$scope.logout=function(){
-		console.log("User logging out");
-		requestHandler.postRequest("/api/j_spring_security_logout","");
-	}
 
 });
