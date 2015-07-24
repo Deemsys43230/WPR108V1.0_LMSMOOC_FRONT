@@ -1,4 +1,4 @@
-var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad']);
+var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule']);
 
 userApp.config(['$routeProvider','$ocLazyLoadProvider',
 
@@ -27,21 +27,16 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider',
                 }
 
             }).
-            when('/logout', {
-                templateUrl: '../common/views/login.html',
-                controller: 'logoutController',
-                resolve: {
-                    loadMyFiles:function($ocLazyLoad) {
-                        return $ocLazyLoad.load({
-                            name:'userApp',
-                            files:[
-                                '../../app/logout/logoutController.js'
-                            ]
-                        })
-                    }
-                }
-            }).
             otherwise({
                 redirectTo: '/'
             });
 }]);
+
+userApp.controller('logoutController',function($scope,$window,requestHandler){
+    $scope.logout = function(){
+        alert("calling");
+        console.log("hit login controller");
+        requestHandler.getRequest("/api/j_spring_security_logout","");
+        $window.location.href = '../common';
+    };
+});
