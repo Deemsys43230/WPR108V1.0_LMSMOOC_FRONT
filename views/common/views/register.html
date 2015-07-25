@@ -8,6 +8,7 @@
 			</p>
 			<hr>
 			<form role="form" name="regForm" class="form-horizontal" novalidate>
+                <div class="col-md-12">
 				<div class="form-group">
 					<input type="text" class=" form-control" name="fullName" ng-model="userDetailsForm.fullName"  placeholder="Full Name" required>
 					<span class="input-icon"><i class=" icon-user"></i></span>
@@ -41,8 +42,8 @@
                 <div class="checkbox small terms col-md-offset-2 col-sm-offset-2 col-xs-offset-1">
                     <label><input type="checkbox" name="agree" ng-model="userDetailsForm.agreeTermsAndCondition" ng-true-value="1"  ng-false-value="0" required><span>I accept the&nbsp;</span><a href="">Terms & Conditions</a></label>
                 </div>
-
-                 <button ng-click="creatUser(userDetailsForm);" ng-disabled="regForm.$invalid" class="button_fullwidth" ng-class="{'button-disable':regForm.$invalid}">Create Account</button>
+                </div>
+                 <button ng-click="createUser(userDetailsForm);" ng-disabled="regForm.$invalid" class="button_fullwidth" ng-class="{'button-disable':regForm.$invalid}">Create Account</button>
                 <a href="#login" class="button_fullwidth-2">Log in</a>
 			</form>
 		</div>
