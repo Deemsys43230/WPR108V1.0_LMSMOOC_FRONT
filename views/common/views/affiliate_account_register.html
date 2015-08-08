@@ -79,14 +79,15 @@
                                                 </span>
                                             </div>
                                         </li>
-                                        <li>
-                                            <input name="gender" type="radio" class="required check_radio" value="Male">
-                                            <label class="label_gender"> Male</label>
+                                        <li class="check-radio">
+                                            <input type="radio" class=" option-input radio size-change" name="example" />
+                                            <label class="topup">Male</label>
                                         </li>
-                                        <li>
-                                            <input name="gender" type="radio" class="required check_radio" value="Female">
-                                            <label class="label_gender"> Female</label>
-                                        </li>
+
+                                        <li class="check-radio">
+                                            <input type="radio" class=" option-input radio size-change" name="example" />
+                                            <label class="topup">Female</label>
+                                        </li> 
                                     </ul>
                                 </ul>
                             </div><!-- end col-md-6 -->
@@ -313,36 +314,29 @@
 </script>
 
 <script>
-    $(document).ready(function(){
-        //Check and radio input styles
-        $('input.check_radio').iCheck({
-            checkboxClass: 'icheckbox_square-aero',
-            radioClass: 'iradio_square-aero'
+    
+    var picker = new Pikaday(
+        {
+            field: document.getElementById('datepicker'),
+            firstDay: 1,
+            minDate: new Date(1940, 0, 1),
+            maxDate: new Date(new Date().getFullYear()-7, 12, 31),
+            yearRange: [1940, new Date().getFullYear()-7],
+            format:'MM/DD/YYYY',
+            defaultDate: new Date(new Date().getFullYear()-15,1,1)
         });
 
-        //Pace holder
-        $('input, textarea').placeholder();
+    picker.setMoment(moment('MM/DD/YYYY'));
+
+    var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker1'),
+        firstDay: 1,
+        minDate: new Date(1980, 0, 1),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000,2020],
+        format:'MM/DD/YYYY'
     });
-</script>
-
-<script>
-
-      var picker = new Pikaday(
-              {
-                  field: document.getElementById('datepicker'),
-                  firstDay: 1,
-                  minDate: new Date('2000-01-01'),
-                  maxDate: new Date('2020-12-31'),
-                  yearRange: [2000,2020]
-              });
-      var picker = new Pikaday(
-              {
-                  field: document.getElementById('datepicker1'),
-                  firstDay: 1,
-                  minDate: new Date('2000-01-01'),
-                  maxDate: new Date('2020-12-31'),
-                  yearRange: [2000,2020]
-              });
 
 </script>
 

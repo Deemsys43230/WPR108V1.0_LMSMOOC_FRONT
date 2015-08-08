@@ -12,7 +12,7 @@ userDetailsApp.controller("userDetailController",function($scope,$http,$location
 
 //Enrich the Account Profile
     $scope.updateUserDetails=function(){
-        requestHandler.postRequest("/api/updateUserDetails.json",$scope.userDetailsForm,0).then(function(results){
+        requestHandler.postRequest("updateUserDetails.json",$scope.userDetailsForm,0).then(function(results){
             userDetailService.setUserDetailsForm(null);
             $location.path('/user-registration-success');
         });

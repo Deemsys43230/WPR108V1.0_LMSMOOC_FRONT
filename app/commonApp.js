@@ -1,12 +1,54 @@
 var commonApp= angular.module('commonApp', ['ngRoute','oc.lazyLoad']);
 
-commonApp.config(['$routeProvider','$ocLazyLoadProvider',
+commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
-    function($routeProvider,$ocLazyLoadProvider) {
+    function($routeProvider,$ocLazyLoadProvider,$httpProvider) {
         $ocLazyLoadProvider.config({
             debug:false,
             events:true
         });
+
+        //Do For Cross Orgin Login Management
+        $httpProvider.defaults.withCredentials = true;
+
+        $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
+                return {
+                    'request': function(request) {
+
+                        return request;
+                    },
+                    'response': function (response) {
+                        return response;
+                    },
+                    'responseError': function (rejection) {
+                        switch (rejection.status) {
+                            case 400: {
+                                break;
+                            }
+                            case 401:{
+                              alert("restricted");
+                            }
+                            case 403: {
+                              alert("yes !");
+                              alert("Get out");
+                                $location.path("/login");
+
+                                break;
+                            }
+                            case 500: {
+                                break;
+                            }
+                            default : {
+                               
+
+                                break;
+                            }
+                        }
+
+                        return $q.reject(rejection);
+                    }
+                };
+            }]);
 
         $routeProvider.
             when('/login', {
@@ -31,7 +73,9 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/registration/registrationController.js'
+                                '../../app/registration/registrationService.js',
+                                '../../app/registration/registrationController.js',
+                                '../../plugin/date-picker/moment.js',
                             ]
                         })
                     }
@@ -45,14 +89,14 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../plugin/check_radio/skins/square/aero.css',
+                                '../../plugin/date-picker/moment.js',
                                 '../../css/check-radio.css',
                                 '../../plugin/date-picker/pikaday.css',
                                 '../../js/jquery-ui-1.8.12.min.js',
                                 '../../js/jquery.validate.js',
-                                '../../plugin/check_radio/jquery.icheck.js',
                                 '../../plugin/date-picker/pikaday.js',
-                                '../../app/registration/userDetailController.js'
+                                '../../app/registration/userDetailController.js',
+
                             ]
                         })
                     }
@@ -67,7 +111,7 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/registration/pageRedirect.js'
+                                '../../app/registration/registrationPageRedirect.js'
                             ]
                         })
                     }
@@ -117,7 +161,17 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                 templateUrl: 'views/affiliate_login.html'
             }).
             when('/affiliate_register', {
-                templateUrl: 'views/affiliate_register.html'
+                templateUrl: 'views/affiliate_register.html',
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../plugin/date-picker/moment.js'
+                            ]
+                        })
+                    }
+                }
             }).
             when('/affiliate_account_register', {
                 templateUrl: 'views/affiliate_account_register.html',
@@ -126,12 +180,11 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../plugin/check_radio/skins/square/aero.css',
                                 '../../css/check-radio.css',
                                 '../../plugin/date-picker/pikaday.css',
                                 '../../js/jquery-ui-1.8.12.min.js',
                                 '../../js/jquery.validate.js',
-                                '../../plugin/check_radio/jquery.icheck.js',
+                                '../../plugin/date-picker/moment.js',
                                 '../../plugin/date-picker/pikaday.js'
                             ]
                         })
@@ -146,7 +199,7 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../angular/scripts/Login/pageRedirect.js'
+                                '../../app/registration/registrationPageRedirect.js'
                             ]
                         })
                     }

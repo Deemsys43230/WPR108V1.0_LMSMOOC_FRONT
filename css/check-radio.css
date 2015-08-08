@@ -1,6 +1,25 @@
 .check-radio label{
     color: #999;
 }
+
+.size-change{
+    top:0px !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.topup{
+    padding: 15px 0px 0px 5px;
+    position: absolute;
+}
+
+.option-input.size-change:checked::before {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 22px !important;
+    line-height: 40px !important;
+}
+
 .option-input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -28,7 +47,7 @@
 }
 
 .option-input:checked {
-    background: limegreen   ;
+    background: #8dc63f;
     outline: none;
 }
 
@@ -45,7 +64,7 @@
 }
 
 .option-input:checked::after {
-    background: limegreen;
+    background: #8dc63f;
     content: '';
     display: block;
     position: relative;
@@ -55,3 +74,4 @@
 .option-input.radio { border-radius: 50%; }
 
 .option-input.radio::after { border-radius: 50%; }
+

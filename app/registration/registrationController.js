@@ -2,12 +2,13 @@ var registerApp= angular.module('commonApp', ["requestModule"]);
 
 registerApp.controller("registrationController",function($scope,$http,$location,userDetailService,requestHandler){
     $scope.isValid=false;
+    
     //Check for Email Already Exists
     $scope.checkEmail = function() {
 
         if($scope.userDetailsForm.emailAddress!="")
         {
-            requestHandler.postRequest("/api/isNewUser.json",$scope.userDetailsForm,0).then(function(results){
+            requestHandler.postRequest("isNewUser.json",$scope.userDetailsForm,0).then(function(results){
                 if (!results.data.isNewUser) {
                     $scope.emailAlreadyExist= "Email ID Already Exists!";
                     $scope.isValid=false;
@@ -22,14 +23,18 @@ registerApp.controller("registrationController",function($scope,$http,$location,
     }
 
     //Create New User
-    $scope.createUser=function(){
+    $scope.createUser=function (){
         //Operation After clicked create account
-
-        requestHandler.postRequest("/api/saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
+        alert("hit createUser");
+        requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
+            var date = new Date();
+            var year=date.getFullYear();
+            year = year-25;
+            var dob = '01' + '/' + '01' + '/' + year;
+            results.data.userDetailsForm.dateOfBirth=dob;
             userDetailService.setUserDetailsForm(results.data.userDetailsForm);
             $location.path('/create_account');
         });
-
     }
 
 });
@@ -65,17 +70,3 @@ registerApp.directive('ngBlur', ['$parse', function($parse) {
         });
     }
 }]);
-
-//Service
-registerApp.service('userDetailService', function() {
-    this.userDetailsForm = null;
-
-    this.setUserDetailsForm = function(userDetailsForm) {
-        this.userDetailsForm = userDetailsForm;
-    };
-
-    this.getUserDetailsForm = function() {
-        return this.userDetailsForm;
-    };
-
-});

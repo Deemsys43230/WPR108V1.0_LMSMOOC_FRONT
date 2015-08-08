@@ -9,24 +9,6 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider',
         });
 
         $routeProvider.
-             when('/', {
-                templateUrl: 'views/course_category.html',
-                resolve: {
-                    loadMyFiles:function($ocLazyLoad) {
-                        return $ocLazyLoad.load({
-                            name:'userApp',
-                            files:[
-                                '../../js/bootstrap.min.js',
-                                '../../plugin/menu/css/component.css',
-                                '../../plugin/menu/js/modernizr.custom.js',
-                                '../../plugin/menu/js/jquery.dlmenu.js',
-                                '../../js/jquery-mouse-overlay.js'
-                            ]
-                        })
-                    }
-                }
-
-            }).
             when('/course_category', {
                 templateUrl: 'views/course_category.html',
                 resolve: {
@@ -627,7 +609,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider',
                 templateUrl: '../common/views/contacts.html'
             }).
             otherwise({
-                redirectTo: '/'
+                redirectTo: '/course_category'
             });
 }]);
 
