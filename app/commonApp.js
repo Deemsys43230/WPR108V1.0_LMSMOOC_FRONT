@@ -65,6 +65,24 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                     }
                 }
             }).
+             when('/login:verificationCode', {
+                templateUrl: 'views/emailVerification.html',
+                controller: 'emailController',
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../app/registration/emailVerification.js',
+                                '../../css/ns-style-bar.css',
+                                '../../js/modernizr.custom.js',
+                                '../../js/classie.js',
+                                '../../js/notificationFx.js'
+                            ]
+                        })
+                    }
+                }
+            }).
             when('/register', {
                 templateUrl: 'views/register.html',
                 controller: 'registrationController',
@@ -73,9 +91,8 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/registration/registrationService.js',
                                 '../../app/registration/registrationController.js',
-                                '../../plugin/date-picker/moment.js',
+                                '../../plugin/date-picker/moment.js'
                             ]
                         })
                     }
@@ -95,7 +112,7 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                                 '../../js/jquery-ui-1.8.12.min.js',
                                 '../../js/jquery.validate.js',
                                 '../../plugin/date-picker/pikaday.js',
-                                '../../app/registration/userDetailController.js',
+                                '../../app/registration/userDetailController.js'
 
                             ]
                         })

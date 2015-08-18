@@ -24,12 +24,12 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     
          return $http.post(requestURL,params).then(function (results) {
             console.log(results);
-             alert(JSON.stringify(results));
             return results;   
          });
     };
+    
     requestObj.loginRequest=function(){      
-         $http.post('http://localhost:8085/Learnterest/j_spring_security_check?username=user&password=user').success(function(){
+         $http.post('http://localhost:8085/Learnterest/j_spring_security_check?username=magesh123@gmail.com&password=magesh@123').success(function(){
             alert("Do nothing!!");
         });
     };

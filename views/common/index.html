@@ -7,6 +7,8 @@
   	<meta charset="utf-8">
     <title>LEARN - Courses, Education site template</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon"/>
@@ -21,7 +23,7 @@
     <link href="../../css/common.css" rel="stylesheet">
 </head>
 
-<body ng-app="commonApp">
+<body ng-app="commonApp" onload="error()">
 
 <header>
 

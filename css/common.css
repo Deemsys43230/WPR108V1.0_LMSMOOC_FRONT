@@ -7258,3 +7258,37 @@ p.name{
 .font-size-300{
     font-size:300px;
 }
+
+.error-message{
+    position: relative;
+    display: inline-block !important;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.error-message span{
+    display: inline-block !important;
+    position: absolute;
+    min-width:auto;
+    padding: 0 7px;
+    color: #FFFFFF;
+    background: #e15053;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 0px;
+    bottom: 63px;
+    right: -15px;
+}
+
+.error-message span:after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 23px;
+    margin-left: -6px;
+    width: 0; height: 0;
+    border-top: 6px solid #e15053;
+    border-left: 6px solid transparent;
+}

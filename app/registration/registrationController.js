@@ -1,31 +1,13 @@
 var registerApp= angular.module('commonApp', ["requestModule"]);
 
 registerApp.controller("registrationController",function($scope,$http,$location,userDetailService,requestHandler){
-    $scope.isValid=false;
-    
-    //Check for Email Already Exists
-    $scope.checkEmail = function() {
-
-        if($scope.userDetailsForm.emailAddress!="")
-        {
-            requestHandler.postRequest("isNewUser.json",$scope.userDetailsForm,0).then(function(results){
-                if (!results.data.isNewUser) {
-                    $scope.emailAlreadyExist= "Email ID Already Exists!";
-                    $scope.isValid=false;
-                }
-                else{
-                    $scope.emailAlreadyExist= "";
-                    $scope.isValid=true;
-                }
-            });
-        }
-
-    }
 
     //Create New User
     $scope.createUser=function (){
-        //Operation After clicked create account
+        
         alert("hit createUser");
+
+        //Operation After clicked create account
         requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
             var date = new Date();
             var year=date.getFullYear();
@@ -70,3 +52,57 @@ registerApp.directive('ngBlur', ['$parse', function($parse) {
         });
     }
 }]);
+
+
+//Check for Email Already Exists
+registerApp.directive("emailexists", function ($q, $timeout,requestHandler) {
+    var CheckEmailExists = function (isNew) {
+        if(isNew==true)
+            return true;
+        else
+            return false;
+    };
+
+    return {
+        restrict: "A",
+        require: "ngModel",
+        link: function (scope, element, attributes, ngModel) {
+            ngModel.$asyncValidators.emailexists = function (modelValue) {
+                var defer = $q.defer();
+                $timeout(function () {
+                    var isNew;
+                    var sendRequest=requestHandler.postRequest("isNewUser.json",modelValue,0).then(function(results){
+                        isNew=results.data.isNewUser;
+                    });
+
+                    sendRequest.then(function(){
+
+                        if (CheckEmailExists(isNew)){
+                            defer.resolve();
+                        }
+                        else{
+                            defer.reject();
+                        } 
+                    });
+                }, 10);
+
+                return defer.promise;
+            }
+        }
+    };
+});
+
+
+//Service
+registerApp.service('userDetailService', function() {
+    this.userDetailsForm = null;
+
+    this.setUserDetailsForm = function(userDetailsForm) {
+        this.userDetailsForm = userDetailsForm;
+    };
+
+    this.getUserDetailsForm = function() {
+        return this.userDetailsForm;
+    };
+
+});

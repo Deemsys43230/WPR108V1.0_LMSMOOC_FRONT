@@ -21,21 +21,22 @@
 			<div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
        
 				<div class="form-group">
-					<span style="color:red" class="help-inline">{{loginError}}</span>
+					<span class="error-message">{{loginError}}</span>
 					<input type="email" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
-					<span class="input-icon"><i class=" icon-user"></i></span>
-					<span style="color:red" ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 
-    				<span style="color:red" ng-show="loginForm.Email.$error.required" class="help-inline">Required</span>
-    				<span style="color:red" ng-show="loginForm.Email.$error.email" class="help-inline">Email is not valid</span>
+					<span class="input-icon"><i class="icon-user"></i></span>
+					<span ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 
+    				<span class="error-message" ng-show="loginForm.Email.$error.required"><span>Required.</span></span>
+    				<span class="error-message" ng-show="loginForm.Email.$error.email"><span>Email&nbsp;is&nbsp;not&nbsp;valid.</span></span>
     				</span>
 					<span class="input-icon"><i class=" icon-user"></i></span>
 				</div>
 				<div class="form-group margin-bottom-5">
 					<input type="password" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
-					<span style="color:red" ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid"> 
-    				<span style="color:red" ng-show="loginForm.Password.$error.required" class="help-inline">Required</span>
+					<span  ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid"> 
+    				<span class="error-message" ng-show="loginForm.Password.$error.required"><span>Required.</span></span>
     				</span>
 					<span class="input-icon"><i class="icon-lock"></i></span>
+					<input type="hidden" id="csrftoken_" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
 				</div>
 				<p class="small forget">
 					<a href="#">Forgot Password?</a>
@@ -49,3 +50,21 @@
 </div>
 </div>
 </section> <!-- End login -->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    $('#download').click(function(){                
+
+            var params = $('#params_').clone();
+            var csrftoken = $("#csrftoken_").clone();
+            $('<form target="_blank" action="report" method="post"></form>')
+                .append(params)
+                .append(csrftoken)
+                .appendTo('body')
+                .submit()
+                .remove();
+
+        });
+    });
+</script>
