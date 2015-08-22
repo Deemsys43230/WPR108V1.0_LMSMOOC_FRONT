@@ -11,9 +11,7 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
 
         requestURL=hostedDomain+requestURL;    
          return $http.get(requestURL,params).then(function (results) {
-            console.log(results);    
-            alert(JSON.stringify(results));
-            alert(results.data.userRole)
+            console.log(results);
             return results;   
          });
     };

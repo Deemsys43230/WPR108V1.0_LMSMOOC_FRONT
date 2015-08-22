@@ -1,6 +1,7 @@
 <section id="login_bg">
 <div  class="container">
 <div class="row">
+	<errordisplay message="errorMessage" success="success" fail="fail"></errordisplay>
 	<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 		<div id="login">
 			<p class="text-center">
@@ -25,7 +26,7 @@
     				<span class="error-message" ng-show="regForm.emailAddress.$error.email" class="help-inline"><span>Email&nbsp;is&nbsp;invalid.</span></span>
     				</span>
     				<span class="error-message" ng-show="regForm.emailAddress.$error.emailexists"><span>Email&nbsp;Address&nbsp;Already&nbsp;Exist.</span></span>
-				</div>
+				</div>	
 				<div class="form-group">
 					<input type="password" name="password" class=" form-control required" ng-model="userDetailsForm.password" placeholder="Password" required>
 					<span class="input-icon"><i class=" icon-lock"></i></span>

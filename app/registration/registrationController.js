@@ -1,12 +1,18 @@
 var registerApp= angular.module('commonApp', ["requestModule"]);
 
-registerApp.controller("registrationController",function($scope,$http,$location,userDetailService,requestHandler){
+registerApp.controller("registrationController",function($scope,$http,$location,userDetailService,requestHandler,successMessageService){
+
+    $scope.errorMessage=successMessageService.getMessage();
+    $scope.success=successMessageService.getIsSuccess();
+    $scope.fail=successMessageService.getIsFail();
+
+    successMessageService.reset();
 
     //Create New User
     $scope.createUser=function (){
         
         alert("hit createUser");
-
+        alert(JSON.stringify($scope.userDetailsForm));
         //Operation After clicked create account
         requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
             var date = new Date();
@@ -84,6 +90,7 @@ registerApp.directive("emailexists", function ($q, $timeout,requestHandler) {
                             defer.reject();
                         } 
                     });
+                    isNew = false;
                 }, 10);
 
                 return defer.promise;

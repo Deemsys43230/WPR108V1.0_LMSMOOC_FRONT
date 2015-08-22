@@ -59,14 +59,15 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/login/loginController.js'
+                                '../../app/login/loginController.js',
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
                             ]
                         })
                     }
                 }
             }).
              when('/login:verificationCode', {
-                templateUrl: 'views/emailVerification.html',
+                templateUrl: 'views/login.html',
                 controller: 'emailController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
@@ -74,10 +75,37 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             name:'commonApp',
                             files:[
                                 '../../app/registration/emailVerification.js',
-                                '../../css/ns-style-bar.css',
-                                '../../js/modernizr.custom.js',
-                                '../../js/classie.js',
-                                '../../js/notificationFx.js'
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
+                            ]
+                        })
+                    }
+                }
+            }).
+              when('/forgot_password', {
+                templateUrl: 'views/forgot_password.html',
+                controller:"forgotPasswordRequestController",
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../app/registration/forgotPassword.js',
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
+                            ]
+                        })
+                    }
+                }
+            }).
+             when('/reset_password:genCode', {
+                templateUrl: 'views/reset_password.html',
+                controller:"forgotPasswordController",
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../app/registration/forgotPassword.js',
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
                             ]
                         })
                     }
@@ -92,6 +120,7 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             name:'commonApp',
                             files:[
                                 '../../app/registration/registrationController.js',
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js',
                                 '../../plugin/date-picker/moment.js'
                             ]
                         })
