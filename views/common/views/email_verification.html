@@ -1,0 +1,59 @@
+
+<section id="login_bg">
+<div  class="container">
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+		<div id="login">
+			<p class="text-center">
+				<img src="../../img/login_logo.png" alt="">
+			</p>
+			<hr>
+			<form name="loginForm" novalidate> 
+				<div class="form-group">
+					<span class="error-message">{{loginError}}</span>
+					<input type="email" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
+					<span class="input-icon"><i class="icon-user"></i></span>
+					<span ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 
+    				<span class="error-message" ng-show="loginForm.Email.$error.required"><span>Required.</span></span>
+    				<span class="error-message" ng-show="loginForm.Email.$error.email"><span>Email&nbsp;is&nbsp;not&nbsp;valid.</span></span>
+    				</span>
+					<span class="input-icon"><i class=" icon-user"></i></span>
+				</div>
+				<div class="form-group margin-bottom-5">
+					<input type="password" class=" form-control margin-bottom-5" name="Password" ng-model="loginDetail.password" placeholder="Password" required>
+					<span  ng-show="loginForm.Password.$dirty && loginForm.Password.$invalid"> 
+    				<span class="error-message" ng-show="loginForm.Password.$error.required"><span>Required.</span></span>
+    				</span>
+					<span class="input-icon"><i class="icon-lock"></i></span>
+					<input type="hidden" id="csrftoken_" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
+				</div>
+				<p class="small forget">
+					<a href="#">Forgot Password?</a>
+				</p>
+				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid" ng-class="{'button-disable':loginForm.$invalid}" ng-click="login()">Log in</button>
+				<button type="submit" class="button_fullwidth" ng-disabled="loginForm.$invalid" ng-class="{'button-disable':loginForm.$invalid}" ng-click="getUserRole()">Get method</button>
+				<a href="#register" class="button_fullwidth-2" id="notification-trigger">Register</a>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</section> <!-- End login -->
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+    $('#download').click(function(){                
+
+            var params = $('#params_').clone();
+            var csrftoken = $("#csrftoken_").clone();
+            $('<form target="_blank" action="report" method="post"></form>')
+                .append(params)
+                .append(csrftoken)
+                .appendTo('body')
+                .submit()
+                .remove();
+
+        });
+    });
+</script>
