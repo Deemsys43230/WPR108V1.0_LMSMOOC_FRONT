@@ -43,7 +43,7 @@ changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandl
                 var defer = $q.defer();
                 $timeout(function () {
                     var isPasswordCorrect;
-                    var sendRequest=requestHandler.postRequest("checkPassword.json",modelValue,0).then(function(results){
+                    var sendRequest=requestHandler.postRequest("checkOldPassword.json",modelValue,0).then(function(results){
                         isPasswordCorrect=results.data.checkPassword;
                     });
 
