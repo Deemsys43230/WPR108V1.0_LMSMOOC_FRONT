@@ -39,37 +39,37 @@
                   <li>
                       <label><strong>Designation</strong></label>
                       <div class="form-group">
-                          <input type="text" name="designation" class="required form-control">
+                          <input type="text" name="designation" class="required form-control" ng-model="userDetails.designation">
                       </div>
                   </li>
                   <li>
                       <label><strong>Education</strong></label>
                       <div class="form-group">
-                          <input type="text" name="education" class="required form-control">
+                          <input type="text" name="education" class="required form-control" ng-model="userDetails.education">
                       </div>
                   </li>
                   <li>
                       <label><strong>About Me</strong></label>
                       <div class="form-group">
-                          <textarea type="text" name="about-me" class="required form-control"></textarea>
+                          <textarea type="text" name="about-me" class="required form-control">{{userDetails.aboutMe}}</textarea>
                       </div>
                   </li>
                   <li>
                       <label><strong>Facebook URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="facebook-url" class="required form-control" placeholder="http://www.facebook.com/">
+                          <input type="text" name="facebook-url" class="required form-control" placeholder="http://www.facebook.com/" ng-model="facebookUrl">
                       </div>
                   </li>
                   <li>
                       <label><strong>Twitter URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="twitter-url" class="required form-control" placeholder="http://twitter.com/">
+                          <input type="text" name="twitter-url" class="required form-control" placeholder="http://twitter.com/" ng-model="twitterUrl">
                       </div>
                   </li>
                   <li>
                       <label><strong>Google Plus URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="google" class="required form-control" placeholder="https://plus.google.com/">
+                          <input type="text" name="google" class="required form-control" placeholder="https://plus.google.com/" ng-model="googleUrl">
                       </div>
                   </li>
                   <li class="text-center">

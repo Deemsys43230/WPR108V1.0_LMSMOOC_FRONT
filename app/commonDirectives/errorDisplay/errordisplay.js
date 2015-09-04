@@ -29,12 +29,6 @@ angular.module('commonApp').directive('errordisplay',['$location',function() {
 //Service for exchange success message
 angular.module('commonApp').service('successMessageService', function() {
 
-    this.reset = function(){
-        this.message = null;
-        this.fail = 0;
-        this.success = 0;
-    }
-
     this.setMessage = function(message) {
         this.message = message;
     };
@@ -58,4 +52,11 @@ angular.module('commonApp').service('successMessageService', function() {
     this.getIsSuccess = function() {
         return this.success;
     };
+
+    this.reset = function(){
+        this.message = null;
+        this.fail = 0;
+        this.success = 0;
+    }
+
 });

@@ -56,8 +56,8 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/commonDirectives/errorDisplay/errordisplay.js',
-                                '../../app/login/loginController.js'
+                                '../../app/login/loginController.js',
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
                             ]
                         })
                     }

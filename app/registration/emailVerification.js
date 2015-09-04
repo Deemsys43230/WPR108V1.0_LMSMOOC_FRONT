@@ -6,17 +6,17 @@ emailApp.controller('emailController',function($routeParams,$http,$location,requ
     code = code.substring(18);
     requestHandler.postRequest("confirmMail.json",code,0).then(function(results){
         if(results.data.loginDetailsForms==1){
-            successMessageService.setMessage("Your Account is Activated Successfully.");
+            successMessageService.setMessage("Your Account is Activated Successfully, Kindly login now.");
             successMessageService.setIsFail(0);
             successMessageService.setIsSuccess(1);
             $location.path("/login");
         }
             
         else{
-            successMessageService.setMessage("Your Request has been expired.");
+            successMessageService.setMessage("Your Request has been expired. Kindly Register With New Email ID");
             successMessageService.setIsFail(1);
             successMessageService.setIsSuccess(0);
-            $location.path("/login");
+            $location.path("/register");
         }
     });
 });

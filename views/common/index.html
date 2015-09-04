@@ -7,8 +7,7 @@
   	<meta charset="utf-8">
     <title>LEARN - Courses, Education site template</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="_csrf" content="${_csrf.token}"/>
-    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon"/>
@@ -194,10 +193,28 @@
 <!-- scroll -->
 <script src="../../js/jquery.nicescroll.js"></script>
 
-<!-- [if lt IE 9]> -->
+<!--[if lt IE 9]>
 <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
 
 </body>
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '517246101757424',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
 
 </html>

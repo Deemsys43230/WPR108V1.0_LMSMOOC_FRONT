@@ -39,19 +39,19 @@
                       <li>
                           <label><strong>First Name</strong></label>
                           <div class="form-group">
-                              <input type="text" name="firstname" class="required form-control">
+                              <input type="text" name="firstname" class="required form-control" ng-model="userDetails.firstName">
                           </div>
                       </li>
                       <li>
                           <label><strong>Last Name</strong></label>
                           <div class="form-group">
-                              <input type="text" name="lastname" class="required form-control">
+                              <input type="text" name="lastname" class="required form-control" ng-model="userDetails.lastName">
                           </div>
                       </li>
                       <li>
                           <label class="col-md-12 no-padding"><strong>Country</strong></label>
                           <div class="styled-select">
-                              <select class="form-control required" name="country">
+                              <select class="form-control required" name="country" ng-model="userDetails.country">
                                   <option value="Europe">Europe</option>
                                   <option value="Asia">Asia</option>
                                   <option value="North America" selected>North America</option>
@@ -62,19 +62,19 @@
                       <li>
                           <label><strong>City</strong></label>
                           <div class="form-group">
-                              <input type="text" name="city" class="required form-control">
+                              <input type="text" name="city" class="required form-control" ng-model="userDetails.city">
                           </div>
                       </li>
                       <li>
                           <label><strong>Contact Number</strong></label>
                           <div class="form-group">
-                              <input type="text" name="contact" class="required form-control">
+                              <input type="text" name="contact" class="required form-control" ng-model="userDetails.phoneNumber">
                           </div>
                       </li>
                       <li>
                           <label><strong>Address</strong></label>
                           <div class="form-group">
-                              <textarea type="text" name="contact" class="required form-control"></textarea>
+                              <textarea type="text" name="contact" class="required form-control">{{userDetails.address}}</textarea>
                           </div>
                       </li>
                       <li class="text-center">

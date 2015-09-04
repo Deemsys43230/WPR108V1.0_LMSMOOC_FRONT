@@ -8,14 +8,15 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             events:true
         });
 
-        //Do For Cross Orgin Management
+        //Do For Cross Orgin Login Management
         $httpProvider.defaults.withCredentials = true;
 
         $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
 
             return {
-                
+
                 'request': function(request) {
+
                     return request;
                 },
                 'response': function (response) {
@@ -138,6 +139,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/profile_edit', {
                 templateUrl: 'views/profile_edit.html',
+                controller:'primaryInfoController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -145,7 +147,8 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             files:[
                                 '../../js/bootstrap.min.js',
                                 '../../css/fileupload.css',
-                                '../../js/fileupload.js'
+                                '../../js/fileupload.js',
+                                '../../app/userProfile/userProfileControls.js'
                             ]
                         })
                     }
@@ -153,6 +156,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/primary_info_edit', {
                 templateUrl: 'views/primary_info_edit.html',
+                controller:'profileController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -160,7 +164,8 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             files:[
                                 '../../js/bootstrap.min.js',
                                 '../../css/fileupload.css',
-                                '../../js/fileupload.js'
+                                '../../js/fileupload.js',
+                                '../../app/userProfile/userProfileControls.js'
                             ]
                         })
                     }
@@ -187,6 +192,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/payment_edit', {
                 templateUrl: 'views/payment_edit.html',
+                controller:'paymentController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -194,7 +200,8 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             files:[
                                 '../../js/bootstrap.min.js',
                                 '../../css/fileupload.css',
-                                '../../js/fileupload.js'
+                                '../../js/fileupload.js',
+                                '../../app/userProfile/userProfileControls.js'
                             ]
                         })
                     }

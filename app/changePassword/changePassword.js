@@ -2,6 +2,20 @@ var changePasswordApp= angular.module('userApp', ["requestModule"]);
 
 
 changePasswordApp.controller("changePasswordController",function($scope,$http,$location,$window,requestHandler){
+
+    requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
+        $scope.userDetails=result.data.userDetailsForm;
+    });
+
+    $scope.doChangePassword= function () {
+        var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
+
+        sendRequest.then(function(){
+              $scope.message="Your Password Changes Successfully!"
+            $scope.success=true;
+        });
+    }
+
 });
 
 // Compare Confirm New Password
@@ -29,7 +43,7 @@ changePasswordApp.directive('compareTo',function() {
 changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandler) {
 
     var CheckPassword = function (isPasswordCorrect) {
-        if(isPasswordCorrect==true)
+        if(isPasswordCorrect==1)
             return true;
         else
             return false;
@@ -43,18 +57,13 @@ changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandl
                 var defer = $q.defer();
                 $timeout(function () {
                     var isPasswordCorrect;
-                    var sendRequest=requestHandler.postRequest("checkOldPassword.json",modelValue,0).then(function(results){
-                        isPasswordCorrect=results.data.checkPassword;
-                    });
-
-                    sendRequest.then(function(){
-
-                        if (CheckPassword(isPasswordCorrect)){
+                    var sendRequest=requestHandler.postRequest("User/checkOldPassword.json?password="+modelValue,"").then(function(results){
+                        if (CheckPassword(results.data.checkPassword)){
                             defer.resolve();
                         }
                         else{
                             defer.reject();
-                        } 
+                        }
                     });
                     isPasswordCorrect = false;
                 }, 10);
