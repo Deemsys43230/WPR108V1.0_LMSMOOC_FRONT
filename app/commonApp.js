@@ -12,43 +12,40 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
         $httpProvider.defaults.withCredentials = true;
 
         $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
-                return {
-                    'request': function(request) {
 
-                        return request;
-                    },
-                    'response': function (response) {
-                        return response;
-                    },
-                    'responseError': function (rejection) {
-                        switch (rejection.status) {
-                            case 400: {
-                                break;
-                            }
-                            case 401:{
-                              alert("restricted");
-                            }
-                            case 403: {
-                              alert("yes !");
-                              alert("Get out");
-                                $location.path("/login");
-
-                                break;
-                            }
-                            case 500: {
-                                break;
-                            }
-                            default : {
-                               
-
-                                break;
-                            }
+            return {
+                
+                'request': function(request) {
+                    return request;
+                },
+                'response': function (response) {
+                    return response;
+                },
+                'responseError': function (rejection) {
+                    switch (rejection.status) {
+                        case 400: {
+                            break;
                         }
-
-                        return $q.reject(rejection);
+                        case 401:{
+                            alert("restricted");
+                        }
+                        case 403: {
+                            alert("yes !");
+                            alert("Get out");
+                            $location.path("/login");
+                            break;
+                        }
+                        case 500: {
+                            break;
+                        }
+                        default : {
+                            break;
+                        }
                     }
-                };
-            }]);
+                    return $q.reject(rejection);
+                }
+            };
+        }]);
 
         $routeProvider.
             when('/login', {
@@ -59,8 +56,8 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                         return $ocLazyLoad.load({
                             name:'commonApp',
                             files:[
-                                '../../app/login/loginController.js',
-                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js',
+                                '../../app/login/loginController.js'
                             ]
                         })
                     }
@@ -76,6 +73,20 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             files:[
                                 '../../app/registration/emailVerification.js',
                                 '../../app/commonDirectives/errorDisplay/errordisplay.js'
+                            ]
+                        })
+                    }
+                }
+            }).
+              when('/facebook', {
+                templateUrl: 'views/facebook.html',
+                controller:'myController',
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../app/registration/facebook.js'
                             ]
                         })
                     }

@@ -51,23 +51,56 @@
                   <li>
                       <label><strong>Password</strong></label>
                       <div class="form-group">
-                          <input type="text" name="current-password" class="required form-control" placeholder="Enter Current Password">
+                          <input type="text" name="current-password" class="required form-control">
+                          <span class="input-icon"><a href="#yourModalId"><i class="icon-pencil text-danger"></i></a></span>
                       </div>
-                      <div class="form-group">
-                          <input type="text" name="new-password" class="required form-control" placeholder="Enter New Password">
-                      </div>
-                      <div class="form-group">
-                          <input type="text" name="confirm-new-password" class="required form-control" placeholder="Confirm New Password">
-                      </div>
-                  </li>
-                  <li class="text-center">
-                      <button class="btn btn-primary">Save Changes</button>
                   </li>
               </ul>
           </div>
       </div><!-- End row-->
 </div><!-- End container -->
 </section><!-- End main_content-->
+
+<div id="yourModalId" class="yourModalClass text-center" style="display:none;">
+    <a href="#yourModalId" class="pull-right close padding-top-10">&times;</a>
+    <h4 class="margin-tb-20 text-gray">Change Password</h4>
+    <form role="form" name="changePassword" novalidate>
+    <div class="form-group">
+      <input type="password" name="currentPassword" class="form-control" placeholder="Enter Current Password" ng-model="currentPassword" required checkpassword ng-blur="editPassword=true" ng-focus="editPassword=false">
+      <span class="input-icon"><i class=" icon-lock"></i></span>
+      <span ng-show="changePassword.currentPassword.$dirty && changePassword.currentPassword.$invalid">
+        <span class="error-message" ng-show="changePassword.currentPassword.$error.required" class="help-inline"><span>Required.</span></span>
+      </span>
+      <span class="error-message" ng-show="changePassword.currentPassword.$error.checkpassword && editPassword"><span>Current&nbsp;Password&nbsp;Incorrect</span></span>
+    </div>
+    <div class="form-group">
+      <input type="password" name="newPassword" class="form-control" placeholder="Enter New Password" ng-model="newPassword" required>
+      <span class="input-icon"><i class="icon-lock"></i></span>
+      <span ng-show="changePassword.newPassword.$dirty && changePassword.newPassword.$invalid">
+        <span class="error-message" ng-show="changePassword.newPassword.$error.required" class="help-inline"><span>Required.</span>
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <input type="password" name="confirmNewPassword" class="form-control" placeholder="Confirm New Password" compare-to="newPassword" ng-model="confirmNewPassword">
+      <span class="input-icon"><i class=" icon-lock"></i></span>
+      <span ng-show="changePassword.confirmNewPassword.$dirty && changePassword.confirmNewPassword.$invalid">
+        <span class="error-message" ng-show="changePassword.confirmNewPassword.$error.compareTo" class="help-inline"><span>Must&nbsp;match&nbsp;with&nbsp;new&nbsp;password.</span></span>
+      </span>
+    </div>
+    <div class="text-center">
+      <a href="#yourModalId" class="btn btn-success" ng-class="{'button-disable':changePassword.$invalid}">Change Password</a>
+      <a href="#yourModalId" class="btn btn-danger">Cancel</a>
+    </div>
+  </form>
+</div>
+
+<!--popup-->
+<script>
+    var modal = Modality.init('#yourModalId', {
+    effect: 'slide-up'
+    });
+</script>
 
 <!-- file upload -->
 <script>

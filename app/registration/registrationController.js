@@ -11,9 +11,8 @@ registerApp.controller("registrationController",function($scope,$http,$location,
     //Create New User
     $scope.createUser=function (){
         
-        alert("hit createUser");
-        alert(JSON.stringify($scope.userDetailsForm));
         //Operation After clicked create account
+        $scope.userDetailsForm.dateOfBirth="01/01/1990";
         requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
             var date = new Date();
             var year=date.getFullYear();
@@ -23,6 +22,7 @@ registerApp.controller("registrationController",function($scope,$http,$location,
             userDetailService.setUserDetailsForm(results.data.userDetailsForm);
             $location.path('/create_account');
         });
+        $scope.loading = 1;
     }
 
 });
@@ -46,19 +46,6 @@ registerApp.directive('compareTo',function() {
         }
     };
 });
-
-//Own Directive for ngblur
-registerApp.directive('ngBlur', ['$parse', function($parse) {
-    return function(scope, element, attr) {
-        var fn = $parse(attr['ngBlur']);
-        element.bind('blur', function(event) {
-            scope.$apply(function() {
-                fn(scope, {$event:event});
-            });
-        });
-    }
-}]);
-
 
 //Check for Email Already Exists
 registerApp.directive("emailexists", function ($q, $timeout,requestHandler) {

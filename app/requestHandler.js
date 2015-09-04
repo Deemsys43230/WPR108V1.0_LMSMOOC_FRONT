@@ -5,7 +5,7 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     var requestObj={};
 
     //*IMPORTANT*//
-    var hostedDomain="http://localhost:8085/Learnterest/";
+    var hostedDomain="http://localhost:8080/Learnterest/";
 
     requestObj.getRequest=function(requestURL,params){
 
@@ -27,8 +27,8 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     };
     
     requestObj.loginRequest=function(){      
-         $http.post('http://localhost:8085/Learnterest/j_spring_security_check?username=magesh123@gmail.com&password=magesh@123').success(function(){
-            alert("Do nothing!!");
+         $http.post('http://localhost:8080/Learnterest/j_spring_security_check?username=mugesh1111@gmail.com&password=1234').then(function(results){
+            alert(results.data);
         });
     };
 

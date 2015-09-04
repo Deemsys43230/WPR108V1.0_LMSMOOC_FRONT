@@ -11,7 +11,7 @@
 			<form role="form" name="regForm" class="form-horizontal" novalidate>
                 <div class="col-md-12">
 				<div class="form-group">
-					<input type="text" class=" form-control" name="fullName" ng-model="userDetailsForm.fullName"  placeholder="Full Name" required>
+					<input type="text" class="form-control" name="fullName" ng-model="userDetailsForm.fullName"  placeholder="Full Name" required>
 					<span class="input-icon"><i class=" icon-user"></i></span>
 					<span ng-show="regForm.fullName.$dirty && regForm.fullName.$invalid"> 
     				<span class="error-message" ng-show="regForm.fullName.$error.required"><span>Required.</span></span>
@@ -19,37 +19,49 @@
     			
 				</div>
 				<div class="form-group">
-					<input type="email" name="emailAddress" class=" form-control" ng-model="userDetailsForm.emailAddress" placeholder="Email" ng-blur="checkEmail()" required email emailexists>
+					<input type="email" name="emailAddress" class="form-control" ng-model="userDetailsForm.emailAddress" placeholder="Email" required email emailexists ng-blur="editEmail=true" ng-focus="editEmail=false">
 					<span class="input-icon"><i class="icon-email"></i></span>
 					<span ng-show="regForm.emailAddress.$dirty && regForm.emailAddress.$invalid">
     				<span class="error-message" ng-show="regForm.emailAddress.$error.required" class="help-inline"><span>Required.</span></span>
     				<span class="error-message" ng-show="regForm.emailAddress.$error.email" class="help-inline"><span>Email&nbsp;is&nbsp;invalid.</span></span>
     				</span>
-    				<span class="error-message" ng-show="regForm.emailAddress.$error.emailexists"><span>Email&nbsp;Address&nbsp;Already&nbsp;Exist.</span></span>
+    				<span class="error-message" ng-show="regForm.emailAddress.$error.emailexists && editEmail"><span>Email&nbsp;Address&nbsp;Already&nbsp;Exist.</span></span>
 				</div>	
 				<div class="form-group">
-					<input type="password" name="password" class=" form-control required" ng-model="userDetailsForm.password" placeholder="Password" required>
+					<input type="password" name="password" class="form-control" ng-model="userDetailsForm.password" placeholder="Password" required>
 					<span class="input-icon"><i class=" icon-lock"></i></span>
 					<span ng-show="regForm.password.$dirty && regForm.password.$invalid"> 
     				<span class="error-message" ng-show="regForm.password.$error.required" class="help-inline"><span>Required.</span>
     				</span>
 				</div>
 				<div class="form-group">
-					<input type="password" class=" form-control required" ng-model="userDetailsForm.confirmPassword" name="confirmpassword" placeholder="Confirm password" required compare-to="userDetailsForm.password" >
+					<input type="password" class="form-control" ng-model="userDetailsForm.confirmPassword" name="confirmpassword" placeholder="Confirm password" required compare-to="userDetailsForm.password" >
 					<span class="input-icon"><i class=" icon-lock"></i></span>
 					<span ng-show="regForm.confirmpassword.$dirty && regForm.confirmpassword.$invalid">
-    				<span class="error-message" ng-show="regForm.confirmpassword.$error.compareTo"  ng-show="frm.password.$valid && frm.confirmpassword.$invalid" class="help-inline"><span>Must&nbsp;match&nbsp;with&nbsp;password.</span></span>
+    				<span class="error-message" ng-show="regForm.confirmpassword.$error.compareTo" class="help-inline"><span>Must&nbsp;match&nbsp;with&nbsp;password.</span></span>
     				</span>
 				</div>
                 <div class="checkbox small terms col-md-offset-2 col-sm-offset-2 col-xs-offset-1">
                     <label><input type="checkbox" name="agree" ng-model="userDetailsForm.agreeTermsAndCondition" ng-true-value="1"  ng-false-value="0" required><span>I accept the&nbsp;</span><a href="">Terms & Conditions</a></label>
                 </div>
                 </div>
-                 <button ng-click="createUser(userDetailsForm);" ng-disabled="regForm.$invalid" class="button_fullwidth" ng-class="{'button-disable':regForm.$invalid}">Create Account</button>
+                 <button ng-click="createUser(userDetailsForm);" class="button_fullwidth" ng-class="{'button-disable':regForm.$invalid}">Create Account</button>
                 <a href="#login" class="button_fullwidth-2">Log in</a>
 			</form>
 		</div>
 	</div>
+	<!-- <div id="fountainTextG" ng-show="loading">
+		<div id="fountainTextG_1" class="fountainTextG">L</div>
+		<div id="fountainTextG_2" class="fountainTextG">o</div>
+		<div id="fountainTextG_3" class="fountainTextG">a</div>
+		<div id="fountainTextG_4" class="fountainTextG">d</div>
+		<div id="fountainTextG_5" class="fountainTextG">i</div>
+		<div id="fountainTextG_6" class="fountainTextG">n</div>
+		<div id="fountainTextG_7" class="fountainTextG">g</div>
+		<div id="fountainTextG_8" class="fountainTextG">.</div>
+		<div id="fountainTextG_9" class="fountainTextG">.</div>
+		<div id="fountainTextG_10" class="fountainTextG">.</div>
+	</div> -->
 </div>
 </div>
 </section><!-- End register -->

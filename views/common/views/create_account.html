@@ -37,8 +37,8 @@
                                         </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="country" ng-model="userDetailsForm.country">
-                                            <option value="" selected>Select your country</option>
+                                        <select class="form-control required empty" name="country" ng-model="userDetailsForm.country">
+                                            <option value="" selected disabled>Select your country</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
                                             <option value="North America">North America</option>
@@ -47,8 +47,8 @@
                                     </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="state" ng-model="userDetailsForm.state">
-                                            <option value="" selected>Select your state</option>
+                                        <select class="form-control required empty" name="state" ng-model="userDetailsForm.state">
+                                            <option value="" selected disabled>Select your state</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
                                             <option value="North America">North America</option>
@@ -149,7 +149,7 @@
 
                     <div class="submit step" id="complete">
                         <i class="icon-check"></i>
-                        <h3>Thank you for you time.</h3>
+                        <h3>Thank you for your time.</h3>
                         <a href="#"><button type="button" ng-click="updateUserDetails(userDetailsForm);" name="process" class="submit">Submit to register</button></a>
                     </div><!-- end submit step -->
 
@@ -216,4 +216,10 @@
             defaultDate: new Date(new Date().getFullYear()-25,0,1)
         });
 
+</script>
+
+<script type="text/javascript">
+    $("select:has(option[value=]:first-child)").on('change', function() {
+        $(this).toggleClass("empty", $.inArray($(this).val(), ['', null]) >= 0);
+    }).trigger('change');
 </script>

@@ -1,12 +1,51 @@
 var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule']);
 
-userApp.config(['$routeProvider','$ocLazyLoadProvider',
+userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
-    function($routeProvider,$ocLazyLoadProvider) {
+    function($routeProvider,$ocLazyLoadProvider,$httpProvider) {
         $ocLazyLoadProvider.config({
             debug:false,
             events:true
         });
+
+        //Do For Cross Orgin Management
+        $httpProvider.defaults.withCredentials = true;
+
+        $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
+
+            return {
+                
+                'request': function(request) {
+                    return request;
+                },
+                'response': function (response) {
+                    return response;
+                },
+                'responseError': function (rejection) {
+                    switch (rejection.status) {
+                        case 400: {
+                            break;
+                        }
+                        case 401:{
+                            alert("restricted");
+                        }
+                        case 403: {
+                            alert("yes !");
+                            alert("Get out");
+                            $location.path("/login");
+                            break;
+                        }
+                        case 500: {
+                            break;
+                        }
+                        default : {
+                            break;
+                        }
+                    }
+                    return $q.reject(rejection);
+                }
+            };
+        }]);
 
         $routeProvider.
             when('/course_category', {
@@ -129,6 +168,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider',
             }).
             when('/account_edit', {
                 templateUrl: 'views/account_edit.html',
+                controller:'changePasswordController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -136,7 +176,10 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider',
                             files:[
                                 '../../js/bootstrap.min.js',
                                 '../../css/fileupload.css',
-                                '../../js/fileupload.js'
+                                '../../js/fileupload.js',
+                                '../../js/popup.js',
+                                '../../css/popup.css',
+                                '../../app/changePassword/changePassword.js'
                             ]
                         })
                     }
