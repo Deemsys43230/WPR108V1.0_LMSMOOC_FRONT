@@ -139,7 +139,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/profile_edit', {
                 templateUrl: 'views/profile_edit.html',
-                controller:'primaryInfoController',
+                controller:'profileController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -156,7 +156,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/primary_info_edit', {
                 templateUrl: 'views/primary_info_edit.html',
-                controller:'profileController',
+                controller:'primaryInfoController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -171,8 +171,8 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                     }
                 }
             }).
-            when('/account_edit', {
-                templateUrl: 'views/account_edit.html',
+            when('/change_password', {
+                templateUrl: 'views/change_password.html',
                 controller:'changePasswordController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
@@ -182,8 +182,6 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                                 '../../js/bootstrap.min.js',
                                 '../../css/fileupload.css',
                                 '../../js/fileupload.js',
-                                '../../js/popup.js',
-                                '../../css/popup.css',
                                 '../../app/changePassword/changePassword.js'
                             ]
                         })

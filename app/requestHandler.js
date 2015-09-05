@@ -5,7 +5,7 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     var requestObj={};
 
     //*IMPORTANT*//
-    var hostedDomain="http://learnterest.com:8089/Learnterest/";
+    var hostedDomain="http://localhost:8080/Learnterest/";
 
     requestObj.getRequest=function(requestURL,params){
 
@@ -27,7 +27,7 @@ requestHandlerApp.factory("requestHandler",['$http',function($http){
     };
     
     requestObj.loginRequest=function(){      
-         $http.post(hostedDomain+'j_spring_security_check?username=rsureshbecse@gmail.com&password=sample123').then(function(results){
+         $http.post(hostedDomain+'j_spring_security_check?username=howisitmugu@gmail.com&password=1234').then(function(results){
             alert(results.data);
         });
     };

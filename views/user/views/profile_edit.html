@@ -24,10 +24,10 @@
                           <a href="#primary_info_edit">Primary Info</a>
                       </li>
                       <li class="">
-                          <a href="#account_edit">Account</a>
+                          <a href="#change_password">Change Password</a>
                       </li>
                       <li class="">
-                          <a href="#payment_edit">Payment</a>
+                          <a href="#payment_edit">Payment Settings</a>
                       </li>
                   </ul>
               </div>
@@ -35,23 +35,43 @@
 
               <div class="col-md-8 col-sm-7">
                   <h4 class="create-title">Profile</h4><hr>
+                  <form name="profileEditForm" novalidate>
                   <ul class="data-list no-margin entry">
                       <li>
                           <label><strong>First Name</strong></label>
                           <div class="form-group">
-                              <input type="text" name="firstname" class="required form-control" ng-model="userDetails.firstName">
+                              <input type="text" name="firstname" class="form-control" ng-model="userDetails.firstName" required placeholder="Enter First Name">
+                              <span class="input-icon"><i class="icon-user"></i></span>
+                              <span ng-show="profileEditForm.firstname.$dirty && profileEditForm.firstname.$invalid">
+                                <span class="error-message" ng-show="profileEditForm.firstname.$error.required"><span>Required.</span></span>
+                              </span>
                           </div>
                       </li>
                       <li>
                           <label><strong>Last Name</strong></label>
                           <div class="form-group">
-                              <input type="text" name="lastname" class="required form-control" ng-model="userDetails.lastName">
+                              <input type="text" name="lastname" class="form-control" ng-model="userDetails.lastName" required placeholder="Enter Last Name">
+                              <span class="input-icon"><i class="icon-user"></i></span>
+                              <span ng-show="profileEditForm.lastname.$dirty && profileEditForm.lastname.$invalid">
+                                <span class="error-message" ng-show="profileEditForm.lastname.$error.required"><span>Required.</span></span>
+                              </span>
                           </div>
                       </li>
                       <li>
                           <label class="col-md-12 no-padding"><strong>Country</strong></label>
                           <div class="styled-select">
-                              <select class="form-control required" name="country" ng-model="userDetails.country">
+                              <select class="form-control" name="country" ng-model="userDetails.country">
+                                  <option value="Europe">Europe</option>
+                                  <option value="Asia">Asia</option>
+                                  <option value="North America" selected>North America</option>
+                                  <option value="South America">South America</option>
+                              </select>
+                          </div>
+                      </li>
+                      <li>
+                          <label class="col-md-12 no-padding"><strong>State</strong></label>
+                          <div class="styled-select">
+                              <select class="form-control" name="state" ng-model="userDetails.state">
                                   <option value="Europe">Europe</option>
                                   <option value="Asia">Asia</option>
                                   <option value="North America" selected>North America</option>
@@ -62,25 +82,37 @@
                       <li>
                           <label><strong>City</strong></label>
                           <div class="form-group">
-                              <input type="text" name="city" class="required form-control" ng-model="userDetails.city">
+                              <input type="text" name="city" class="form-control" ng-model="userDetails.city" required placeholder="Enter City">
+                              <span class="input-icon"><i class="icon-building"></i></span>
+                              <span ng-show="profileEditForm.city.$dirty && profileEditForm.city.$invalid">
+                                <span class="error-message" ng-show="profileEditForm.city.$error.required"><span>Required.</span></span>
+                              </span>
                           </div>
                       </li>
                       <li>
                           <label><strong>Contact Number</strong></label>
                           <div class="form-group">
-                              <input type="text" name="contact" class="required form-control" ng-model="userDetails.phoneNumber">
+                              <input type="text" name="contact" class="required form-control" ng-model="userDetails.phoneNumber" required placeholder="Enter Contact Number">
+                              <span class="input-icon"><i class="icon-phone"></i></span>
+                              <span ng-show="profileEditForm.contact.$dirty && profileEditForm.contact.$invalid">
+                                <span class="error-message" ng-show="profileEditForm.contact.$error.required"><span>Required.</span></span>
+                              </span>
                           </div>
                       </li>
                       <li>
                           <label><strong>Address</strong></label>
                           <div class="form-group">
-                              <textarea type="text" name="contact" class="required form-control">{{userDetails.address}}</textarea>
+                              <textarea type="text" name="address" class="required form-control" ng-model="userDetails.address" required placeholder="Enter Address"/>
+                              <span ng-show="profileEditForm.address.$dirty && profileEditForm.address.$invalid">
+                                <span class="error-message top-70" ng-show="profileEditForm.address.$error.required"><span>Required.</span></span>
+                              </span>
                           </div>
                       </li>
                       <li class="text-center">
-                          <button class="btn btn-primary">Save Changes</button>
+                          <button class="btn btn-primary" ng-click="doProfileEdit(userDetails)" ng-class="{'button-disable':profileEditForm.$invalid}">Save Changes</button>
                       </li>
                   </ul>
+                </form>
               </div>
       </div><!-- End row-->
 </div><!-- End container -->

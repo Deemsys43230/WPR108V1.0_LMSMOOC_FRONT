@@ -3,15 +3,11 @@ var changePasswordApp= angular.module('userApp', ["requestModule"]);
 
 changePasswordApp.controller("changePasswordController",function($scope,$http,$location,$window,requestHandler){
 
-    requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
-        $scope.userDetails=result.data.userDetailsForm;
-    });
-
     $scope.doChangePassword= function () {
         var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
 
         sendRequest.then(function(){
-              $scope.message="Your Password Changes Successfully!"
+            $scope.message="Your Password Changes Successfully!"
             $scope.success=true;
         });
     }
@@ -26,7 +22,7 @@ changePasswordApp.directive('compareTo',function() {
             otherModelValue: "=compareTo"
         },
         link: function(scope, element, attributes, ngModel) {
-
+            
             ngModel.$validators.compareTo = function(modelValue) {
                 return modelValue == scope.otherModelValue;
             };
@@ -37,7 +33,6 @@ changePasswordApp.directive('compareTo',function() {
         }
     };
 });
-
 
 //Check for Password
 changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandler) {
@@ -55,6 +50,7 @@ changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandl
         link: function (scope, element, attributes, ngModel) {
             ngModel.$asyncValidators.checkpassword = function (modelValue) {
                 var defer = $q.defer();
+                
                 $timeout(function () {
                     var isPasswordCorrect;
                     var sendRequest=requestHandler.postRequest("User/checkOldPassword.json?password="+modelValue,"").then(function(results){

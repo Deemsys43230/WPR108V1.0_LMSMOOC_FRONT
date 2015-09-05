@@ -8,13 +8,9 @@ userApp.controller("profileController",function($scope,$http,$location,$window,r
         $scope.userDetails=result.data.userDetailsForm;
     });
 
-
-    $scope.doChangePassword= function () {
-        var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
-
-        sendRequest.then(function(){
-            $scope.message="Your Password Changes Successfully!"
-            $scope.success=true;
+    $scope.doProfileEdit= function () {
+        var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
+        alert("success");
         });
     }
 
@@ -26,12 +22,9 @@ userApp.controller("primaryInfoController",function($scope,$http,$location,$wind
         $scope.userDetails=result.data.userDetailsForm;
     });
 
-    $scope.doChangePassword= function () {
-        var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
-
-        sendRequest.then(function(){
-            $scope.message="Your Password Changes Successfully!"
-            $scope.success=true;
+    $scope.doPrimaryInfoEdit= function () {
+        var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
+        alert("success");
         });
     }
 
@@ -43,13 +36,9 @@ userApp.controller("paymentController",function($scope,$http,$location,$window,r
         $scope.userDetails=result.data.userDetailsForm;
     });
 
-
-    $scope.doChangePassword= function () {
-        var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
-
-        sendRequest.then(function(){
-            $scope.message="Your Password Changes Successfully!"
-            $scope.success=true;
+    $scope.doPaymentIdEdit= function () {
+        var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
+        alert("success");
         });
     }
 

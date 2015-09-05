@@ -5,7 +5,7 @@
 
 /*input text color*/
 input, select, textarea{
-    color: #555 !important;
+    color: #777 !important;
 }
 
 input[type=radio]{
@@ -7346,6 +7346,10 @@ p.name{
     width: 0; height: 0;
     border-top: 6px solid #e15053;
     border-left: 6px solid transparent;
+}
+
+.top-70{
+    top: -70px !important;
 }
 
 

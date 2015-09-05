@@ -24,10 +24,10 @@
                           <a href="#primary_info_edit">Primary Info</a>
                       </li>
                       <li class="">
-                          <a href="#account_edit">Account</a>
+                          <a href="#change_password">Change Password</a>
                       </li>
                       <li class="">
-                          <a href="#payment_edit">Payment</a>
+                          <a href="#payment_edit">Payment Settings</a>
                       </li>
                   </ul>
               </div>
@@ -35,47 +35,63 @@
 
           <div class="col-md-8 col-sm-7">
               <h4 class="create-title">Primary Info</h4><hr>
+              <form name="primaryInfoForm" novalidate>
               <ul class="data-list no-margin entry">
                   <li>
                       <label><strong>Designation</strong></label>
                       <div class="form-group">
-                          <input type="text" name="designation" class="required form-control" ng-model="userDetails.designation">
+                          <input type="text" name="designation" class="form-control" ng-model="userDetails.designation" required placeholder="Enter Designation">
+                          <span class="input-icon"><i class="icon-user"></i></span>
+                            <span ng-show="primaryInfoForm.designation.$dirty && primaryInfoForm.designation.$invalid">
+                            <span class="error-message" ng-show="primaryInfoForm.designation.$error.required"><span>Required.</span></span>
+                          </span>
                       </div>
                   </li>
                   <li>
                       <label><strong>Education</strong></label>
                       <div class="form-group">
-                          <input type="text" name="education" class="required form-control" ng-model="userDetails.education">
+                          <input type="text" name="education" class="form-control" ng-model="userDetails.education" required placeholder="Enter Education">
+                          <span class="input-icon"><i class="icon-book"></i></span>
+                            <span ng-show="primaryInfoForm.education.$dirty && primaryInfoForm.education.$invalid">
+                            <span class="error-message" ng-show="primaryInfoForm.education.$error.required"><span>Required.</span></span>
+                          </span>
                       </div>
                   </li>
                   <li>
                       <label><strong>About Me</strong></label>
                       <div class="form-group">
-                          <textarea type="text" name="about-me" class="required form-control">{{userDetails.aboutMe}}</textarea>
+                          <textarea type="text" name="aboutMe" class="form-control" required placeholder="Enter About Me" ng-model="userDetails.aboutMe"/>
+                            <span ng-show="primaryInfoForm.aboutMe.$dirty && primaryInfoForm.aboutMe.$invalid">
+                            <span class="error-message top-70" ng-show="primaryInfoForm.aboutMe.$error.required"><span>Required.</span></span>
+                          </span>
                       </div>
                   </li>
                   <li>
                       <label><strong>Facebook URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="facebook-url" class="required form-control" placeholder="http://www.facebook.com/" ng-model="facebookUrl">
+                          <input type="text" name="facebookUrl" class="form-control" placeholder="Enter Facebook URL" ng-model="userDetails.facebookUrl">
+                          <span class="input-icon"><i class="icon-globe"></i></span>
                       </div>
                   </li>
                   <li>
                       <label><strong>Twitter URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="twitter-url" class="required form-control" placeholder="http://twitter.com/" ng-model="twitterUrl">
+                          <input type="text" name="twitterUrl" class="form-control" placeholder="Enter Twitter URL" ng-model="userDetails.twitterUrl">
+                          <span class="input-icon"><i class="icon-globe"></i></span>
                       </div>
                   </li>
                   <li>
                       <label><strong>Google Plus URL</strong></label>
                       <div class="form-group">
-                          <input type="text" name="google" class="required form-control" placeholder="https://plus.google.com/" ng-model="googleUrl">
+                          <input type="text" name="google" class="form-control" placeholder="Enter Google Plus URL" ng-model="userDetails.googleUrl">
+                          <span class="input-icon"><i class="icon-globe"></i></span>
                       </div>
                   </li>
                   <li class="text-center">
-                      <button class="btn btn-primary">Save Changes</button>
+                      <button class="btn btn-primary" ng-click="doPrimaryInfoEdit(userDetails)" ng-class="{'button-disable':primaryInfoForm.$invalid}">Save Changes</button>
                   </li>
               </ul>
+            </form>
           </div>
       </div><!-- End row-->
 </div><!-- End container -->
