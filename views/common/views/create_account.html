@@ -37,8 +37,8 @@
                                         </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="country" ng-model="userDetailsForm.country">
-                                            <option value="" selected>Select your country</option>
+                                        <select class="form-control required empty" name="country" ng-model="userDetailsForm.country">
+                                            <option value="" selected disabled>Select your country</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
                                             <option value="North America">North America</option>
@@ -47,8 +47,8 @@
                                     </div>
                                     </li>
                                     <li><div class="styled-select margin-bottom-15">
-                                        <select class="form-control required" name="state" ng-model="userDetailsForm.state">
-                                            <option value="" selected>Select your state</option>
+                                        <select class="form-control required empty" name="state" ng-model="userDetailsForm.state">
+                                            <option value="" selected disabled>Select your state</option>
                                             <option value="Europe">Europe</option>
                                             <option value="Asia">Asia</option>
                                             <option value="North America">North America</option>
@@ -217,3 +217,10 @@
         });
 
 </script>
+
+<script type="text/javascript">
+    $("select:has(option[value=]:first-child)").on('change', function() {
+        $(this).toggleClass("empty", $.inArray($(this).val(), ['', null]) >= 0);
+    }).trigger('change');
+</script>
+

@@ -2,6 +2,62 @@
 /* BOOTSTARP OVER RIDING*/
 /*===============================*/
 
+
+/*input text color*/
+input, select, textarea{
+    color: #555 !important;
+}
+
+input[type=radio]{
+    color: #fff !important;
+}
+
+/*select option*/
+select option {
+    color: #555;
+}
+
+select.empty {
+    color: #bbb !important;
+}
+/* Hidden placeholder */
+select option[disabled]:first-child {
+    display: none;
+}
+
+/* To remove outline in firefox */
+a:focus, a:active,input:focus,
+button,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="checkbox"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    outline: none !important;
+}
+
+select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    text-indent: 0.01px !important;
+    text-overflow: '' !important;
+}
+
+select option{
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    padding: 5px !important;
+}
+
+@-moz-document url-prefix() {
+    select {
+    width: 98% !important;
+}
+}
+
 /* slideshow progress bar */
 .btn-xs,
 .btn-group-xs >{
@@ -1749,15 +1805,15 @@ table.course-author tr:hover{
 }
 
 .sb-search-input:-moz-placeholder {
-    color: #ccc;
+    color: #bbb;
 }
 
 .sb-search-input::-moz-placeholder {
-    color: #ccc;
+    color: #bbb;
 }
 
 .sb-search-input:-ms-input-placeholder {
-    color: #ccc;
+    color: #bbb;
 }
 
 .sb-icon-search,
@@ -2603,8 +2659,8 @@ ul#follow_us_contacts  li a:hover i{
 .input-group button:hover { background-color:#006488; color:#fff; border:none;}
 .input-group button:focus { outline:none; border:none;}
 
-.form-control::-moz-placeholder { color: #999; opacity:1;}
-.form-control::-webkit-input-placeholder {color: #999;}
+.form-control::-moz-placeholder { color: #bbb; opacity:1;}
+.form-control::-webkit-input-placeholder {color: #bbb;}
 
 input.form-control, textarea.form-control {
     background:none;
