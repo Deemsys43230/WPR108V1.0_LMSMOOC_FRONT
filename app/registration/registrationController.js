@@ -12,7 +12,6 @@ registerApp.controller("registrationController",function($scope,$http,$location,
     $scope.createUser=function (){
         
         //Operation After clicked create account
-        $scope.userDetailsForm.dateOfBirth=01/01/1990;
         requestHandler.postRequest("saveUserDetails.json",$scope.userDetailsForm,0).then(function(results){
             var date = new Date();
             var year=date.getFullYear();
