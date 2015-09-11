@@ -1,4 +1,4 @@
-var commonApp= angular.module('commonApp', ['ngRoute','oc.lazyLoad']);
+var commonApp= angular.module('commonApp', ['ngRoute','oc.lazyLoad','ngCookies']);
 
 commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
@@ -8,14 +8,21 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             events:true
         });
 
-        //Do For Cross Orgin Login Management
-        $httpProvider.defaults.withCredentials = true;
 
-        $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
+        $httpProvider.interceptors.push(['$q','$location','$injector','$cookies',function ($q, $location,$injector,$cookies) {
+
+            //Do For Cross Orgin Login Management
+            $httpProvider.defaults.withCredentials = true
 
             return {
                 
                 'request': function(request) {
+
+                    if($cookies.get('authToken'))
+                    {
+                        request.headers.Authorization='bearer'+" "+$cookies.get('authToken');
+                    }
+
                     return request;
                 },
                 'response': function (response) {
@@ -281,6 +288,22 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             when('/FAQ', {
                 templateUrl: 'views/FAQ.html'
             }).
+            when('/courses', {
+                templateUrl: '../user/views/course_category.html',
+                resolve: {
+                    loadMyFiles:function($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name:'commonApp',
+                            files:[
+                                '../../plugin/menu/css/component.css',
+                                '../../plugin/menu/js/modernizr.custom.js',
+                                '../../plugin/menu/js/jquery.dlmenu.js',
+                                '../../js/jquery-mouse-overlay.js'
+                            ]
+                        })
+                    }
+                }
+            }).
             when('/contacts', {
                 templateUrl: 'views/contacts.html',
                 resolve: {
@@ -300,3 +323,16 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                 redirectTo: '/login'
             });
     }]);
+
+
+commonApp.service('authService', function() {
+        this.userDetailsForm = null;
+
+        this.setUserDetailsForm = function(userDetailsForm) {
+            this.userDetailsForm = userDetailsForm;
+        };
+
+        this.getUserDetailsForm = function() {
+            return this.userDetailsForm;
+        };
+});

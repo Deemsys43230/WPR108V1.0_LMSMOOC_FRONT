@@ -76,7 +76,11 @@ audio,canvas,progress,video {
 
 /* Text colour for warning */
 .text-danger {
-    color: red !important;
+     color: red !important;
+ }
+
+.text-white {
+    color: white !important;
 }
 a.text-danger:hover {
     color: #a94442 !important;

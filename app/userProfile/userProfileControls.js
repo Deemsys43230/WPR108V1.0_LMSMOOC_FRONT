@@ -1,8 +1,8 @@
 
-var userApp= angular.module('userApp', ["requestModule"]);
+var userApp= angular.module('userApp', ["requestModule","flash","ngAnimate"]);
 
 
-userApp.controller("profileController",function($scope,$http,$location,$window,requestHandler){
+userApp.controller("profileController",function($scope,$http,$location,$window,requestHandler,Flash){
 
     requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
         $scope.userDetails=result.data.userDetailsForm;
@@ -10,13 +10,14 @@ userApp.controller("profileController",function($scope,$http,$location,$window,r
 
     $scope.doProfileEdit= function () {
         var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
-        alert("success");
+            successMessage(Flash,"Profile updated successfully");
         });
+
     }
 
 });
 
-userApp.controller("primaryInfoController",function($scope,$http,$location,$window,requestHandler){
+userApp.controller("primaryInfoController",function($scope,$http,$location,$window,requestHandler,Flash){
 
     requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
         $scope.userDetails=result.data.userDetailsForm;
@@ -24,13 +25,13 @@ userApp.controller("primaryInfoController",function($scope,$http,$location,$wind
 
     $scope.doPrimaryInfoEdit= function () {
         var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
-        alert("success");
+            successMessage(Flash,"Primary Info updated successfully");
         });
     }
 
 });
 
-userApp.controller("paymentController",function($scope,$http,$location,$window,requestHandler){
+userApp.controller("paymentController",function($scope,$http,$location,$window,requestHandler,Flash){
 
     requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
         $scope.userDetails=result.data.userDetailsForm;
@@ -38,8 +39,18 @@ userApp.controller("paymentController",function($scope,$http,$location,$window,r
 
     $scope.doPaymentIdEdit= function () {
         var sendRequest=requestHandler.postRequest("User/updateUserDetails.json",$scope.userDetails,0).then(function(results){
-        alert("success");
+            successMessage(Flash,"Payment Details updated successfully");
         });
     }
 
 });
+
+userApp.controller("viewProfileController",function($scope,$http,$location,$window,requestHandler,Flash){
+
+    requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
+        $scope.userDetails=result.data.userDetailsForm;
+    });
+
+});
+
+

@@ -1,4 +1,4 @@
-var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule']);
+var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule','ngCookies']);
 
 userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
@@ -11,12 +11,14 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
         //Do For Cross Orgin Login Management
         $httpProvider.defaults.withCredentials = true;
 
-        $httpProvider.interceptors.push(['$q','$location','$injector',function ($q, $location,$injector) {
+        $httpProvider.interceptors.push(['$q','$location','$injector','$cookies',function ($q, $location,$injector,$cookies,$window) {
 
             return {
-
                 'request': function(request) {
 
+                    if($cookies.get('authToken')){
+                        request.headers.Authorization='bearer'+" "+$cookies.get('authToken');
+                    }
                     return request;
                 },
                 'response': function (response) {
@@ -27,13 +29,12 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                         case 400: {
                             break;
                         }
-                        case 401:{
-                            alert("restricted");
+                        case 0:{
+                            $location.path('/401');
+                            break;
                         }
                         case 403: {
-                            alert("yes !");
-                            alert("Get out");
-                            $location.path("/login");
+                            $location.path('/401');
                             break;
                         }
                         case 500: {
@@ -43,13 +44,13 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             break;
                         }
                     }
-                    return $q.reject(rejection);
+
                 }
             };
         }]);
 
         $routeProvider.
-            when('/course_category', {
+            when('/', {
                 templateUrl: 'views/course_category.html',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
@@ -207,12 +208,14 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/profile_view', {
                 templateUrl: 'views/profile_view.html',
+                controller:'viewProfileController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             name:'userApp',
                             files:[
-                                '../../js/bootstrap.min.js'
+                                '../../js/bootstrap.min.js',
+                                '../../app/userProfile/userProfileControls.js'
                             ]
                         })
                     }
@@ -656,16 +659,43 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             when('/contacts', {
                 templateUrl: '../common/views/contacts.html'
             }).
+            when('/401', {
+                templateUrl: '../common/views/401.html'
+            }).
             otherwise({
-                redirectTo: '/course_category'
+                templateUrl: '../common/views/about_us.html'
             });
 }]);
 
-userApp.controller('logoutController',function($scope,$window,requestHandler){
+userApp.controller('logoutController',function($scope,$window,$cookies,requestHandler){
     $scope.logout = function(){
-        alert("calling");
-        console.log("hit login controller");
-        requestHandler.getRequest("/api/j_spring_security_logout","");
-        $window.location.href = '../common';
+    
+        var doLogout=requestHandler.getRequest('j_spring_security_logout?ajax=true',"");
+
+        doLogout.then(function(response){
+            $cookies.remove('authToken',{path:'/Learnterest'});
+            $cookies.remove('expires_in',{path:'/Learnterest'});
+            $cookies.remove('token_type',{path:'/Learnterest'});
+            $window.location.href = '../common';
+        });
+
+
     };
 });
+
+//For User Messages
+function successMessage(Flash,message){
+    Flash.create('success', message, 'alert');
+    $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+}
+
+function errorMessage(Flash,message){
+    Flash.create('danger', message, 'custom-class');
+    $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+}

@@ -17,14 +17,11 @@
 
             <div class="col-md-9 margin-top-20">
                 <div class="col-md-12">
-                    <h3>Marion Rhodes</h3>
-                    <h5><i>Web developer</i></h5>
+                    <h3>{{userDetails.firstName}}&nbsp;{{userDetails.lastName}}</h3>
+                    <h5><i>{{userDetails.designation}}</i></h5>
                     <hr/>
-                    <h4>About me</h4>
-                    <p>Lorem ipsum dolor sit amet, dicta oportere ad est, ea eos partem neglegentur theophrastus. Esse voluptatum
-                        duo ne, expetenda corrumpit no per, at mei nobis lucilius. No eos semper aperiri neglegentur, vis noluisse
-                        quaestio no. Vix an nostro inimicus, qui ut animal fabellas reprehendunt. In quando repudiare intellegebat
-                        sed, nam suas dicta melius ea.</p>
+                    <h4>About Me</h4>
+                    <p>{{userDetails.aboutMe!=""?userDetails.aboutMe:"Type few words about yourself in profile"}}</p>
 
                     <div class="col-md-8 col-xs-12 col-md-offset-2 no-padding">
                         <div class="col-md-3 col-xs-3 review">

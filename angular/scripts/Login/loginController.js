@@ -276,6 +276,7 @@ loginApp.controller("loginController",function($window,$scope,$location,authFact
 
   $scope.login=function()
   {
+
     $scope.loginError="";
     console.log("Username: "+$scope.loginDetail.email+",Password:"+$scope.loginDetail.password);
    oAuthFactory.requestLogin($scope.loginDetail.email,$scope.loginDetail.password).success(function(results){

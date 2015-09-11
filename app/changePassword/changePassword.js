@@ -1,14 +1,16 @@
-var changePasswordApp= angular.module('userApp', ["requestModule"]);
+var changePasswordApp= angular.module('userApp', ["requestModule","flash"]);
 
 
-changePasswordApp.controller("changePasswordController",function($scope,$http,$location,$window,requestHandler){
+changePasswordApp.controller("changePasswordController",function($scope,$http,$location,$window,requestHandler,Flash,$route){
 
     $scope.doChangePassword= function () {
         var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
 
         sendRequest.then(function(){
-            $scope.message="Your Password Changes Successfully!"
-            $scope.success=true;
+            $scope.currentPassword="";
+            $location.path("/change_password");
+            $route.reload();
+            successMessage(Flash,"Password changed successfully!");
         });
     }
 
@@ -50,7 +52,6 @@ changePasswordApp.directive("checkpassword", function ($q, $timeout,requestHandl
         link: function (scope, element, attributes, ngModel) {
             ngModel.$asyncValidators.checkpassword = function (modelValue) {
                 var defer = $q.defer();
-                
                 $timeout(function () {
                     var isPasswordCorrect;
                     var sendRequest=requestHandler.postRequest("User/checkOldPassword.json?password="+modelValue,"").then(function(results){
