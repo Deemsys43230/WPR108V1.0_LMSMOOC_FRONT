@@ -139,7 +139,8 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             files:[
                                 '../../app/registration/registrationController.js',
                                 '../../app/commonDirectives/errorDisplay/errordisplay.js',
-                                '../../plugin/date-picker/moment.js'
+                                '../../plugin/date-picker/moment.js',
+                                '../../js/jquery.wizard.js'
                             ]
                         })
                     }
@@ -160,7 +161,6 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                                 '../../js/jquery.validate.js',
                                 '../../plugin/date-picker/pikaday.js',
                                 '../../app/registration/userDetailController.js'
-
                             ]
                         })
                     }
