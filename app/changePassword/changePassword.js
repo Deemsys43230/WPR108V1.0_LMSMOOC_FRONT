@@ -1,4 +1,4 @@
-var changePasswordApp= angular.module('userApp', ["requestModule","flash"]);
+var changePasswordApp= angular.module('userApp', ["requestModule","flash","ngAnimate"]);
 
 
 changePasswordApp.controller("changePasswordController",function($scope,$http,$location,$window,requestHandler,Flash,$route){
@@ -7,10 +7,8 @@ changePasswordApp.controller("changePasswordController",function($scope,$http,$l
         var sendRequest=requestHandler.postRequest("User/changePassword.json?password="+$scope.newPassword,"");
 
         sendRequest.then(function(){
-            $scope.currentPassword="";
-            $location.path("/change_password");
+            Flash.create('success', 'Password changed successfully!');
             $route.reload();
-            successMessage(Flash,"Password changed successfully!");
         });
     }
 

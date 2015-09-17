@@ -1,4 +1,4 @@
-var commonApp= angular.module('commonApp', ['ngRoute','oc.lazyLoad','ngCookies']);
+var commonApp= angular.module('commonApp', ['ngRoute','oc.lazyLoad','ngCookies','flash', 'ngAnimate']);
 
 commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
@@ -79,7 +79,8 @@ commonApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             name:'commonApp',
                             files:[
                                 '../../app/registration/emailVerification.js',
-                                '../../app/commonDirectives/errorDisplay/errordisplay.js'
+                                '../../app/commonDirectives/errorDisplay/errordisplay.js',
+
                             ]
                         })
                     }

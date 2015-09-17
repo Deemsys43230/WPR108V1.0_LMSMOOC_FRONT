@@ -88,7 +88,7 @@
                       </div>
                   </li>
                   <li class="text-center">
-                      <button class="btn btn-primary" ng-click="doPrimaryInfoEdit(userDetails)" ng-class="{'button-disable':primaryInfoForm.$invalid}">Save Changes</button>
+                      <button class="btn btn-primary" ng-click="doPrimaryInfoEdit(userDetails)" ng-disabled="isClean() || primaryInfoForm.$invalid">Save Changes</button>
                   </li>
               </ul>
             </form>

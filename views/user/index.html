@@ -18,7 +18,7 @@
     <!-- CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/common.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../../css/angular-flash.css" />
+    <link type="text/css" rel="stylesheet" href="../../angular/angular-flash.css" />
 
     <!--[if lt IE 9]>
     <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -33,10 +33,10 @@
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <a href="../../index.html" id="logo"></a>
             </div>
-            <div class="col-md-9 col-sm-9 col-xs-9">
+            <div class="col-md-9 col-sm-9 col-xs-9"  ng-controller='userProfile'>
                 <div class="margin-right-40 pull-right margin-top-2">
                     <button type="button" class="btn btn-signin dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs">User Name</span><span class="hidden-sm hidden-md hidden-lg"><i class="icon icon-user"></i> </span>&nbsp;&nbsp;<span class="caret"></span>
+                        <span class="hidden-xs">{{userDetailForm.firstName}}&nbsp;{{userDetailForm.lastName}}</span><span class="hidden-sm hidden-md hidden-lg"><i class="icon icon-user"></i> </span>&nbsp;&nbsp;<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu signin" role="menu">
                         <li>
@@ -46,8 +46,8 @@
                                         <img class="profile-img" src="../../img/teacher_4_small.jpg" alt="" />
                                     </td>
                                     <td>
-                                        <strong>Andrew</strong><br/>
-                                        <small>Web developer</small><br/>
+                                        <strong>{{userDetailForm.firstName}}</strong><br/>
+                                        <small>{{userDetailForm.designation}}</small><br/>
                                         <span class="pull-left" id="tooltip-call">
                                             <a href="#profile_edit" class="icon icon-pencil" title="Edit Profile" positionX="-20" positionY="-35"></a>
                                             <a href="#profile_view" class="icon icon-user" title="View Profile" positionX="-20" positionY="-35"></a>
@@ -213,14 +213,13 @@
 <script src="../../angular/angularjs-1.4.3.js"></script>
 <script src="../../angular/angular-route-1.4.3.js"></script>
 <script src="../../angular/angular-cookies.js"></script>
-<script src="../../angular/angular-flash.min.js"></script>
-<script src="../../angular/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../../angular/angular-animate-1.4.3.js"></script>
+<script src="../../angular/angular-flash.js"></script>
 
 <!-- For Handling Request -->
 <script src="../../app/userApp.js"></script>
 <script src="../../angular/ocLazyLoad.min.js"></script>
 <script src="../../app/requestHandler.js"></script>
-
 
 <script src="../../js/jquery.nicescroll.js"></script>
 

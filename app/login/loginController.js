@@ -1,13 +1,15 @@
-var commonApp= angular.module('commonApp', ["requestModule",'ngCookies']);
+var commonApp= angular.module('commonApp', ['requestModule','ngCookies','ngRoute','flash']);
 
 
-commonApp.controller("loginController",function($cookies,$scope,$http,$location,$window,requestHandler,userDetailService,successMessageService){
+commonApp.controller("loginController", function($cookies,$scope,Flash,$http,$location,$window,requestHandler,userDetailService,successMessageService){
 
 	$scope.errorMessage=successMessageService.getMessage();
 	$scope.success=successMessageService.getIsSuccess();
 	$scope.fail=successMessageService.getIsFail();
 
 	successMessageService.reset();
+
+	$scope.loginForm={};
 	
 	//Login Function
 	$scope.login=function(){
@@ -26,9 +28,8 @@ commonApp.controller("loginController",function($cookies,$scope,$http,$location,
 
 			}
 			else if(response.status==400){
-				$scope.loginError=response.data.error_description;
+				Flash.create('danger', 'Incorrect Username or Password!');
 			}
-
 
 		});
 	};
@@ -42,7 +43,6 @@ commonApp.controller("loginController",function($cookies,$scope,$http,$location,
 	$scope.changeUserPassword=function(){
 		requestHandler.postRequest("checkPassword.json",1234,"");
 	};
-
 
 });
 
@@ -60,4 +60,5 @@ commonApp.service('userDetailService', function() {
     };
 
 });
+
 

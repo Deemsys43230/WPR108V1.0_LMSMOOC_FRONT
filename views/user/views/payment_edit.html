@@ -52,7 +52,7 @@
                       </div>
                   </li>
                   <li class="text-center">
-                      <button class="btn btn-primary" ng-click="doPaymentIdEdit(userDetails)" ng-class="{'button-disable':paymentIdForm.$invalid}">Save</button>
+                      <button class="btn btn-primary" ng-click="doPaymentIdEdit(userDetails)" ng-disabled="isClean() || paymentIdForm.$invalid">Save</button>
                   </li>
               </ul>
             </form>

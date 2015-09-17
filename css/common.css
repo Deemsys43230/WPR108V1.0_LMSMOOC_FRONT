@@ -20,7 +20,7 @@ select option {
 select.empty {
     color: #bbb !important;
 }
-/* Hidden placeholder */
+/* Hidden first Child */
 select option[disabled]:first-child {
     display: none;
 }
@@ -416,6 +416,7 @@ ul.sf-menu li a:hover{
     -webkit-transition: none;
     transition: none;
     color:#fff;
+    cursor: pointer;
 }
 
 #mobnav-btn:before {
@@ -3148,11 +3149,13 @@ ul.user_panel a.dropdown-toggle{color:#fff;}
 }
 
 p.profile-name{
-    font-size: 30px;
+    font-size: 22px;
     color: #aaa;
     margin-top: 20px;
     text-align: center !important;
     margin-bottom: 0px;
+    word-wrap: break-word;
+    line-height: 25px
 }
 p.profile-name small{
     font-size: 12px;
@@ -7412,4 +7415,32 @@ p.name{
     text-align:center;
     margin-bottom: 6px;
     font-size:20px;
+}
+
+.views{
+    min-height: 300px !important;
+}
+
+.text-count{
+    background-color:#4DBF4D !important;
+    text-align:center !important;
+    border-left: 0px !important;
+    color:#fff !important;
+    font-weight: bold;
+    font-size:12px !important;
+    line-height: 20px !important;
+    height: 20px !important;
+}
+
+.profile-image{
+    width: 250px;
+    height: 250px;
+    border:1px solid #ddd;
+}
+
+.profile-image-button{
+    position: absolute;
+    float: right;
+    margin-right: 10px !important;
+    margin-top: 10px !important;
 }

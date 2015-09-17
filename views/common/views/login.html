@@ -10,7 +10,7 @@
 				<img src="../../img/login_logo.png" alt="">
 			</p>
 			<hr>
-			<form name="loginForm" novalidate> 
+			<form name="loginForm" novalidate>
             <div class="row">
             <div class="col-md-6 col-sm-6 login_social">
 				<a class="btn btn-primary btn-block" ng-click="fbLogin()"><i class="icon-facebook"></i>Facebook</a>
@@ -20,12 +20,12 @@
 			</div>
 			</div> <!-- end row -->
 			<div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
-				<span class="text-danger"><small>{{loginError}}<br/><br/></small></span>
+				<div flash-message="5000" ></div>
 				<div class="form-group">
-					<input type="email" class=" form-control " name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
+					<input type="email" class="form-control" name="Email" placeholder="Email Address" ng-model="loginDetail.email" required email>
 					<span class="input-icon"><i class="icon-user"></i></span>
 					<span ng-show="loginForm.Email.$dirty && loginForm.Email.$invalid"> 
-    				<span class="error-message" ng-show="loginForm.Email.$error.required"><span>Required1.</span></span>
+    				<span class="error-message" ng-show="loginForm.Email.$error.required"><span>Required.</span></span>
     				<span class="error-message" ng-show="loginForm.Email.$error.email"><span>Email&nbsp;is&nbsp;not&nbsp;valid.</span></span>
     				</span>
 					<span class="input-icon"><i class=" icon-user"></i></span>

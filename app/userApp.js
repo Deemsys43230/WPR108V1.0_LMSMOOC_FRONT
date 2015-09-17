@@ -1,4 +1,4 @@
-var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule','ngCookies']);
+var userApp= angular.module('userApp', ['ngRoute','oc.lazyLoad','requestModule','ngCookies','flash', 'ngAnimate']);
 
 userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
 
@@ -147,9 +147,12 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
                             name:'userApp',
                             files:[
                                 '../../js/bootstrap.min.js',
-                                '../../css/fileupload.css',
-                                '../../js/fileupload.js',
-                                '../../app/userProfile/userProfileControls.js'
+                                '../../app/userProfile/userProfileControls.js',
+                                '../../js/jquery.simplyCountable.js',
+                                '../../css/profile-image-upload.css',
+                                '../../js/image-upload.js',
+                                '../../js/popup.js',
+                                '../../css/popup.css'
                             ]
                         })
                     }
@@ -208,7 +211,7 @@ userApp.config(['$routeProvider','$ocLazyLoadProvider','$httpProvider',
             }).
             when('/profile_view', {
                 templateUrl: 'views/profile_view.html',
-                controller:'viewProfileController',
+                controller: 'viewProfileController',
                 resolve: {
                     loadMyFiles:function($ocLazyLoad) {
                         return $ocLazyLoad.load({
@@ -678,24 +681,11 @@ userApp.controller('logoutController',function($scope,$window,$cookies,requestHa
             $cookies.remove('token_type',{path:'/Learnterest'});
             $window.location.href = '../common';
         });
-
-
     };
 });
 
-//For User Messages
-function successMessage(Flash,message){
-    Flash.create('success', message, 'alert');
-    $("html, body").animate({
-        scrollTop: 0
-    }, 600);
-    return false;
-}
-
-function errorMessage(Flash,message){
-    Flash.create('danger', message, 'custom-class');
-    $("html, body").animate({
-        scrollTop: 0
-    }, 600);
-    return false;
-}
+userApp.controller('userProfile',function($scope,requestHandler){
+    requestHandler.getRequest("User/getUserDetails.json","").then(function(result){
+        $scope.userDetailForm=result.data.userDetailsForm;
+    });
+});
